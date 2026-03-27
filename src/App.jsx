@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, ScrollRestoration } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -6,15 +6,9 @@ import Company from './pages/Company'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
 
-function ScrollToTop() {
-  // Scroll to top on route change
-  const { pathname } = window.location
-  return null
-}
-
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/select-electrical">
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-1">
