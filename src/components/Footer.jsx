@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom'
 import { Zap, Phone, Mail, MapPin, Linkedin, ArrowRight } from 'lucide-react'
 
 const serviceLinks = [
-  'Variable Frequency Drives',
-  'Motor Control Centers',
-  'Switchboards',
-  'Electric Motors',
-  'Soft Starters',
-  'Power Factor Correction',
-  'Installation & Commissioning',
-  'Infrared Surveys',
+  { label: 'Variable Frequency Drives', to: '/services' },
+  { label: 'Motor Control Centers', to: '/se1000-pds-motor-control-center' },
+  { label: 'Switchboards', to: '/se3000-switchboards' },
+  { label: 'Electric Motors', to: '/services' },
+  { label: 'Soft Starters', to: '/services' },
+  { label: 'Power Factor Correction', to: '/power-factor-correction' },
+  { label: 'Installation & Commissioning', to: '/services' },
+  { label: 'Infrared Surveys', to: '/services' },
 ]
 
 export default function Footer() {
@@ -57,6 +57,7 @@ export default function Footer() {
                 { label: 'Home', to: '/' },
                 { label: 'Company', to: '/company' },
                 { label: 'Services', to: '/services' },
+                { label: 'Blog', to: '/blog' },
                 { label: 'Contact Us', to: '/contact' },
               ].map((link) => (
                 <li key={link.to}>
@@ -79,13 +80,13 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5">
               {serviceLinks.map((service) => (
-                <li key={service}>
+                <li key={service.label}>
                   <Link
-                    to="/services"
+                    to={service.to}
                     className="flex items-center gap-2 text-gray-400 hover:text-gold transition-colors text-sm group"
                   >
                     <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform flex-shrink-0" />
-                    {service}
+                    {service.label}
                   </Link>
                 </li>
               ))}

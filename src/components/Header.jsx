@@ -1,18 +1,49 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Zap, Phone } from 'lucide-react'
+import { Menu, X, Zap, Phone, ChevronDown } from 'lucide-react'
 
 const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'Company', to: '/company' },
   { label: 'Services', to: '/services' },
+  { label: 'Blog', to: '/blog' },
   { label: 'Contact', to: '/contact' },
 ]
 
+const productGroups = [
+  {
+    heading: 'SE200 Series',
+    items: [
+      { label: 'Oil Well Drive', to: '/se200-oil-well-drive' },
+      { label: 'ESP Drive', to: '/se200-esp-drive' },
+      { label: 'PCP Pump Drive', to: '/se200-pcp-pump-drive' },
+      { label: 'Artificial Lift Controller', to: '/se200-artificial-lift-controller-drive' },
+      { label: 'Gas Compressor Drive', to: '/se200-gas-compressor-drive' },
+      { label: 'Industrial Drive', to: '/se200-industrial-drive' },
+      { label: 'Automated Pump Drive', to: '/se200-automated-pump-drive' },
+      { label: 'Pump Process Drive', to: '/se200-pump-process-drive' },
+      { label: 'Control Solutions', to: '/se200-control-solutions' },
+    ],
+  },
+  {
+    heading: 'Equipment',
+    items: [
+      { label: 'SE1000 PDS Motor Control Center', to: '/se1000-pds-motor-control-center' },
+      { label: 'SE3000 Switchboards', to: '/se3000-switchboards' },
+      { label: 'Power Factor Correction', to: '/power-factor-correction' },
+    ],
+  },
+]
+
+const mobileProductItems = productGroups.flatMap((g) => g.items)
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [productsOpen, setProductsOpen] = useState(false)
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
+  const dropdownRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20)
@@ -22,8 +53,23 @@ export default function Header() {
 
   useEffect(() => {
     setMenuOpen(false)
+    setProductsOpen(false)
+    setMobileProductsOpen(false)
     window.scrollTo(0, 0)
   }, [location.pathname])
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setProductsOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
+  const productPaths = productGroups.flatMap((g) => g.items.map((i) => i.to))
+  const productsActive = productPaths.includes(location.pathname)
 
   return (
     <header
@@ -71,9 +117,7 @@ export default function Header() {
                   key={link.to}
                   to={link.to}
                   className={`relative px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
-                    active
-                      ? 'text-gold'
-                      : 'text-gray-300 hover:text-white'
+                    active ? 'text-gold' : 'text-gray-300 hover:text-white'
                   }`}
                 >
                   {link.label}
@@ -83,6 +127,54 @@ export default function Header() {
                 </Link>
               )
             })}
+
+            {/* Products dropdown */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setProductsOpen((o) => !o)}
+                className={`relative flex items-center gap-1 px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
+                  productsActive || productsOpen ? 'text-gold' : 'text-gray-300 hover:text-white'
+                }`}
+              >
+                Products
+                <ChevronDown
+                  size={14}
+                  className={`transition-transform duration-200 ${productsOpen ? 'rotate-180' : ''}`}
+                />
+                {productsActive && !productsOpen && (
+                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gold" />
+                )}
+              </button>
+
+              {productsOpen && (
+                <div className="absolute top-full right-0 mt-1 bg-dark border border-white/10 shadow-2xl w-[560px] grid grid-cols-2 gap-0 z-50">
+                  {productGroups.map((group) => (
+                    <div key={group.heading} className="p-5 border-r border-white/5 last:border-r-0">
+                      <div className="text-gold text-xs font-semibold uppercase tracking-widest mb-3 pb-2 border-b border-white/10">
+                        {group.heading}
+                      </div>
+                      <ul className="space-y-0.5">
+                        {group.items.map((item) => (
+                          <li key={item.to}>
+                            <Link
+                              to={item.to}
+                              className={`block px-2 py-1.5 text-sm rounded transition-colors ${
+                                location.pathname === item.to
+                                  ? 'text-gold'
+                                  : 'text-gray-400 hover:text-white hover:bg-white/5'
+                              }`}
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
             <Link
               to="/contact"
               className="ml-4 bg-gold text-dark text-sm font-semibold px-5 py-2.5 hover:bg-gold-dark transition-colors duration-200"
@@ -104,7 +196,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-dark-800 border-t border-white/10">
+        <div className="md:hidden bg-dark border-t border-white/10">
           <div className="px-6 py-4 flex flex-col gap-1">
             {navLinks.map((link) => {
               const active = location.pathname === link.to
@@ -120,6 +212,44 @@ export default function Header() {
                 </Link>
               )
             })}
+
+            {/* Mobile products accordion */}
+            <button
+              onClick={() => setMobileProductsOpen((o) => !o)}
+              className={`flex items-center justify-between px-3 py-3 text-sm font-medium border-b border-white/5 transition-colors ${
+                productsActive || mobileProductsOpen ? 'text-gold' : 'text-gray-300'
+              }`}
+            >
+              Products
+              <ChevronDown
+                size={14}
+                className={`transition-transform duration-200 ${mobileProductsOpen ? 'rotate-180' : ''}`}
+              />
+            </button>
+
+            {mobileProductsOpen && (
+              <div className="bg-white/5 px-3 py-2 mb-1">
+                {productGroups.map((group) => (
+                  <div key={group.heading} className="mb-4 last:mb-0">
+                    <div className="text-gold text-xs font-semibold uppercase tracking-widest mb-2 px-2">
+                      {group.heading}
+                    </div>
+                    {group.items.map((item) => (
+                      <Link
+                        key={item.to}
+                        to={item.to}
+                        className={`block px-2 py-2 text-sm border-b border-white/5 last:border-0 transition-colors ${
+                          location.pathname === item.to ? 'text-gold' : 'text-gray-400'
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            )}
+
             <div className="pt-3 flex flex-col gap-3">
               <a href="tel:7809688859" className="flex items-center gap-2 text-gold text-sm font-medium">
                 <Phone size={14} /> 780-968-8859
