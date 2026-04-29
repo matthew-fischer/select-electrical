@@ -6,9 +6,9 @@ const lvVFDs = [
   { label: 'CFW100', to: '/cfw100' },
   { label: 'CFW300', to: '/cfw300' },
   { label: 'CFW500', to: '/cfw500' },
+  { label: 'CFW501', to: '/cfw501' },
   { label: 'CFW700', to: '/cfw700' },
   { label: 'CFW701', to: '/cfw701' },
-  { label: 'CFW501', to: '/cfw501' },
 ]
 
 const mvVFDs = [

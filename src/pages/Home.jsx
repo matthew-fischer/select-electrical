@@ -3,6 +3,7 @@ import {
   ArrowRight, Zap, Settings, Shield, Award, Users, ChevronRight,
   CheckCircle, Phone, Wrench, Activity, BarChart3, Thermometer
 } from 'lucide-react'
+import SE200Carousel from '../components/SE200Carousel'
 
 const services = [
   {
@@ -110,11 +111,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Bottom scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600">
-          <span className="text-xs tracking-widest uppercase">Scroll</span>
-          <div className="w-px h-8 bg-gradient-to-b from-gray-600 to-transparent" />
-        </div>
+
       </section>
 
       {/* Stats bar */}
@@ -170,6 +167,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* SE200 Carousel */}
+      <SE200Carousel />
 
       {/* About snippet */}
       <section className="py-24 bg-white">

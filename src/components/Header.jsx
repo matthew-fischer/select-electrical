@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Zap, Phone, ChevronDown } from 'lucide-react'
+import { Menu, X, Zap, Phone, ChevronDown, ArrowRight } from 'lucide-react'
 
 const navLinks = [
   { label: 'Home', to: '/' },
@@ -23,6 +23,27 @@ const productGroups = [
       { label: 'Automated Pump Drive', to: '/se200-automated-pump-drive' },
       { label: 'Pump Process Drive', to: '/se200-pump-process-drive' },
       { label: 'Control Solutions', to: '/se200-control-solutions' },
+    ],
+  },
+  {
+    heading: 'Low Voltage VFDs',
+    hub: '/low-voltage-vfd',
+    items: [
+      { label: 'CFW11', to: '/cfw11' },
+      { label: 'CFW100', to: '/cfw100' },
+      { label: 'CFW300', to: '/cfw300' },
+      { label: 'CFW500', to: '/cfw500' },
+      { label: 'CFW700', to: '/cfw700' },
+      { label: 'CFW701', to: '/cfw701' },
+      { label: 'CFW501', to: '/cfw501' },
+    ],
+  },
+  {
+    heading: 'Medium Voltage VFDs',
+    hub: '/medium-voltage-vfd',
+    items: [
+      { label: 'MVW01', to: '/mvw01' },
+      { label: 'MVW3000', to: '/mvw3000' },
     ],
   },
   {
@@ -55,7 +76,6 @@ export default function Header() {
     setMenuOpen(false)
     setProductsOpen(false)
     setMobileProductsOpen(false)
-    window.scrollTo(0, 0)
   }, [location.pathname])
 
   useEffect(() => {
@@ -147,11 +167,22 @@ export default function Header() {
               </button>
 
               {productsOpen && (
-                <div className="absolute top-full right-0 mt-1 bg-dark border border-white/10 shadow-2xl w-[560px] grid grid-cols-2 gap-0 z-50">
+                <div className="absolute top-full right-0 mt-1 bg-dark border border-white/10 shadow-2xl w-[820px] grid grid-cols-4 gap-0 z-50">
                   {productGroups.map((group) => (
                     <div key={group.heading} className="p-5 border-r border-white/5 last:border-r-0">
-                      <div className="text-gold text-xs font-semibold uppercase tracking-widest mb-3 pb-2 border-b border-white/10">
-                        {group.heading}
+                      <div className="mb-3 pb-2 border-b border-white/10">
+                        {group.hub ? (
+                          <Link
+                            to={group.hub}
+                            className="text-gold text-xs font-semibold uppercase tracking-widest hover:opacity-75 transition-opacity flex items-center gap-1"
+                          >
+                            {group.heading} <ArrowRight size={10} />
+                          </Link>
+                        ) : (
+                          <span className="text-gold text-xs font-semibold uppercase tracking-widest">
+                            {group.heading}
+                          </span>
+                        )}
                       </div>
                       <ul className="space-y-0.5">
                         {group.items.map((item) => (
