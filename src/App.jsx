@@ -31,6 +31,7 @@ import CFW501 from './pages/CFW501'
 import MediumVoltageVFD from './pages/MediumVoltageVFD'
 import MVW01 from './pages/MVW01'
 import MVW3000 from './pages/MVW3000'
+import MotorDatasheets from './pages/MotorDatasheets'
 
 export default function App() {
   return (
@@ -69,6 +70,7 @@ export default function App() {
             <Route path="/medium-voltage-vfd" element={<MediumVoltageVFD />} />
             <Route path="/mvw01" element={<MVW01 />} />
             <Route path="/mvw3000" element={<MVW3000 />} />
+            <Route path="/motor-datasheets" element={<MotorDatasheets />} />
           </Routes>
         </main>
         <Footer />
