@@ -247,7 +247,7 @@ const motors = [
   { series:'WFD', hp:10,   voltage:'230/460V', rpm:1800, amps:40,   frame:null, file:'331013' },
   { series:'WFD', hp:12,   voltage:'230/460V', rpm:1800, amps:48,   frame:null, file:'331014' },
 
-  // ── W22 General Purpose ──────────────────────────────────────────────────
+  // ── W22 ──────────────────────────────────────────────────
   { series:'W22', hp:1,   voltage:'230/460V', rpm:3600, frame:null,    file:'HT000402NPW22' },
   { series:'W22', hp:1,   voltage:'230/460V', rpm:1800, frame:null,    file:'HT000404NPW22' },
   { series:'W22', hp:1,   voltage:'230/460V', rpm:1200, frame:null,    file:'HT000406NPW22' },
