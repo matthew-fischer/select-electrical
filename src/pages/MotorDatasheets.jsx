@@ -14,6 +14,7 @@ const allRPM     = [ALL, ...uniq(motors.map(m => m.rpm))]
 
 const seriesInfo = {
   W01: { label: 'W01 General Purpose',  badge: 'bg-blue-900/40 text-blue-300 border-blue-700/40' },
+  W22: { label: 'W22 General Purpose',  badge: 'bg-purple-900/40 text-purple-300 border-purple-700/40' },
   W21: { label: 'W21 Explosion Proof',  badge: 'bg-amber-900/40 text-amber-300 border-amber-700/40' },
   WFD: { label: 'WFD Farm Duty',        badge: 'bg-green-900/40 text-green-300 border-green-700/40' },
 }
@@ -55,14 +56,23 @@ export default function MotorDatasheets() {
   const [rpm,     setRpm]     = useState(ALL)
   const [page,    setPage]    = useState(1)
 
+  const seriesOrder = { W01:0, W22:1, W21:2, WFD:3 }
+
   const filtered = useMemo(() => {
     setPage(1)
-    return motors.filter(m =>
-      (series  === ALL || m.series  === series) &&
-      (hp      === ALL || m.hp      === hp) &&
-      (voltage === ALL || m.voltage === voltage) &&
-      (rpm     === ALL || m.rpm     === rpm)
-    )
+    return motors
+      .filter(m =>
+        (series  === ALL || m.series  === series) &&
+        (hp      === ALL || m.hp      === hp) &&
+        (voltage === ALL || m.voltage === voltage) &&
+        (rpm     === ALL || m.rpm     === rpm)
+      )
+      .sort((a, b) =>
+        a.hp - b.hp ||
+        (seriesOrder[a.series] ?? 9) - (seriesOrder[b.series] ?? 9) ||
+        a.voltage.localeCompare(b.voltage) ||
+        a.rpm - b.rpm
+      )
   }, [series, hp, voltage, rpm])
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE))
@@ -114,7 +124,7 @@ export default function MotorDatasheets() {
             <div>
               <div className="text-xs text-gray-500 uppercase tracking-widest mb-2">Series</div>
               <div className="flex flex-wrap gap-1.5">
-                {[ALL, 'W01', 'W21', 'WFD'].map(s => (
+                {[ALL, 'W01', 'W22', 'W21', 'WFD'].map(s => (
                   <FilterBtn key={s} active={series === s} onClick={() => setSeries(s)}>
                     {s === ALL ? 'All' : seriesInfo[s].label}
                   </FilterBtn>
@@ -190,10 +200,10 @@ export default function MotorDatasheets() {
               <tbody>
                 {pageItems.map((m, i) => (
                   <tr
-                    key={`${m.file}-${i}`}
+                    key={i}
                     className={`border-b border-white/5 transition-colors hover:bg-white/3 ${
                       i % 2 === 0 ? 'bg-transparent' : 'bg-white/[0.02]'
-                    }`}
+                    } ${!m.file ? 'opacity-50' : ''}`}
                   >
                     <td className="px-4 py-3">
                       <span className={`inline-block text-xs font-semibold px-2 py-0.5 border ${seriesInfo[m.series].badge}`}>
@@ -205,17 +215,21 @@ export default function MotorDatasheets() {
                     <td className="px-4 py-3 text-gray-300">{m.rpm}</td>
                     <td className="px-4 py-3 text-gray-300">{m.amps != null ? `${m.amps} A` : '—'}</td>
                     <td className="px-4 py-3 text-gray-500">{m.frame ?? '—'}</td>
-                    <td className="px-4 py-3 font-mono text-xs text-gray-400">{m.file}</td>
+                    <td className="px-4 py-3 font-mono text-xs text-gray-400">{m.file ?? '—'}</td>
                     <td className="px-4 py-3 text-right">
-                      <a
-                        href={pdfPath(m.series, m.file)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 bg-gold text-dark text-xs font-bold px-3 py-1.5 hover:bg-yellow-300 transition-colors"
-                      >
-                        <Download size={12} />
-                        PDF
-                      </a>
+                      {m.file ? (
+                        <a
+                          href={pdfPath(m.series, m.file)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 bg-gold text-dark text-xs font-bold px-3 py-1.5 hover:bg-yellow-300 transition-colors"
+                        >
+                          <Download size={12} />
+                          PDF
+                        </a>
+                      ) : (
+                        <span className="text-xs text-gray-600 italic">Not available</span>
+                      )}
                     </td>
                   </tr>
                 ))}
