@@ -7,7 +7,6 @@ const navLinks = [
   { label: 'Company', to: '/company' },
   { label: 'Services', to: '/services' },
   { label: 'Blog', to: '/blog' },
-  { label: 'Motors', to: '/motor-datasheets' },
   { label: 'Contact', to: '/contact' },
 ]
 
@@ -53,6 +52,14 @@ const productGroups = [
       { label: 'SE1000 PDS Motor Control Center', to: '/se1000-pds-motor-control-center' },
       { label: 'SE3000 Switchboards', to: '/se3000-switchboards' },
       { label: 'Power Factor Correction', to: '/power-factor-correction' },
+    ],
+  },
+  {
+    heading: 'Datasheets',
+    items: [
+      { label: 'Motor Datasheets', to: '/motor-datasheets' },
+      { label: 'Reactor Datasheets', to: '/reactor-datasheets' },
+      { label: 'Harmonic Filters', to: '/harmonic-filters' },
     ],
   },
 ]
@@ -168,7 +175,7 @@ export default function Header() {
               </button>
 
               {productsOpen && (
-                <div className="absolute top-full right-0 mt-1 bg-dark border border-white/10 shadow-2xl w-[820px] grid grid-cols-4 gap-0 z-50">
+                <div className="absolute top-full right-0 mt-1 bg-dark border border-white/10 shadow-2xl w-[1025px] grid grid-cols-5 gap-0 z-50">
                   {productGroups.map((group) => (
                     <div key={group.heading} className="p-5 border-r border-white/5 last:border-r-0">
                       <div className="mb-3 pb-2 border-b border-white/10">

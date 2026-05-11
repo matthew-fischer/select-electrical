@@ -32,6 +32,8 @@ import MediumVoltageVFD from './pages/MediumVoltageVFD'
 import MVW01 from './pages/MVW01'
 import MVW3000 from './pages/MVW3000'
 import MotorDatasheets from './pages/MotorDatasheets'
+import ReactorDatasheets from './pages/ReactorDatasheets'
+import HarmonicFilters from './pages/HarmonicFilters'
 
 export default function App() {
   return (
@@ -71,6 +73,8 @@ export default function App() {
             <Route path="/mvw01" element={<MVW01 />} />
             <Route path="/mvw3000" element={<MVW3000 />} />
             <Route path="/motor-datasheets" element={<MotorDatasheets />} />
+            <Route path="/reactor-datasheets" element={<ReactorDatasheets />} />
+            <Route path="/harmonic-filters" element={<HarmonicFilters />} />
           </Routes>
         </main>
         <Footer />
