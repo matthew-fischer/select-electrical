@@ -68,8 +68,8 @@ export default function Home() {
         </div>
 
         {/* Gold accent block */}
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-gold/10 to-transparent hidden lg:block" />
-        <div className="absolute right-0 top-0 bottom-0 w-1 bg-gold/40 hidden lg:block" />
+        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-gold/25 to-transparent hidden lg:block" />
+        <div className="absolute right-0 top-0 bottom-0 w-1 bg-gold/60 hidden lg:block" />
 
         <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-20">
           <div className="max-w-3xl">
