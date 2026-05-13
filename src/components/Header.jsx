@@ -60,6 +60,8 @@ const productGroups = [
       { label: 'Motor Datasheets', to: '/motor-datasheets' },
       { label: 'Reactor Datasheets', to: '/reactor-datasheets' },
       { label: 'Harmonic Filters', to: '/harmonic-filters' },
+      { label: 'Sine Wave Filters', to: '/sine-filters' },
+      { label: 'dV/dt Filters', to: '/dvdt-filters' },
     ],
   },
 ]

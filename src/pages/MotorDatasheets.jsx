@@ -2,6 +2,15 @@ import { useState, useMemo } from 'react'
 import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucide-react'
 import motors, { pdfPath } from '../data/motorDatasheets'
 
+const manuals = [
+  { brand: 'WEG W01', label: 'W01 Motor Manual',         url: '/select-electrical/datasheets/Manuals/Motors/WEG-WO1-MOTOR-MANUAL.pdf' },
+  { brand: 'WEG W21', label: 'W21XP Motor Manual',        url: '/select-electrical/datasheets/Manuals/Motors/WEG-MOTOR-W21XP-MANUAL.pdf' },
+  { brand: 'WEG W22', label: 'W22 Motor Manual',          url: '/select-electrical/datasheets/Manuals/Motors/WEG-MOTOR-W22-MANUAL.pdf' },
+  { brand: 'WEG W22', label: 'W22 Technical Catalog',     url: '/select-electrical/datasheets/Manuals/Motors/WEG-MOTOR-W22-TECHNICAL-CATALOG.pdf' },
+  { brand: 'WEG W22', label: 'W22 Three Phase Datasheet', url: '/select-electrical/datasheets/Manuals/Motors/WEG-MOTOR-W22-THREE-PHASE.pdf' },
+  { brand: 'Farm Duty', label: 'Standard Stock Catalog',  url: '/select-electrical/datasheets/Manuals/Motors/WEG-05-A-2020-standard-stock-us100-english.pdf' },
+]
+
 const ALL = 'All'
 
 function uniq(arr) {
@@ -104,6 +113,21 @@ export default function MotorDatasheets() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-10">
+        {/* Manuals */}
+        <div className="mb-8 pb-8 border-b border-white/5">
+          <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Manuals &amp; Documentation</p>
+          <div className="flex flex-wrap gap-2">
+            {manuals.map(m => (
+              <a key={m.url} href={m.url} target="_blank" rel="noopener noreferrer"
+                 className="inline-flex items-center gap-2 bg-[#0d0d0d] border border-white/8 px-3 py-2 text-xs hover:border-gold/40 transition-colors group">
+                <span className="text-gray-500 font-medium">{m.brand}</span>
+                <span className="text-gray-400 group-hover:text-white transition-colors">{m.label}</span>
+                <Download size={11} className="text-gold" />
+              </a>
+            ))}
+          </div>
+        </div>
+
         {/* Filter panel */}
         <div className="bg-[#0d0d0d] border border-white/8 p-6 mb-8">
           <div className="flex items-center gap-2 mb-5 text-gray-400 text-sm font-medium">

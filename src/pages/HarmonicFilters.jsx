@@ -1,6 +1,14 @@
 import { useState, useMemo } from 'react'
-import { SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { SlidersHorizontal, X, ChevronLeft, ChevronRight, Download } from 'lucide-react'
 import harmonicFilters from '../data/harmonicFilterData'
+
+const manuals = [
+  { brand: 'Mirus', label: 'Lineator Brochure',         url: '/select-electrical/datasheets/Manuals/Mirus%20Harmonic%20Filter/AUHF-Lineator-Brochure.pdf' },
+  { brand: 'Mirus', label: 'Lineator Manual',            url: '/select-electrical/datasheets/Manuals/Mirus%20Harmonic%20Filter/AUHF-Lineator-Manual.pdf' },
+  { brand: 'Mirus', label: 'Typical Specification',      url: '/select-electrical/datasheets/Manuals/Mirus%20Harmonic%20Filter/AUHF-Lineator-Typical-Specification.pdf' },
+  { brand: 'MTE',   label: 'MAP Solution Catalog',       url: '/select-electrical/datasheets/Manuals/MTE%20Harmonic%20Filter/MTE-MAP-SOLUTION-CATALOG.pdf' },
+  { brand: 'MTE',   label: 'Technical Reference Manual', url: '/select-electrical/datasheets/Manuals/MTE%20Harmonic%20Filter/MTE-MAP-TECHNICAL-REFERENCES-AND-MANUAL-1.pdf' },
+]
 
 const ALL = 'All'
 
@@ -96,6 +104,21 @@ export default function HarmonicFilters() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-10">
+        {/* Manuals */}
+        <div className="mb-8 pb-8 border-b border-white/5">
+          <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Manuals &amp; Documentation</p>
+          <div className="flex flex-wrap gap-2">
+            {manuals.map(m => (
+              <a key={m.url} href={m.url} target="_blank" rel="noopener noreferrer"
+                 className="inline-flex items-center gap-2 bg-[#0d0d0d] border border-white/8 px-3 py-2 text-xs hover:border-gold/40 transition-colors group">
+                <span className="text-gray-500 font-medium">{m.brand}</span>
+                <span className="text-gray-400 group-hover:text-white transition-colors">{m.label}</span>
+                <Download size={11} className="text-gold" />
+              </a>
+            ))}
+          </div>
+        </div>
+
         {/* Filter panel */}
         <div className="bg-[#0d0d0d] border border-white/8 p-6 mb-8">
           <div className="flex items-center gap-2 mb-5 text-gray-400 text-sm font-medium">

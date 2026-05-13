@@ -2,6 +2,13 @@ import { useState, useMemo } from 'react'
 import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucide-react'
 import reactors, { pdfPath } from '../data/reactorDatasheets'
 
+const manuals = [
+  { brand: 'MTE', label: 'Reactor Catalog & Manual',         url: '/select-electrical/datasheets/Manuals/MTE%203%25%20Impedance%20Reactor/RL-REACTOR-CATALOG-AND-MANUAL.pdf' },
+  { brand: 'TCI', label: 'KDR Brochure',                     url: '/select-electrical/datasheets/Manuals/TCI%203%25%20Impendance%20Reactor/KDR-BROCHURE.pdf' },
+  { brand: 'TCI', label: 'Installation Instructions',         url: '/select-electrical/datasheets/Manuals/TCI%203%25%20Impendance%20Reactor/KDR-REACTOR-INSTRUCTION-INSTALLATION.pdf' },
+  { brand: 'TCI', label: 'Reactor/Filter Size Chart',         url: '/select-electrical/datasheets/Manuals/TCI%203%25%20Impendance%20Reactor/REACTOR-FILTER-SIZE-CHART.pdf' },
+]
+
 const ALL = 'All'
 
 function uniq(arr) {
@@ -92,6 +99,21 @@ export default function ReactorDatasheets() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-10">
+        {/* Manuals */}
+        <div className="mb-8 pb-8 border-b border-white/5">
+          <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Manuals &amp; Documentation</p>
+          <div className="flex flex-wrap gap-2">
+            {manuals.map(m => (
+              <a key={m.url} href={m.url} target="_blank" rel="noopener noreferrer"
+                 className="inline-flex items-center gap-2 bg-[#0d0d0d] border border-white/8 px-3 py-2 text-xs hover:border-gold/40 transition-colors group">
+                <span className="text-gray-500 font-medium">{m.brand}</span>
+                <span className="text-gray-400 group-hover:text-white transition-colors">{m.label}</span>
+                <Download size={11} className="text-gold" />
+              </a>
+            ))}
+          </div>
+        </div>
+
         {/* Filter panel */}
         <div className="bg-[#0d0d0d] border border-white/8 p-6 mb-8">
           <div className="flex items-center gap-2 mb-5 text-gray-400 text-sm font-medium">

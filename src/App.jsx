@@ -34,6 +34,8 @@ import MVW3000 from './pages/MVW3000'
 import MotorDatasheets from './pages/MotorDatasheets'
 import ReactorDatasheets from './pages/ReactorDatasheets'
 import HarmonicFilters from './pages/HarmonicFilters'
+import SineFilters from './pages/SineFilters'
+import DvdtFilters from './pages/DvdtFilters'
 
 export default function App() {
   return (
@@ -75,6 +77,8 @@ export default function App() {
             <Route path="/motor-datasheets" element={<MotorDatasheets />} />
             <Route path="/reactor-datasheets" element={<ReactorDatasheets />} />
             <Route path="/harmonic-filters" element={<HarmonicFilters />} />
+            <Route path="/sine-filters" element={<SineFilters />} />
+            <Route path="/dvdt-filters" element={<DvdtFilters />} />
           </Routes>
         </main>
         <Footer />
