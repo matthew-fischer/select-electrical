@@ -57,6 +57,7 @@ const productGroups = [
   {
     heading: 'Datasheets',
     items: [
+      { label: 'CFW11 Datasheets', to: '/cfw11-datasheets' },
       { label: 'Motor Datasheets', to: '/motor-datasheets' },
       { label: 'Reactor Datasheets', to: '/reactor-datasheets' },
       { label: 'Harmonic Filters', to: '/harmonic-filters' },
