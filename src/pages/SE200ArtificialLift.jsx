@@ -25,6 +25,7 @@ export default function SE200ArtificialLift() {
         'Compatible with artificial lift pumping units of any size',
         'Manual and automatic speed control options',
       ]}
+      brochureUrl="/select-electrical/datasheets/Brochures/SE200-ALC-Drive.pdf"
     />
   )
 }

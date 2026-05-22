@@ -23,6 +23,7 @@ export default function SE200ESP() {
         'Single-phase to three-phase conversion capability',
         'Reduces maintenance costs on mechanical equipment and downhole pumps',
       ]}
+      brochureUrl="/select-electrical/datasheets/Brochures/SE200-ESP-Drive.pdf"
     />
   )
 }

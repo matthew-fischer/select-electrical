@@ -25,6 +25,7 @@ export default function SE200PumpProcess() {
         'Heat sink monitoring',
         'Minimizes operational and maintenance costs',
       ]}
+      brochureUrl="/select-electrical/datasheets/Brochures/SE200-Pump-Process-Drive.pdf"
     />
   )
 }

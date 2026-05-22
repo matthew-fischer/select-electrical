@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle, Phone, Settings } from 'lucide-react'
+import { ArrowRight, CheckCircle, Phone, Settings, Download } from 'lucide-react'
 
 const applications = [
   { label: 'Oil Well Drive', to: '/se200-oil-well-drive' },
@@ -121,6 +121,20 @@ export default function SE200ControlSolutions() {
                   <Phone size={14} /> 780-968-8859
                 </a>
               </div>
+
+              {/* Brochure download */}
+              <a
+                href="/select-electrical/datasheets/Brochures/SE500-Motor-Starter.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between gap-3 border border-gray-100 p-5 hover:border-gold/40 transition-colors group"
+              >
+                <div>
+                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1">SE500 Motor Starter</p>
+                  <p className="text-dark font-semibold text-sm group-hover:text-gold transition-colors">Download Brochure</p>
+                </div>
+                <Download size={20} className="text-gold shrink-0" />
+              </a>
 
               <div className="border border-gray-100 p-6">
                 <h3 className="font-bold text-dark text-base mb-4">SE200 Product Applications</h3>
