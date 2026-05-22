@@ -25,6 +25,7 @@ export default function SE200PCP() {
         'Reduced maintenance on mechanical equipment, downhole pumps, and rod strings',
       ]}
       brochureUrl="/select-electrical/datasheets/Brochures/SE200-PCP-Drive.pdf"
+      image="/select-electrical/images/se200/PCP.jpg"
     />
   )
 }

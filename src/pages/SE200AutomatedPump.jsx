@@ -25,6 +25,7 @@ export default function SE200AutomatedPump() {
         'Precise speed control for energy optimization',
       ]}
       brochureUrl="/select-electrical/datasheets/Brochures/SE200-Automated-Pump-Drive.pdf"
+      image="/select-electrical/images/se200/Automated.jpg"
     />
   )
 }

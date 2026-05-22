@@ -26,6 +26,7 @@ export default function SE200ArtificialLift() {
         'Manual and automatic speed control options',
       ]}
       brochureUrl="/select-electrical/datasheets/Brochures/SE200-ALC-Drive.pdf"
+      image="/select-electrical/images/se200/Artificial.jpg"
     />
   )
 }

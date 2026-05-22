@@ -13,7 +13,7 @@ const se200Products = [
   { label: 'Control Solutions', to: '/se200-control-solutions' },
 ]
 
-export default function SE200ProductPage({ title, subtitle, description, specs, features, additionalSections, brochureUrl }) {
+export default function SE200ProductPage({ title, subtitle, description, specs, features, additionalSections, brochureUrl, image }) {
   return (
     <>
       {/* Page hero */}
@@ -29,22 +29,37 @@ export default function SE200ProductPage({ title, subtitle, description, specs, 
           </svg>
         </div>
         <div className="relative max-w-7xl mx-auto px-6">
-          <div className="flex items-center gap-2 text-gray-500 text-sm mb-6 flex-wrap">
-            <Link to="/" className="hover:text-gold transition-colors">Home</Link>
-            <span>/</span>
-            <Link to="/services" className="hover:text-gold transition-colors">Services</Link>
-            <span>/</span>
-            <span className="text-gray-300">{title}</span>
+          <div className={image ? "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" : ""}>
+            <div>
+              <div className="flex items-center gap-2 text-gray-500 text-sm mb-6 flex-wrap">
+                <Link to="/" className="hover:text-gold transition-colors">Home</Link>
+                <span>/</span>
+                <Link to="/services" className="hover:text-gold transition-colors">Services</Link>
+                <span>/</span>
+                <span className="text-gray-300">{title}</span>
+              </div>
+              <div className="inline-block bg-gold/10 border border-gold/30 text-gold text-xs font-semibold tracking-widest uppercase px-3 py-1 mb-5">
+                SE200 Series
+              </div>
+              <div className="w-16 h-1 bg-gold mb-6" />
+              <h1 className="text-4xl md:text-5xl font-black text-white mb-3">{title}</h1>
+              {subtitle && (
+                <p className="text-gold font-medium text-lg mb-5">{subtitle}</p>
+              )}
+              <p className="text-gray-400 text-lg">{description}</p>
+            </div>
+            {image && (
+              <div className="hidden lg:block">
+                <div className="relative aspect-[3/4] overflow-hidden border border-gold/20 shadow-2xl bg-[#0d0d0d]">
+                  <img
+                    src={image}
+                    alt={title}
+                    className="w-full h-full object-cover object-center opacity-90"
+                  />
+                </div>
+              </div>
+            )}
           </div>
-          <div className="inline-block bg-gold/10 border border-gold/30 text-gold text-xs font-semibold tracking-widest uppercase px-3 py-1 mb-5">
-            SE200 Series
-          </div>
-          <div className="w-16 h-1 bg-gold mb-6" />
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-3">{title}</h1>
-          {subtitle && (
-            <p className="text-gold font-medium text-lg mb-5">{subtitle}</p>
-          )}
-          <p className="text-gray-400 text-lg max-w-2xl">{description}</p>
         </div>
       </section>
 

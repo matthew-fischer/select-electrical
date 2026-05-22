@@ -26,6 +26,7 @@ export default function SE200PumpProcess() {
         'Minimizes operational and maintenance costs',
       ]}
       brochureUrl="/select-electrical/datasheets/Brochures/SE200-Pump-Process-Drive.pdf"
+      image="/select-electrical/images/se200/Pump.jpg"
     />
   )
 }

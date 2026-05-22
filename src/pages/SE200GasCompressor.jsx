@@ -26,6 +26,7 @@ export default function SE200GasCompressor() {
         'Precise speed control with reduced energy consumption',
       ]}
       brochureUrl="/select-electrical/datasheets/Brochures/SE200-Gas-Compressor-Drive.pdf"
+      image="/select-electrical/images/se200/Gas.jpg"
     />
   )
 }

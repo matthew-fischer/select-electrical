@@ -24,6 +24,7 @@ export default function SE200ESP() {
         'Reduces maintenance costs on mechanical equipment and downhole pumps',
       ]}
       brochureUrl="/select-electrical/datasheets/Brochures/SE200-ESP-Drive.pdf"
+      image="/select-electrical/images/se200/ESP.jpg"
     />
   )
 }
