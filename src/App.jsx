@@ -37,6 +37,7 @@ import HarmonicFilters from './pages/HarmonicFilters'
 import SineFilters from './pages/SineFilters'
 import DvdtFilters from './pages/DvdtFilters'
 import CFW11Datasheets from './pages/CFW11Datasheets'
+import Support from './pages/Support'
 
 export default function App() {
   return (
@@ -81,6 +82,7 @@ export default function App() {
             <Route path="/sine-filters" element={<SineFilters />} />
             <Route path="/dvdt-filters" element={<DvdtFilters />} />
             <Route path="/cfw11-datasheets" element={<CFW11Datasheets />} />
+            <Route path="/support" element={<Support />} />
           </Routes>
         </main>
         <Footer />
