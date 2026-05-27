@@ -37,6 +37,9 @@ import HarmonicFilters from './pages/HarmonicFilters'
 import SineFilters from './pages/SineFilters'
 import DvdtFilters from './pages/DvdtFilters'
 import CFW11Datasheets from './pages/CFW11Datasheets'
+import CFW100Datasheets from './pages/CFW100Datasheets'
+import CFW300Datasheets from './pages/CFW300Datasheets'
+import CFW500Datasheets from './pages/CFW500Datasheets'
 import Support from './pages/Support'
 
 export default function App() {
@@ -82,6 +85,9 @@ export default function App() {
             <Route path="/sine-filters" element={<SineFilters />} />
             <Route path="/dvdt-filters" element={<DvdtFilters />} />
             <Route path="/cfw11-datasheets" element={<CFW11Datasheets />} />
+            <Route path="/cfw100-datasheets" element={<CFW100Datasheets />} />
+            <Route path="/cfw300-datasheets" element={<CFW300Datasheets />} />
+            <Route path="/cfw500-datasheets" element={<CFW500Datasheets />} />
             <Route path="/support" element={<Support />} />
           </Routes>
         </main>
