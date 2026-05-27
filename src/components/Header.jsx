@@ -119,6 +119,7 @@ export default function Header() {
   const productsActive = productPaths.includes(location.pathname)
 
   return (
+    <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled ? 'bg-dark shadow-2xl' : 'bg-dark/95'
@@ -252,76 +253,79 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden fixed top-16 left-0 right-0 bottom-0 bg-dark border-t border-white/10 overflow-y-scroll">
-          <div className="px-6 py-4 flex flex-col gap-1">
-            {navLinks.map((link) => {
-              const active = location.pathname === link.to
-              return (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className={`px-3 py-3 text-sm font-medium border-b border-white/5 transition-colors ${
-                    active ? 'text-gold' : 'text-gray-300'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              )
-            })}
+      {/* Mobile hamburger only — menu rendered outside header */}
+    </header>
 
-            {/* Mobile products accordion */}
-            <button
-              onClick={() => setMobileProductsOpen((o) => !o)}
-              className={`flex items-center justify-between px-3 py-3 text-sm font-medium border-b border-white/5 transition-colors ${
-                productsActive || mobileProductsOpen ? 'text-gold' : 'text-gray-300'
-              }`}
-            >
-              Products
-              <ChevronDown
-                size={14}
-                className={`transition-transform duration-200 ${mobileProductsOpen ? 'rotate-180' : ''}`}
-              />
-            </button>
-
-            {mobileProductsOpen && (
-              <div className="bg-white/5 px-3 py-2 mb-1">
-                {productGroups.map((group) => (
-                  <div key={group.heading} className="mb-4 last:mb-0">
-                    <div className="text-gold text-xs font-semibold uppercase tracking-widest mb-2 px-2">
-                      {group.heading}
-                    </div>
-                    {group.items.map((item) => (
-                      <Link
-                        key={item.to}
-                        to={item.to}
-                        className={`block px-2 py-2 text-sm border-b border-white/5 last:border-0 transition-colors ${
-                          location.pathname === item.to ? 'text-gold' : 'text-gray-400'
-                        }`}
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            )}
-
-            <div className="pt-3 flex flex-col gap-3">
-              <a href="tel:7809688859" className="flex items-center gap-2 text-gold text-sm font-medium">
-                <Phone size={14} /> 780-968-8859
-              </a>
+    {/* Mobile menu — outside <header> so fixed positioning works reliably on iOS */}
+    {menuOpen && (
+      <div className="md:hidden fixed top-16 left-0 right-0 bottom-0 z-40 bg-dark border-t border-white/10 overflow-y-scroll">
+        <div className="px-6 py-4 flex flex-col gap-1">
+          {navLinks.map((link) => {
+            const active = location.pathname === link.to
+            return (
               <Link
-                to="/contact"
-                className="bg-gold text-dark text-sm font-semibold px-5 py-3 text-center"
+                key={link.to}
+                to={link.to}
+                className={`px-3 py-3 text-sm font-medium border-b border-white/5 transition-colors ${
+                  active ? 'text-gold' : 'text-gray-300'
+                }`}
               >
-                Get a Quote
+                {link.label}
               </Link>
+            )
+          })}
+
+          {/* Mobile products accordion */}
+          <button
+            onClick={() => setMobileProductsOpen((o) => !o)}
+            className={`flex items-center justify-between px-3 py-3 text-sm font-medium border-b border-white/5 transition-colors ${
+              productsActive || mobileProductsOpen ? 'text-gold' : 'text-gray-300'
+            }`}
+          >
+            Products
+            <ChevronDown
+              size={14}
+              className={`transition-transform duration-200 ${mobileProductsOpen ? 'rotate-180' : ''}`}
+            />
+          </button>
+
+          {mobileProductsOpen && (
+            <div className="bg-white/5 px-3 py-2 mb-1">
+              {productGroups.map((group) => (
+                <div key={group.heading} className="mb-4 last:mb-0">
+                  <div className="text-gold text-xs font-semibold uppercase tracking-widest mb-2 px-2">
+                    {group.heading}
+                  </div>
+                  {group.items.map((item) => (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      className={`block px-2 py-2 text-sm border-b border-white/5 last:border-0 transition-colors ${
+                        location.pathname === item.to ? 'text-gold' : 'text-gray-400'
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              ))}
             </div>
+          )}
+
+          <div className="pt-3 flex flex-col gap-3">
+            <a href="tel:7809688859" className="flex items-center gap-2 text-gold text-sm font-medium">
+              <Phone size={14} /> 780-968-8859
+            </a>
+            <Link
+              to="/contact"
+              className="bg-gold text-dark text-sm font-semibold px-5 py-3 text-center"
+            >
+              Get a Quote
+            </Link>
           </div>
         </div>
-      )}
-    </header>
+      </div>
+    )}
+    </>
   )
 }
