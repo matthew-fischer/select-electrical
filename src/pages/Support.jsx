@@ -190,6 +190,7 @@ function Modal({ manual, onClose }) {
                 Please fill out a brief form before downloading — it helps us provide the best follow-up support.
               </p>
               <form onSubmit={handleSubmit} className="space-y-4">
+                <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
                 <div>
                   <label className="block text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1.5">
                     Full Name <span className="text-gold">*</span>

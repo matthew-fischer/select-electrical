@@ -235,6 +235,7 @@ export default function Contact() {
                     </p>
 
                     <form onSubmit={handleSubmit} className="space-y-5">
+                      <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
                           <label className="block text-xs font-semibold text-dark uppercase tracking-wide mb-2">
