@@ -135,6 +135,37 @@ export default function MotorDatasheets() {
           </div>
         </div>
 
+        {/* Series image cards */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+          {[
+            { key: 'W01', img: 'WEG W01 1HP Motor.jpg' },
+            { key: 'W22', img: 'WEG W22 Motor.jpg' },
+            { key: 'W21', img: 'WEG W21 Motor.jpg' },
+            { key: 'WFD', img: 'WEG Farm Duty Motor.jpg' },
+          ].map(({ key, img }) => (
+            <button
+              key={key}
+              onClick={() => setSeries(series === key ? ALL : key)}
+              className={`relative overflow-hidden border transition-all duration-150 group ${
+                series === key ? 'border-gold' : 'border-white/8 hover:border-white/25'
+              }`}
+            >
+              <img
+                src={`/select-electrical/images/${img}`}
+                alt={seriesInfo[key].label}
+                className="w-full h-36 object-cover object-center"
+              />
+              <div className={`absolute inset-0 transition-opacity duration-150 ${
+                series === key ? 'bg-gold/20' : 'bg-dark/50 group-hover:bg-dark/30'
+              }`} />
+              <div className="absolute bottom-0 left-0 right-0 p-2.5 bg-gradient-to-t from-black/80 to-transparent">
+                <span className={`inline-block text-xs font-bold px-1.5 py-0.5 border ${seriesInfo[key].badge} mb-1`}>{key}</span>
+                <p className="text-white text-xs font-semibold leading-tight">{seriesInfo[key].label}</p>
+              </div>
+            </button>
+          ))}
+        </div>
+
         {/* Filter panel */}
         <div className="bg-[#0d0d0d] border border-white/8 p-6 mb-8">
           <div className="flex items-center gap-2 mb-5 text-gray-400 text-sm font-medium">

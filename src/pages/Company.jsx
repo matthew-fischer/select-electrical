@@ -27,7 +27,11 @@ export default function Company() {
   return (
     <>
       {/* Page hero */}
-      <section className="bg-dark pt-36 pb-20 relative overflow-hidden">
+      <section
+        className="pt-36 pb-20 relative overflow-hidden"
+        style={{ backgroundImage: "url('/select-electrical/images/Shop.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 40%' }}
+      >
+        <div className="absolute inset-0 bg-dark opacity-75" />
         <div className="absolute inset-0 opacity-5">
           <svg width="100%" height="100%">
             <defs>
