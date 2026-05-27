@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { CheckCircle, Phone, ArrowRight, Zap, Download } from 'lucide-react'
+import { CheckCircle, Phone, ArrowRight, Zap, Download, FileText } from 'lucide-react'
 
 const se200Products = [
   { label: 'Oil Well Drive', to: '/se200-oil-well-drive' },
@@ -158,18 +158,22 @@ export default function SE200ProductPage({ title, subtitle, description, specs, 
 
               {/* Brochure download */}
               {brochureUrl && (
-                <a
-                  href={brochureUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-between gap-3 border border-gray-100 p-5 hover:border-gold/40 transition-colors group"
-                >
-                  <div>
-                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1">Product Brochure</p>
-                    <p className="text-dark font-semibold text-sm group-hover:text-gold transition-colors">Download PDF</p>
+                <div className="border border-gray-100 p-6">
+                  <div className="flex items-center gap-2 mb-1">
+                    <FileText size={15} className="text-gold" />
+                    <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest">Product Brochure</p>
                   </div>
-                  <Download size={20} className="text-gold shrink-0" />
-                </a>
+                  <p className="text-dark font-bold text-sm mb-1">{title}</p>
+                  <p className="text-gray-500 text-xs mb-4">Complete product brochure including specifications and application details.</p>
+                  <a
+                    href={brochureUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 bg-dark text-white text-xs font-semibold px-4 py-2.5 hover:bg-gold hover:text-dark transition-colors w-full"
+                  >
+                    <Download size={13} /> Download Brochure
+                  </a>
+                </div>
               )}
 
               {/* 24/7 Support */}

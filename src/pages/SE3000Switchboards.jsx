@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle, Phone, Shield, Zap } from 'lucide-react'
+import { ArrowRight, CheckCircle, Phone, Shield, Zap, Download, FileText } from 'lucide-react'
 
 const specs = [
   { label: 'Maximum Capacity', value: 'Up to 6000A' },
@@ -129,6 +129,23 @@ export default function SE3000Switchboards() {
                 </Link>
                 <a href="tel:7809688859" className="flex items-center justify-center gap-2 text-gold text-sm font-medium hover:opacity-80 transition-opacity">
                   <Phone size={14} /> 780-968-8859
+                </a>
+              </div>
+
+              <div className="border border-gray-100 p-6">
+                <div className="flex items-center gap-2 mb-1">
+                  <FileText size={15} className="text-gold" />
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest">Product Brochure</p>
+                </div>
+                <p className="text-dark font-bold text-sm mb-1">SE3000 Switchboards</p>
+                <p className="text-gray-500 text-xs mb-4">Complete product brochure including specifications and application details.</p>
+                <a
+                  href="/select-electrical/datasheets/Brochures/SE-3000.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-dark text-white text-xs font-semibold px-4 py-2.5 hover:bg-gold hover:text-dark transition-colors w-full"
+                >
+                  <Download size={13} /> Download Brochure
                 </a>
               </div>
 

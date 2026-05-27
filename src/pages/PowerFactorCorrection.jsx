@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle, Phone, Zap, BarChart3 } from 'lucide-react'
+import { ArrowRight, CheckCircle, Phone, Zap, BarChart3, Download, FileText } from 'lucide-react'
 
 const correctionMethods = [
   'Capacitor or capacitor bank installations',
@@ -172,6 +172,23 @@ export default function PowerFactorCorrection() {
                     </Link>
                   </li>
                 </ul>
+              </div>
+
+              <div className="border border-gray-100 p-6">
+                <div className="flex items-center gap-2 mb-1">
+                  <FileText size={15} className="text-gold" />
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest">Product Brochure</p>
+                </div>
+                <p className="text-dark font-bold text-sm mb-1">SE700 Power Factor Correction</p>
+                <p className="text-gray-500 text-xs mb-4">Overview of the SE700 automatic power factor correction system.</p>
+                <a
+                  href="/select-electrical/datasheets/Brochures/SE700-Power-Factor-Correction.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-dark text-white text-xs font-semibold px-4 py-2.5 hover:bg-gold hover:text-dark transition-colors w-full"
+                >
+                  <Download size={13} /> Download Brochure
+                </a>
               </div>
 
               <div className="bg-gold/5 border border-gold/20 p-5">
