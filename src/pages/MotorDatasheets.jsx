@@ -222,9 +222,6 @@ export default function MotorDatasheets() {
                   <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">HP</th>
                   <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Voltage</th>
                   <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">RPM</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Amps</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Frame</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Datasheet</th>
                   <th className="px-4 py-3"></th>
                 </tr>
               </thead>
@@ -244,9 +241,6 @@ export default function MotorDatasheets() {
                     <td className="px-4 py-3 text-white font-semibold">{m.hp} HP</td>
                     <td className="px-4 py-3 text-gray-300">{m.voltage}</td>
                     <td className="px-4 py-3 text-gray-300">{m.rpm}</td>
-                    <td className="px-4 py-3 text-gray-300">{m.amps != null ? `${m.amps} A` : '—'}</td>
-                    <td className="px-4 py-3 text-gray-500">{m.frame ?? '—'}</td>
-                    <td className="px-4 py-3 font-mono text-xs text-gray-400">{m.file ?? '—'}</td>
                     <td className="px-4 py-3 text-right">
                       {m.file ? (
                         <a

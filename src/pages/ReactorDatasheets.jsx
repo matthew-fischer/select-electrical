@@ -188,7 +188,6 @@ export default function ReactorDatasheets() {
                   <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Brand</th>
                   <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Voltage</th>
                   <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">HP</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Part Number</th>
                   <th className="px-4 py-3"></th>
                 </tr>
               </thead>
@@ -207,7 +206,6 @@ export default function ReactorDatasheets() {
                     </td>
                     <td className="px-4 py-3 text-gray-300">{r.voltage}</td>
                     <td className="px-4 py-3 text-white font-semibold">{r.hp} HP</td>
-                    <td className="px-4 py-3 font-mono text-xs text-gray-400">{r.file}</td>
                     <td className="px-4 py-3 text-right">
                       <a
                         href={pdfPath(r.brand, r.voltage, r.file)}

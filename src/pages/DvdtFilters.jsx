@@ -188,7 +188,6 @@ export default function DvdtFilters() {
                   <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Enclosure</th>
                   <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Amps</th>
                   <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">HP (230V / 460V / 575V)</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Cabinet</th>
                   <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">SKU</th>
                 </tr>
               </thead>
@@ -208,7 +207,6 @@ export default function DvdtFilters() {
                     <td className="px-4 py-3 text-gray-300">{f.enclosure}</td>
                     <td className="px-4 py-3 text-white font-semibold">{f.amps} A</td>
                     <td className="px-4 py-3 text-gray-300">{f.hpRange}</td>
-                    <td className="px-4 py-3 text-gray-500">{f.frame || '—'}</td>
                     <td className="px-4 py-3 font-mono text-xs text-gold">{f.sku}</td>
                   </tr>
                 ))}
