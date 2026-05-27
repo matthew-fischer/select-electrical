@@ -114,7 +114,7 @@ function Modal({ manual, onClose }) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          access_key: '7331374a-cb04-4028-b9ac-2dc8ccd8d199',
           subject: `Manual Download – ${manual.title} – ${formData.name}`,
           from_name: formData.name,
           manual: manual.title,
