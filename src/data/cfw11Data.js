@@ -35,7 +35,7 @@ const drives = [
   { voltage: '240V 3PH', hp: 7.5,  file: 'CFW110024T20N1Z' },
   { voltage: '240V 3PH', hp: 10,   file: 'CFW110028T20N1Z' },
   { voltage: '240V 3PH', hp: 12.5, file: 'CFW110033T20N1Z' },
-  { voltage: '240V 3PH', hp: 15,   file: null               },
+  { voltage: '240V 3PH', hp: 15,   file: 'CFW110045T20N1Z' },
   { voltage: '240V 3PH', hp: 20,   file: 'CFW110054T20N1Z' },
   { voltage: '240V 3PH', hp: 25,   file: 'CFW110070T20N1Z' },
   { voltage: '240V 3PH', hp: 30,   file: 'CFW110086T2SZ'   },
@@ -51,32 +51,29 @@ const drives = [
   { voltage: '690V', hp: 7.5,  file: 'CFW110010T501NFZ'  },
   { voltage: '690V', hp: 10,   file: 'CFW110012T501NFZ'  },
   { voltage: '690V', hp: 15,   file: 'CFW110017T501NFZ'  },
-  { voltage: '690V', hp: 20,   file: 'CFW110022T60NBZ'   },
-  { voltage: '690V', hp: 25,   file: 'CFW110027T60NBZ'   },
-  { voltage: '690V', hp: 30,   file: 'CFW110032T60NBZ'   },
-  { voltage: '690V', hp: 40,   file: 'CFW110044T60NBZ'   },
+  { voltage: '690V', hp: 20,   file: 'CFW110022T50NBZ'   },
+  { voltage: '690V', hp: 25,   file: 'CFW110027T50NBZ'   },
+  { voltage: '690V', hp: 30,   file: 'CFW110032T50NBZ'   },
+  { voltage: '690V', hp: 40,   file: 'CFW110044T50NBZ'   },
   { voltage: '690V', hp: 50,   file: 'CFW110053T60N1NBYZ'},
   { voltage: '690V', hp: 60,   file: 'CFW110063T60N1NBYZ'},
   { voltage: '690V', hp: 75,   file: 'CFW110080T60N1NBYZ'},
   { voltage: '690V', hp: 100,  file: 'CFW110107T60N1NBYZ'},
   { voltage: '690V', hp: 125,  file: 'CFW110125T60N1NBYZ'},
   { voltage: '690V', hp: 150,  file: 'CFW110150T60N1NBYZ'},
-  { voltage: '690V', hp: 200,  file: 'CFW110216T60NBZ'   },
-  { voltage: '690V', hp: 250,  file: 'CFW110289T60NBZ'   },
-  { voltage: '690V', hp: 300,  file: 'CFW110315T60NBZ'   },
-  { voltage: '690V', hp: 350,  file: 'CFW110365T60NBZ'   },
-  { voltage: '690V', hp: 450,  file: 'CFW110435T60NBZ'   },
+  { voltage: '690V', hp: 200,  file: 'CFW110216T60YZ'    },
+  { voltage: '690V', hp: 250,  file: 'CFW110289T60YZ'    },
+  { voltage: '690V', hp: 300,  file: 'CFW110315T60YZ'    },
+  { voltage: '690V', hp: 350,  file: 'CFW110365T60YZ'    },
+  { voltage: '690V', hp: 450,  file: 'CFW110435T60YZ'    },
 
   // 200-240V (1PH)
-  { voltage: '240V 1PH', hp: 1, file: '10574720_datapacks' },
-  { voltage: '240V 1PH', hp: 2, file: '10574721_datapacks' },
-  { voltage: '240V 1PH', hp: 3, file: '10574722_datapacks' },
+  { voltage: '240V 1PH', hp: 1, file: 'CFW110006B20N1Z' },
+  { voltage: '240V 1PH', hp: 2, file: 'CFW110007B20N1Z' },
+  { voltage: '240V 1PH', hp: 3, file: 'CFW110010S20N1Z' },
 ]
 
 export function pdfPath(file) {
-  if (file.startsWith('10574')) {
-    return `/select-electrical/datasheets/CFW11/${file}.pdf`
-  }
   return `/select-electrical/datasheets/CFW11/${file}-datapack.pdf`
 }
 
