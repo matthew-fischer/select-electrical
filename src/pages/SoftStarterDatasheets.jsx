@@ -211,7 +211,7 @@ export default function SoftStarterDatasheets() {
                     <td className="px-4 py-3 text-gray-300">{d.hp}</td>
                     <td className="px-4 py-3 font-mono text-xs text-gray-400">{partNumber(d.file)}</td>
                     <td className="px-4 py-3 text-right">
-                      {d.file ? (
+                      {d.file && !d.pending ? (
                         <a
                           href={pdfPath(d.model, d.file)}
                           target="_blank"

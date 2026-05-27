@@ -19,7 +19,7 @@ const softStarters = [
   { model: 'SSW07', amps: 30,   hp: '10 / 20 / 25',        file: 'SSWO70030T5SZ.pdf' },
   { model: 'SSW07', amps: 45,   hp: '15 / 30 / 40',        file: 'SSWO70045T5SZ.pdf' },
   { model: 'SSW07', amps: 61,   hp: '20 / 40 / 60',        file: 'SSWO70061T5SZ.pdf' },
-  { model: 'SSW07', amps: 85,   hp: '30 / 60 / 75',        file: null },
+  { model: 'SSW07', amps: 85,   hp: '30 / 60 / 75',        file: 'SSW070085T5SZ.pdf', pending: true },
   { model: 'SSW07', amps: 130,  hp: '50 / 100 / 125',      file: 'SSWO70130T5SZ.pdf' },
   { model: 'SSW07', amps: 171,  hp: '60 / 125 / 150',      file: 'SSWO70171T5SZ.pdf' },
   { model: 'SSW07', amps: 200,  hp: '75 / 150 / 200',      file: 'SSWO70200T5SZ.pdf' },
@@ -50,7 +50,7 @@ const softStarters = [
   { model: 'SSW900', amps: 820,  hp: '350 / 700 / 800',    file: 'SSW900-F-0820-T5-E2.pdf' },
   { model: 'SSW900', amps: 950,  hp: '400 / 800 / 1000',   file: 'SSW900-F-0950-T5-E2.pdf' },
   { model: 'SSW900', amps: 1100, hp: '450 / 900 / 1100',   file: 'SSW900-G-1100-T5-E2.pdf' },
-  { model: 'SSW900', amps: 1400, hp: '500 / 1100 / 1350',  file: null },
+  { model: 'SSW900', amps: 1400, hp: '500 / 1100 / 1350',  file: 'SSW900G1400T5E3.pdf', pending: true },
 ]
 
 export function pdfPath(model, file) {
