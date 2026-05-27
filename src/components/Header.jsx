@@ -254,7 +254,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-dark border-t border-white/10">
+        <div className="md:hidden bg-dark border-t border-white/10 max-h-[calc(100vh-64px)] overflow-y-auto">
           <div className="px-6 py-4 flex flex-col gap-1">
             {navLinks.map((link) => {
               const active = location.pathname === link.to
