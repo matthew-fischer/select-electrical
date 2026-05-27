@@ -106,6 +106,11 @@ export default function Header() {
   }, [location.pathname])
 
   useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
+  useEffect(() => {
     function handleClickOutside(e) {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
         setProductsOpen(false)
@@ -258,7 +263,7 @@ export default function Header() {
 
     {/* Mobile menu — outside <header> so fixed positioning works reliably on iOS */}
     {menuOpen && (
-      <div className="md:hidden fixed top-16 left-0 right-0 bottom-0 z-40 bg-dark border-t border-white/10 overflow-y-scroll">
+      <div className="md:hidden fixed top-16 left-0 right-0 bottom-0 z-40 bg-dark border-t border-white/10 overflow-y-auto" style={{ WebkitOverflowScrolling: 'touch' }}>
         <div className="px-6 py-4 flex flex-col gap-1">
           {navLinks.map((link) => {
             const active = location.pathname === link.to
@@ -296,12 +301,12 @@ export default function Header() {
                   {group.hub ? (
                     <Link
                       to={group.hub}
-                      className="flex items-center gap-1 text-gold text-xs font-semibold uppercase tracking-widest mb-2 px-2 hover:opacity-75 transition-opacity"
+                      className="flex items-center gap-1 text-gold text-xs font-semibold uppercase tracking-widest px-2 py-2 -mx-2 hover:opacity-75 transition-opacity"
                     >
                       {group.heading} <ArrowRight size={10} />
                     </Link>
                   ) : (
-                    <div className="text-gold text-xs font-semibold uppercase tracking-widest mb-2 px-2">
+                    <div className="text-gold text-xs font-semibold uppercase tracking-widest py-2 px-2">
                       {group.heading}
                     </div>
                   )}
