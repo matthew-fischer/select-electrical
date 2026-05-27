@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Phone, Mail, MapPin, Linkedin, Send, CheckCircle, Clock } from 'lucide-react'
+import { Phone, Mail, MapPin, Linkedin, Send, CheckCircle, Clock, Loader2, AlertCircle } from 'lucide-react'
 
 const serviceOptions = [
   'Variable Frequency Drives (VFDs)',
@@ -25,16 +25,40 @@ export default function Contact() {
     message: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // In a real deployment, you'd send this to a backend or form service
-    // For now we show a success state
-    setSubmitted(true)
+    setLoading(true)
+    setError('')
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          subject: `Contact Form – ${formData.service || 'General Enquiry'} – ${formData.name}`,
+          from_name: formData.name,
+          ...formData,
+        }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setSubmitted(true)
+      } else {
+        setError('Something went wrong. Please try again or email us directly.')
+      }
+    } catch {
+      setError('Could not send message. Please check your connection and try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -303,11 +327,23 @@ export default function Contact() {
                         />
                       </div>
 
+                      {error && (
+                        <div className="flex items-start gap-3 bg-red-50 border border-red-200 px-4 py-3 text-red-700 text-sm">
+                          <AlertCircle size={16} className="flex-shrink-0 mt-0.5" />
+                          <span>{error}</span>
+                        </div>
+                      )}
+
                       <button
                         type="submit"
-                        className="w-full bg-gold text-dark font-semibold py-4 px-8 flex items-center justify-center gap-2 hover:bg-gold-dark transition-colors"
+                        disabled={loading}
+                        className="w-full bg-gold text-dark font-semibold py-4 px-8 flex items-center justify-center gap-2 hover:bg-yellow-300 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                       >
-                        Send Message <Send size={16} />
+                        {loading ? (
+                          <><Loader2 size={16} className="animate-spin" /> Sending…</>
+                        ) : (
+                          <>Send Message <Send size={16} /></>
+                        )}
                       </button>
                     </form>
                   </>

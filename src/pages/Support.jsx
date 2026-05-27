@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Download, FileText, X, CheckCircle, ClipboardList, UserCheck, ArrowDownToLine } from 'lucide-react'
+import { Download, FileText, X, CheckCircle, ClipboardList, UserCheck, ArrowDownToLine, Loader2, AlertCircle } from 'lucide-react'
 
 const manuals = [
   {
@@ -82,24 +82,56 @@ const steps = [
   },
 ]
 
+function triggerDownload(manual) {
+  const link = document.createElement('a')
+  link.href = `/select-electrical/datasheets/Brochures/${manual.file}`
+  link.download = manual.file
+  link.target = '_blank'
+  link.rel = 'noopener noreferrer'
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
+
 function Modal({ manual, onClose }) {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', company: '' })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value })
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
-    // Trigger the download automatically after form submit
-    const link = document.createElement('a')
-    link.href = `/select-electrical/datasheets/Brochures/${manual.file}`
-    link.download = manual.file
-    link.target = '_blank'
-    link.rel = 'noopener noreferrer'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    setLoading(true)
+    setError('')
+
+    // Start download immediately so the browser doesn't block it
+    triggerDownload(manual)
+
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+          subject: `Manual Download – ${manual.title} – ${formData.name}`,
+          from_name: formData.name,
+          manual: manual.title,
+          ...formData,
+        }),
+      })
+      const data = await res.json()
+      if (!data.success) {
+        // Download already started — just log the notification failure silently
+        console.warn('Web3Forms notification failed:', data)
+      }
+    } catch (err) {
+      console.warn('Could not send download notification:', err)
+    } finally {
+      setLoading(false)
+      setSubmitted(true)
+    }
   }
 
   return (
@@ -214,12 +246,23 @@ function Modal({ manual, onClose }) {
                     />
                   </div>
                 </div>
+                {error && (
+                  <div className="flex items-start gap-2 bg-red-950/50 border border-red-700/40 px-3 py-2.5 text-red-400 text-xs">
+                    <AlertCircle size={14} className="flex-shrink-0 mt-0.5" />
+                    <span>{error}</span>
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-gold text-dark font-semibold py-3 flex items-center justify-center gap-2 hover:bg-yellow-300 transition-colors mt-2"
+                  disabled={loading}
+                  className="w-full bg-gold text-dark font-semibold py-3 flex items-center justify-center gap-2 hover:bg-yellow-300 transition-colors mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  <Download size={16} />
-                  Submit &amp; Download
+                  {loading ? (
+                    <><Loader2 size={15} className="animate-spin" /> Starting Download…</>
+                  ) : (
+                    <><Download size={16} /> Submit &amp; Download</>
+                  )}
                 </button>
               </form>
             </>
