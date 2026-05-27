@@ -79,13 +79,17 @@ export default function Blogs() {
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-gray-50 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+      <section
+        className="py-16 relative overflow-hidden"
+        style={{ backgroundImage: "url('/select-electrical/images/image-1998.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
+        <div className="absolute inset-0 bg-gold opacity-80" />
+        <div className="relative max-w-7xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-black text-dark mb-4">Have a Project in Mind?</h2>
           <p className="text-gray-500 mb-8 max-w-xl mx-auto">
             Our engineering team is ready to help with your electrical and automation challenges.
           </p>
-          <Link to="/contact" className="btn-primary inline-flex items-center gap-2">
+          <Link to="/contact" className="inline-flex items-center gap-2 bg-dark text-white font-semibold px-8 py-4 hover:bg-dark-700 transition-colors">
             Get in Touch <ArrowRight size={16} />
           </Link>
         </div>

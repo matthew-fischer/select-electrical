@@ -229,8 +229,12 @@ export default function Company() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gold">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section
+        className="py-20 relative overflow-hidden"
+        style={{ backgroundImage: "url('/select-electrical/images/image-1998.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
+        <div className="absolute inset-0 bg-gold opacity-80" />
+        <div className="relative max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-dark mb-5">
             Let's Work on Your Next Project
           </h2>

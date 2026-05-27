@@ -141,9 +141,23 @@ export default function Footer() {
         <p className="text-gray-500 text-sm">
           &copy; {new Date().getFullYear()} Select Electrical Enterprises Ltd. All rights reserved.
         </p>
-        <p className="text-gray-600 text-xs">
-          Proudly serving Alberta since 1988
-        </p>
+        <div className="flex items-center gap-4">
+          <p className="text-gray-600 text-xs">
+            Proudly serving Alberta since 1988
+          </p>
+          <span className="text-gray-700 text-xs hidden md:block">·</span>
+          <p className="text-gray-600 text-xs">
+            Built by{' '}
+            <a
+              href="https://www.linkedin.com/in/matthew-fischer9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-gold transition-colors"
+            >
+              Matthew Fischer
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   )
