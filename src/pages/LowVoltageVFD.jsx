@@ -54,6 +54,7 @@ export default function LowVoltageVFD() {
             <rect width="100%" height="100%" fill="url(#grid)" />
           </svg>
         </div>
+        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-gold/25 to-transparent hidden lg:block" />
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="flex items-center gap-2 text-gray-500 text-sm mb-6">
             <Link to="/" className="hover:text-gold transition-colors">Home</Link>

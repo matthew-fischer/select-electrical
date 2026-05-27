@@ -87,7 +87,8 @@ export default function DvdtFilters() {
   return (
     <div className="min-h-screen bg-dark pt-24">
       {/* Hero */}
-      <div className="bg-[#080808] border-b border-white/5 py-14">
+      <div className="bg-[#080808] border-b border-white/5 py-14 relative overflow-hidden">
+        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-gold/25 to-transparent hidden lg:block" />
         <div className="max-w-7xl mx-auto px-6">
           <div className="w-16 h-1 bg-gold mb-6" />
           <h1 className="text-3xl md:text-4xl font-black text-white mb-3">
