@@ -66,6 +66,29 @@ export default function Contact() {
         </div>
       </section>
 
+      {/* Google Maps */}
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto px-6 py-16">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-1 h-6 bg-gold" />
+            <h2 className="text-lg font-bold text-dark uppercase tracking-wide">Find Us</h2>
+          </div>
+          <div className="w-full h-80 border border-gray-200 overflow-hidden">
+            <iframe
+              title="Select Electrical Enterprises Location"
+              src="https://maps.google.com/maps?q=Select+Electrical+Enterprises+Ltd,+Stony+Plain,+AB&output=embed&z=11"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+          <p className="text-gray-400 text-xs mt-3">#101 315 Slate Ave, Stony Plain, AB</p>
+        </div>
+      </section>
+
       {/* Contact content */}
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
