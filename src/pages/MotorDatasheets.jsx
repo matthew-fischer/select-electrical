@@ -3,13 +3,20 @@ import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucid
 import motors, { pdfPath } from '../data/motorDatasheets'
 
 const manuals = [
-  { brand: 'WEG W01', label: 'W01 Motor Manual',         url: '/select-electrical/datasheets/Manuals/Motors/WEG-WO1-MOTOR-MANUAL.pdf' },
-  { brand: 'WEG W21', label: 'W21XP Motor Manual',        url: '/select-electrical/datasheets/Manuals/Motors/WEG-MOTOR-W21XP-MANUAL.pdf' },
-  { brand: 'WEG W22', label: 'W22 Motor Manual',          url: '/select-electrical/datasheets/Manuals/Motors/WEG-MOTOR-W22-MANUAL.pdf' },
-  { brand: 'WEG W22', label: 'W22 Technical Catalog',     url: '/select-electrical/datasheets/Manuals/Motors/WEG-MOTOR-W22-TECHNICAL-CATALOG.pdf' },
-  { brand: 'WEG W22', label: 'W22 Three Phase Datasheet', url: '/select-electrical/datasheets/Manuals/Motors/WEG-MOTOR-W22-THREE-PHASE.pdf' },
-  { brand: 'Farm Duty', label: 'Standard Stock Catalog',  url: '/select-electrical/datasheets/Manuals/Motors/WEG-05-A-2020-standard-stock-us100-english.pdf' },
+  { tag: 'W01',       label: 'W01 Motor Manual',         url: '/select-electrical/datasheets/Manuals/Motors/WEG-WO1-MOTOR-MANUAL.pdf' },
+  { tag: 'W21',       label: 'W21XP Motor Manual',        url: '/select-electrical/datasheets/Manuals/Motors/WEG-MOTOR-W21XP-MANUAL.pdf' },
+  { tag: 'W22',       label: 'W22 Motor Manual',          url: '/select-electrical/datasheets/Manuals/Motors/WEG-MOTOR-W22-MANUAL.pdf' },
+  { tag: 'W22',       label: 'W22 Technical Catalog',     url: '/select-electrical/datasheets/Manuals/Motors/WEG-MOTOR-W22-TECHNICAL-CATALOG.pdf' },
+  { tag: 'W22',       label: 'W22 Three Phase Datasheet', url: '/select-electrical/datasheets/Manuals/Motors/WEG-MOTOR-W22-THREE-PHASE.pdf' },
+  { tag: 'Farm Duty', label: 'Standard Stock Catalog',    url: '/select-electrical/datasheets/Manuals/Motors/WEG-05-A-2020-standard-stock-us100-english.pdf' },
 ]
+
+const tagBadge = {
+  'W01':       'bg-blue-900/40 text-blue-300 border-blue-700/40',
+  'W21':       'bg-amber-900/40 text-amber-300 border-amber-700/40',
+  'W22':       'bg-purple-900/40 text-purple-300 border-purple-700/40',
+  'Farm Duty': 'bg-green-900/40 text-green-300 border-green-700/40',
+}
 
 const ALL = 'All'
 
@@ -120,7 +127,7 @@ export default function MotorDatasheets() {
             {manuals.map(m => (
               <a key={m.url} href={m.url} target="_blank" rel="noopener noreferrer"
                  className="inline-flex items-center gap-2 bg-[#0d0d0d] border border-white/8 px-3 py-2 text-xs hover:border-gold/40 transition-colors group">
-                <span className="text-gray-500 font-medium">{m.brand}</span>
+                <span className={`font-semibold text-xs px-1.5 py-0.5 border ${tagBadge[m.tag]}`}>{m.tag}</span>
                 <span className="text-gray-400 group-hover:text-white transition-colors">{m.label}</span>
                 <Download size={11} className="text-gold" />
               </a>

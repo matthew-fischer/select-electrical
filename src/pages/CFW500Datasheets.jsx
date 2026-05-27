@@ -3,10 +3,14 @@ import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucid
 import drives, { pdfPath, partNumber } from '../data/cfw500Data'
 
 const manuals = [
-  { brand: 'WEG', label: "User's Manual",             url: '/select-electrical/datasheets/CFW500/WEG-CFW500-USERS-MANUAL.pdf' },
-  { brand: 'WEG', label: 'Control Brochure',          url: '/select-electrical/datasheets/CFW500/WEG-CFW500-CONTROL-BROCHURE.pdf' },
-  { brand: 'WEG', label: 'Quick Parameter Reference', url: '/select-electrical/datasheets/CFW500/WEG-CFW500-QUICK-PARAMETER-REFERENCE.pdf' },
+  { tag: 'CFW500', label: "User's Manual",             url: '/select-electrical/datasheets/CFW500/WEG-CFW500-USERS-MANUAL.pdf' },
+  { tag: 'CFW500', label: 'Control Brochure',          url: '/select-electrical/datasheets/CFW500/WEG-CFW500-CONTROL-BROCHURE.pdf' },
+  { tag: 'CFW500', label: 'Quick Parameter Reference', url: '/select-electrical/datasheets/CFW500/WEG-CFW500-QUICK-PARAMETER-REFERENCE.pdf' },
 ]
+
+const tagBadge = {
+  'CFW500': 'bg-amber-900/40 text-amber-300 border-amber-700/40',
+}
 
 const ALL = 'All'
 
@@ -114,7 +118,7 @@ export default function CFW500Datasheets() {
             {manuals.map(m => (
               <a key={m.url} href={m.url} target="_blank" rel="noopener noreferrer"
                  className="inline-flex items-center gap-2 bg-[#0d0d0d] border border-white/8 px-3 py-2 text-xs hover:border-gold/40 transition-colors group">
-                <span className="text-gray-500 font-medium">{m.brand}</span>
+                <span className={`font-semibold text-xs px-1.5 py-0.5 border ${tagBadge[m.tag]}`}>{m.tag}</span>
                 <span className="text-gray-400 group-hover:text-white transition-colors">{m.label}</span>
                 <Download size={11} className="text-gold" />
               </a>

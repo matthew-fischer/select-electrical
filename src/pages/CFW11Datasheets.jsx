@@ -3,12 +3,16 @@ import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucid
 import drives, { pdfPath } from '../data/cfw11Data'
 
 const manuals = [
-  { brand: 'WEG', label: 'CFW11 Catalog',                url: '/select-electrical/datasheets/Manuals/CFW11/WEG-CFW11-CATALOG.pdf' },
-  { brand: 'WEG', label: 'Quick Parameter Reference',    url: '/select-electrical/datasheets/Manuals/CFW11/WEG-CFW11-QUICK-PARAMETER-REFERENCE.pdf' },
-  { brand: 'WEG', label: "User's Manual (200–460V)",     url: '/select-electrical/datasheets/Manuals/CFW11/WEG-CFW11-USERS-MANUAL-200-460V.pdf' },
-  { brand: 'WEG', label: "User's Manual (460V)",         url: '/select-electrical/datasheets/Manuals/CFW11/WEG-CFW11-USERS-MNAUAL-460V.pdf' },
-  { brand: 'WEG', label: "User's Manual (600V)",         url: '/select-electrical/datasheets/Manuals/CFW11/WEG-CFW11-USERS-MANUAL-600V.pdf' },
+  { tag: 'CFW11', label: 'CFW11 Catalog',                url: '/select-electrical/datasheets/Manuals/CFW11/WEG-CFW11-CATALOG.pdf' },
+  { tag: 'CFW11', label: 'Quick Parameter Reference',    url: '/select-electrical/datasheets/Manuals/CFW11/WEG-CFW11-QUICK-PARAMETER-REFERENCE.pdf' },
+  { tag: 'CFW11', label: "User's Manual (200–460V)",     url: '/select-electrical/datasheets/Manuals/CFW11/WEG-CFW11-USERS-MANUAL-200-460V.pdf' },
+  { tag: 'CFW11', label: "User's Manual (460V)",         url: '/select-electrical/datasheets/Manuals/CFW11/WEG-CFW11-USERS-MNAUAL-460V.pdf' },
+  { tag: 'CFW11', label: "User's Manual (600V)",         url: '/select-electrical/datasheets/Manuals/CFW11/WEG-CFW11-USERS-MANUAL-600V.pdf' },
 ]
+
+const tagBadge = {
+  'CFW11': 'bg-blue-900/40 text-blue-300 border-blue-700/40',
+}
 
 const ALL = 'All'
 
@@ -107,7 +111,7 @@ export default function CFW11Datasheets() {
             {manuals.map(m => (
               <a key={m.url} href={m.url} target="_blank" rel="noopener noreferrer"
                  className="inline-flex items-center gap-2 bg-[#0d0d0d] border border-white/8 px-3 py-2 text-xs hover:border-gold/40 transition-colors group">
-                <span className="text-gray-500 font-medium">{m.brand}</span>
+                <span className={`font-semibold text-xs px-1.5 py-0.5 border ${tagBadge[m.tag]}`}>{m.tag}</span>
                 <span className="text-gray-400 group-hover:text-white transition-colors">{m.label}</span>
                 <Download size={11} className="text-gold" />
               </a>

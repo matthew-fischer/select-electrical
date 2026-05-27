@@ -62,6 +62,7 @@ const productGroups = [
       { label: 'CFW100 Datasheets', to: '/cfw100-datasheets' },
       { label: 'CFW300 Datasheets', to: '/cfw300-datasheets' },
       { label: 'CFW500 Datasheets', to: '/cfw500-datasheets' },
+      { label: 'Soft Starter Datasheets', to: '/soft-starter-datasheets' },
       { label: 'Motor Datasheets', to: '/motor-datasheets' },
       { label: 'Reactor Datasheets', to: '/reactor-datasheets' },
       { label: 'Harmonic Filters', to: '/harmonic-filters' },

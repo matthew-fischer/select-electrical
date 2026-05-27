@@ -3,10 +3,10 @@ import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucid
 import reactors, { pdfPath } from '../data/reactorDatasheets'
 
 const manuals = [
-  { brand: 'MTE', label: 'Reactor Catalog & Manual',         url: '/select-electrical/datasheets/Manuals/MTE%203%25%20Impedance%20Reactor/RL-REACTOR-CATALOG-AND-MANUAL.pdf' },
-  { brand: 'TCI', label: 'KDR Brochure',                     url: '/select-electrical/datasheets/Manuals/TCI%203%25%20Impendance%20Reactor/KDR-BROCHURE.pdf' },
-  { brand: 'TCI', label: 'Installation Instructions',         url: '/select-electrical/datasheets/Manuals/TCI%203%25%20Impendance%20Reactor/KDR-REACTOR-INSTRUCTION-INSTALLATION.pdf' },
-  { brand: 'TCI', label: 'Reactor/Filter Size Chart',         url: '/select-electrical/datasheets/Manuals/TCI%203%25%20Impendance%20Reactor/REACTOR-FILTER-SIZE-CHART.pdf' },
+  { tag: 'MTE', label: 'Reactor Catalog & Manual',         url: '/select-electrical/datasheets/Manuals/MTE%203%25%20Impedance%20Reactor/RL-REACTOR-CATALOG-AND-MANUAL.pdf' },
+  { tag: 'TCI', label: 'KDR Brochure',                     url: '/select-electrical/datasheets/Manuals/TCI%203%25%20Impendance%20Reactor/KDR-BROCHURE.pdf' },
+  { tag: 'TCI', label: 'Installation Instructions',         url: '/select-electrical/datasheets/Manuals/TCI%203%25%20Impendance%20Reactor/KDR-REACTOR-INSTRUCTION-INSTALLATION.pdf' },
+  { tag: 'TCI', label: 'Reactor/Filter Size Chart',         url: '/select-electrical/datasheets/Manuals/TCI%203%25%20Impendance%20Reactor/REACTOR-FILTER-SIZE-CHART.pdf' },
 ]
 
 const ALL = 'All'
@@ -106,7 +106,7 @@ export default function ReactorDatasheets() {
             {manuals.map(m => (
               <a key={m.url} href={m.url} target="_blank" rel="noopener noreferrer"
                  className="inline-flex items-center gap-2 bg-[#0d0d0d] border border-white/8 px-3 py-2 text-xs hover:border-gold/40 transition-colors group">
-                <span className="text-gray-500 font-medium">{m.brand}</span>
+                <span className={`font-semibold text-xs px-1.5 py-0.5 border ${brandInfo[m.tag].badge}`}>{m.tag}</span>
                 <span className="text-gray-400 group-hover:text-white transition-colors">{m.label}</span>
                 <Download size={11} className="text-gold" />
               </a>

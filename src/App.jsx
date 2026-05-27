@@ -40,6 +40,7 @@ import CFW11Datasheets from './pages/CFW11Datasheets'
 import CFW100Datasheets from './pages/CFW100Datasheets'
 import CFW300Datasheets from './pages/CFW300Datasheets'
 import CFW500Datasheets from './pages/CFW500Datasheets'
+import SoftStarterDatasheets from './pages/SoftStarterDatasheets'
 import Support from './pages/Support'
 
 export default function App() {
@@ -88,6 +89,7 @@ export default function App() {
             <Route path="/cfw100-datasheets" element={<CFW100Datasheets />} />
             <Route path="/cfw300-datasheets" element={<CFW300Datasheets />} />
             <Route path="/cfw500-datasheets" element={<CFW500Datasheets />} />
+            <Route path="/soft-starter-datasheets" element={<SoftStarterDatasheets />} />
             <Route path="/support" element={<Support />} />
           </Routes>
         </main>

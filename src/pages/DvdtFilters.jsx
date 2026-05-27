@@ -3,11 +3,11 @@ import { SlidersHorizontal, X, ChevronLeft, ChevronRight, Download } from 'lucid
 import dvdtFilters from '../data/dvdtFilterData'
 
 const manuals = [
-  { brand: 'TCI', label: 'V1K Filter Size Chart',       url: '/select-electrical/datasheets/Manuals/TCI%20DVDT%20Filter/V1K-FILTER-SIZE-CHART.pdf' },
-  { brand: 'TCI', label: 'V1K Manual',                   url: '/select-electrical/datasheets/Manuals/TCI%20DVDT%20Filter/V1K-MANUAL.pdf' },
-  { brand: 'TCI', label: 'V1K Brochure',                 url: '/select-electrical/datasheets/Manuals/TCI%20DVDT%20Filter/VIK-BROCHURE.pdf' },
-  { brand: 'MTE', label: 'DVS Solution Catalog',         url: '/select-electrical/datasheets/Manuals/MTE%20DVDT%20Filter/DVS-SOLUTION-CATALOG.pdf' },
-  { brand: 'MTE', label: 'Technical Reference Manual',   url: '/select-electrical/datasheets/Manuals/MTE%20DVDT%20Filter/DVS-TECHNICAL-REFERENCE-MANUAL.pdf' },
+  { tag: 'TCI', label: 'V1K Filter Size Chart',       url: '/select-electrical/datasheets/Manuals/TCI%20DVDT%20Filter/V1K-FILTER-SIZE-CHART.pdf' },
+  { tag: 'TCI', label: 'V1K Manual',                   url: '/select-electrical/datasheets/Manuals/TCI%20DVDT%20Filter/V1K-MANUAL.pdf' },
+  { tag: 'TCI', label: 'V1K Brochure',                 url: '/select-electrical/datasheets/Manuals/TCI%20DVDT%20Filter/VIK-BROCHURE.pdf' },
+  { tag: 'MTE', label: 'DVS Solution Catalog',         url: '/select-electrical/datasheets/Manuals/MTE%20DVDT%20Filter/DVS-SOLUTION-CATALOG.pdf' },
+  { tag: 'MTE', label: 'Technical Reference Manual',   url: '/select-electrical/datasheets/Manuals/MTE%20DVDT%20Filter/DVS-TECHNICAL-REFERENCE-MANUAL.pdf' },
 ]
 
 const ALL = 'All'
@@ -107,7 +107,7 @@ export default function DvdtFilters() {
             {manuals.map(m => (
               <a key={m.url} href={m.url} target="_blank" rel="noopener noreferrer"
                  className="inline-flex items-center gap-2 bg-[#0d0d0d] border border-white/8 px-3 py-2 text-xs hover:border-gold/40 transition-colors group">
-                <span className="text-gray-500 font-medium">{m.brand}</span>
+                <span className={`font-semibold text-xs px-1.5 py-0.5 border ${brandInfo[m.tag].badge}`}>{m.tag}</span>
                 <span className="text-gray-400 group-hover:text-white transition-colors">{m.label}</span>
                 <Download size={11} className="text-gold" />
               </a>

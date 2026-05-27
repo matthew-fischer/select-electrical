@@ -1,30 +1,36 @@
 import { useState, useMemo } from 'react'
-import { SlidersHorizontal, X, ChevronLeft, ChevronRight, Download } from 'lucide-react'
-import sineFilters from '../data/sineFilterData'
+import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucide-react'
+import softStarters, { pdfPath, partNumber } from '../data/softStarterData'
 
 const manuals = [
-  { tag: 'Mirus', label: 'AUSF Brochure',                   url: '/select-electrical/datasheets/Manuals/Mirus%20Sinewave%20Filter/AUSF-BROCHURE.pdf' },
-  { tag: 'Mirus', label: 'Installation & Operation Guide',   url: '/select-electrical/datasheets/Manuals/Mirus%20Sinewave%20Filter/AUSF-INSTALLATION-OPERATION-AND-MAINTENANCE-GUIDE.pdf' },
-  { tag: 'Mirus', label: 'Technical Data',                   url: '/select-electrical/datasheets/Manuals/Mirus%20Sinewave%20Filter/AUSF-TECHNICAL-DATA.pdf' },
-  { tag: 'MTE',   label: 'SWG Solution Catalog',             url: '/select-electrical/datasheets/Manuals/MTE%20Sinewave%20Filter/SWG-SOLUTION-CATALOG.pdf' },
-  { tag: 'MTE',   label: 'Technical Reference Manual',       url: '/select-electrical/datasheets/Manuals/MTE%20Sinewave%20Filter/SWG-TECHNICAL-REFERENCE-MANUAL.pdf' },
+  { brand: 'WEG', model: 'SSW05', label: "User's Manual",           url: '/select-electrical/datasheets/Soft%20Starters/SSW05/WEG-SSW05-User-Manual.pdf' },
+  { brand: 'WEG', model: 'SSW05', label: 'Quick Parameter Ref.',    url: '/select-electrical/datasheets/Soft%20Starters/SSW05/WEG-SSW05-Quick-Parameter-Reference.pdf' },
+  { brand: 'WEG', model: 'SSW05', label: 'Products Brochure',       url: '/select-electrical/datasheets/Soft%20Starters/SSW05/WEG-SSW05-Products-Brochure.pdf' },
+  { brand: 'WEG', model: 'SSW07', label: "User's Manual",           url: '/select-electrical/datasheets/Soft%20Starters/SSW07/WEG-SSW07-User-Manual.pdf' },
+  { brand: 'WEG', model: 'SSW07', label: 'Quick Parameter Ref.',    url: '/select-electrical/datasheets/Soft%20Starters/SSW07/WEG-SSW07-Quick-Parameter-Reference.pdf' },
+  { brand: 'WEG', model: 'SSW07', label: 'Products Brochure',       url: '/select-electrical/datasheets/Soft%20Starters/SSW07/WEG-SSW07-Products-Brochure.pdf' },
+  { brand: 'WEG', model: 'SSW900', label: "User's Manual",          url: '/select-electrical/datasheets/Soft%20Starters/SSW900/WEG-SSW900-user-manual.pdf' },
+  { brand: 'WEG', model: 'SSW900', label: 'Programming Manual',     url: '/select-electrical/datasheets/Soft%20Starters/SSW900/WEG-SSW900-programing-manual.pdf' },
+  { brand: 'WEG', model: 'SSW900', label: 'Installation Guide',     url: '/select-electrical/datasheets/Soft%20Starters/SSW900/WEG-SSW900-installation-guide.pdf' },
+  { brand: 'WEG', model: 'SSW900', label: 'Catalog',                url: '/select-electrical/datasheets/Soft%20Starters/SSW900/WEG-SSW900-catalog.pdf' },
 ]
 
 const ALL = 'All'
+const allModels = [ALL, 'SSW05', 'SSW07', 'SSW900']
 
 function uniq(arr) {
   return [...new Set(arr)].sort((a, b) => a - b)
 }
 
-const allHP       = uniq(sineFilters.map(f => f.hp))
-const allVoltage  = [ALL, '230V', '240V', '480V', '575V', '600V']
-const allBrand    = [ALL, 'Mirus', 'MTE']
-const allEnclosure = [ALL, 'Open Chassis', 'NEMA 1', 'NEMA 3R']
+const allAmps = uniq(softStarters.map(d => d.amps))
 
-const brandInfo = {
-  Mirus: { badge: 'bg-purple-900/40 text-purple-300 border-purple-700/40' },
-  MTE:   { badge: 'bg-orange-900/40 text-orange-300 border-orange-700/40' },
+const modelInfo = {
+  'SSW05':  { badge: 'bg-blue-900/40 text-blue-300 border-blue-700/40' },
+  'SSW07':  { badge: 'bg-indigo-900/40 text-indigo-300 border-indigo-700/40' },
+  'SSW900': { badge: 'bg-amber-900/40 text-amber-300 border-amber-700/40' },
 }
+
+const modelOrder = { SSW05: 0, SSW07: 1, SSW900: 2 }
 
 function FilterBtn({ active, onClick, children }) {
   return (
@@ -56,37 +62,33 @@ function pageRange(current, total) {
   return pages
 }
 
-export default function SineFilters() {
-  const [brand,     setBrand]     = useState(ALL)
-  const [voltage,   setVoltage]   = useState(ALL)
-  const [enclosure, setEnclosure] = useState(ALL)
-  const [hp,        setHp]        = useState(ALL)
-  const [page,      setPage]      = useState(1)
+export default function SoftStarterDatasheets() {
+  const [model, setModel] = useState(ALL)
+  const [amps,  setAmps]  = useState(ALL)
+  const [page,  setPage]  = useState(1)
 
   const filtered = useMemo(() => {
     setPage(1)
-    return sineFilters
-      .filter(f =>
-        (brand     === ALL || f.brand     === brand) &&
-        (voltage   === ALL || f.voltage   === voltage) &&
-        (enclosure === ALL || f.enclosure === enclosure) &&
-        (hp        === ALL || f.hp        === hp)
+    return softStarters
+      .filter(d =>
+        (model === ALL || d.model === model) &&
+        (amps  === ALL || d.amps  === amps)
       )
       .sort((a, b) =>
-        a.hp - b.hp ||
-        a.brand.localeCompare(b.brand) ||
-        a.voltage.localeCompare(b.voltage) ||
-        a.enclosure.localeCompare(b.enclosure)
+        (modelOrder[a.model] ?? 9) - (modelOrder[b.model] ?? 9) ||
+        a.amps - b.amps
       )
-  }, [brand, voltage, enclosure, hp])
+  }, [model, amps])
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE))
   const pageItems  = filtered.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE)
+  const hasFilters = model !== ALL || amps !== ALL
 
-  const hasFilters = brand !== ALL || voltage !== ALL || enclosure !== ALL || hp !== ALL
-
-  function clearAll() { setBrand(ALL); setVoltage(ALL); setEnclosure(ALL); setHp(ALL) }
+  function clearAll() { setModel(ALL); setAmps(ALL) }
   function goTo(p)    { setPage(Math.min(Math.max(1, p), totalPages)) }
+
+  // Show only manuals for the selected model (or all if no filter)
+  const visibleManuals = model === ALL ? manuals : manuals.filter(m => m.model === model)
 
   return (
     <div className="min-h-screen bg-dark pt-24">
@@ -95,10 +97,11 @@ export default function SineFilters() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="w-16 h-1 bg-gold mb-6" />
           <h1 className="text-3xl md:text-4xl font-black text-white mb-3">
-            Sine Wave Filters
+            Soft Starter Datasheets
           </h1>
           <p className="text-gray-400 max-w-xl">
-            Filter by brand, voltage, enclosure type, and horsepower to find the correct sine wave filter SKU and specifications.
+            Filter by model series and amp rating to find and download the correct WEG soft starter datasheet.
+            All units operate on 230 / 460 / 575V.
           </p>
         </div>
       </div>
@@ -106,12 +109,16 @@ export default function SineFilters() {
       <div className="max-w-7xl mx-auto px-6 py-10">
         {/* Manuals */}
         <div className="mb-8 pb-8 border-b border-white/5">
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Manuals &amp; Documentation</p>
+          <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">
+            Manuals &amp; Documentation
+          </p>
           <div className="flex flex-wrap gap-2">
-            {manuals.map(m => (
+            {visibleManuals.map(m => (
               <a key={m.url} href={m.url} target="_blank" rel="noopener noreferrer"
                  className="inline-flex items-center gap-2 bg-[#0d0d0d] border border-white/8 px-3 py-2 text-xs hover:border-gold/40 transition-colors group">
-                <span className={`font-semibold text-xs px-1.5 py-0.5 border ${brandInfo[m.tag].badge}`}>{m.tag}</span>
+                <span className={`font-semibold text-xs px-1.5 py-0.5 border ${modelInfo[m.model].badge}`}>
+                  {m.model}
+                </span>
                 <span className="text-gray-400 group-hover:text-white transition-colors">{m.label}</span>
                 <Download size={11} className="text-gold" />
               </a>
@@ -134,45 +141,27 @@ export default function SineFilters() {
             )}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {/* Brand */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {/* Model */}
             <div>
-              <div className="text-xs text-gray-500 uppercase tracking-widest mb-2">Brand</div>
+              <div className="text-xs text-gray-500 uppercase tracking-widest mb-2">Model Series</div>
               <div className="flex flex-wrap gap-1.5">
-                {allBrand.map(b => (
-                  <FilterBtn key={b} active={brand === b} onClick={() => setBrand(b)}>{b}</FilterBtn>
+                {allModels.map(m => (
+                  <FilterBtn key={m} active={model === m} onClick={() => setModel(m)}>
+                    {m}
+                  </FilterBtn>
                 ))}
               </div>
             </div>
 
-            {/* Voltage */}
+            {/* Amps */}
             <div>
-              <div className="text-xs text-gray-500 uppercase tracking-widest mb-2">Voltage</div>
-              <div className="flex flex-wrap gap-1.5">
-                {allVoltage.map(v => (
-                  <FilterBtn key={v} active={voltage === v} onClick={() => setVoltage(v)}>{v}</FilterBtn>
-                ))}
-              </div>
-            </div>
-
-            {/* Enclosure */}
-            <div>
-              <div className="text-xs text-gray-500 uppercase tracking-widest mb-2">Enclosure</div>
-              <div className="flex flex-wrap gap-1.5">
-                {allEnclosure.map(e => (
-                  <FilterBtn key={e} active={enclosure === e} onClick={() => setEnclosure(e)}>{e}</FilterBtn>
-                ))}
-              </div>
-            </div>
-
-            {/* Horsepower */}
-            <div>
-              <div className="text-xs text-gray-500 uppercase tracking-widest mb-2">Horsepower</div>
+              <div className="text-xs text-gray-500 uppercase tracking-widest mb-2">Amp Rating</div>
               <div className="flex flex-wrap gap-1.5 max-h-32 overflow-y-auto">
-                <FilterBtn active={hp === ALL} onClick={() => setHp(ALL)}>All</FilterBtn>
-                {allHP.map(h => (
-                  <FilterBtn key={h} active={hp === h} onClick={() => setHp(h)}>
-                    {h} HP
+                <FilterBtn active={amps === ALL} onClick={() => setAmps(ALL)}>All</FilterBtn>
+                {allAmps.map(a => (
+                  <FilterBtn key={a} active={amps === a} onClick={() => setAmps(a)}>
+                    {a} A
                   </FilterBtn>
                 ))}
               </div>
@@ -183,7 +172,7 @@ export default function SineFilters() {
         {/* Results count */}
         <div className="flex items-center justify-between mb-4">
           <p className="text-sm text-gray-500">
-            <span className="text-white font-semibold">{filtered.length}</span> product{filtered.length !== 1 ? 's' : ''} found
+            <span className="text-white font-semibold">{filtered.length}</span> datasheet{filtered.length !== 1 ? 's' : ''} found
           </p>
           {totalPages > 1 && (
             <p className="text-sm text-gray-500">
@@ -193,45 +182,55 @@ export default function SineFilters() {
         </div>
 
         {/* Table */}
-        {filtered.length > 0 ? (
+        {filtered.length > 0 && (
           <div className="border border-white/8 overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-[#0d0d0d] border-b border-white/8">
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Brand</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Voltage</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Enclosure</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">HP</th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Model</th>
                   <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Amps</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Frame / Cabinet</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">SKU</th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">HP (230 / 460 / 575V)</th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Part Number</th>
+                  <th className="px-4 py-3"></th>
                 </tr>
               </thead>
               <tbody>
-                {pageItems.map((f, i) => (
+                {pageItems.map((d, i) => (
                   <tr
                     key={i}
                     className={`border-b border-white/5 transition-colors hover:bg-white/3 ${
                       i % 2 === 0 ? 'bg-transparent' : 'bg-white/[0.02]'
-                    }`}
+                    } ${!d.file ? 'opacity-50' : ''}`}
                   >
                     <td className="px-4 py-3">
-                      <span className={`inline-block text-xs font-semibold px-2 py-0.5 border ${brandInfo[f.brand].badge}`}>
-                        {f.brand}
+                      <span className={`inline-block text-xs font-semibold px-2 py-0.5 border ${modelInfo[d.model].badge}`}>
+                        {d.model}
                       </span>
                     </td>
-                    <td className="px-4 py-3 text-gray-300">{f.voltage}</td>
-                    <td className="px-4 py-3 text-gray-300">{f.enclosure}</td>
-                    <td className="px-4 py-3 text-white font-semibold">{f.hp} HP</td>
-                    <td className="px-4 py-3 text-gray-300">{f.amps} A</td>
-                    <td className="px-4 py-3 text-gray-500">{f.frame}</td>
-                    <td className="px-4 py-3 font-mono text-xs text-gold">{f.sku}</td>
+                    <td className="px-4 py-3 text-white font-semibold">{d.amps} A</td>
+                    <td className="px-4 py-3 text-gray-300">{d.hp}</td>
+                    <td className="px-4 py-3 font-mono text-xs text-gray-400">{partNumber(d.file)}</td>
+                    <td className="px-4 py-3 text-right">
+                      {d.file ? (
+                        <a
+                          href={pdfPath(d.model, d.file)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 bg-gold text-dark text-xs font-bold px-3 py-1.5 hover:bg-yellow-300 transition-colors"
+                        >
+                          <Download size={12} />
+                          PDF
+                        </a>
+                      ) : (
+                        <span className="text-xs text-gray-600 italic">Not available</span>
+                      )}
+                    </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-        ) : null}
+        )}
 
         {/* Pagination */}
         {totalPages > 1 && filtered.length > 0 && (
@@ -276,7 +275,7 @@ export default function SineFilters() {
 
         {filtered.length === 0 && (
           <div className="border border-white/8 py-20 text-center">
-            <p className="text-gray-500 mb-3">No products match your filters.</p>
+            <p className="text-gray-500 mb-3">No datasheets match your filters.</p>
             <button onClick={clearAll} className="text-gold text-sm hover:opacity-75 transition-opacity">
               Clear all filters
             </button>
