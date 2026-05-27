@@ -293,9 +293,18 @@ export default function Header() {
             <div className="bg-white/5 px-3 py-2 mb-1">
               {productGroups.map((group) => (
                 <div key={group.heading} className="mb-4 last:mb-0">
-                  <div className="text-gold text-xs font-semibold uppercase tracking-widest mb-2 px-2">
-                    {group.heading}
-                  </div>
+                  {group.hub ? (
+                    <Link
+                      to={group.hub}
+                      className="flex items-center gap-1 text-gold text-xs font-semibold uppercase tracking-widest mb-2 px-2 hover:opacity-75 transition-opacity"
+                    >
+                      {group.heading} <ArrowRight size={10} />
+                    </Link>
+                  ) : (
+                    <div className="text-gold text-xs font-semibold uppercase tracking-widest mb-2 px-2">
+                      {group.heading}
+                    </div>
+                  )}
                   {group.items.map((item) => (
                     <Link
                       key={item.to}
