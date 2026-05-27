@@ -41,6 +41,12 @@ import CFW100Datasheets from './pages/CFW100Datasheets'
 import CFW300Datasheets from './pages/CFW300Datasheets'
 import CFW500Datasheets from './pages/CFW500Datasheets'
 import SoftStarterDatasheets from './pages/SoftStarterDatasheets'
+import ElectricalServices from './pages/ElectricalServices'
+import InfraredSurveys from './pages/InfraredSurveys'
+import VfdStartupCommissioning from './pages/VfdStartupCommissioning'
+import VfdPreventativeMaintenance from './pages/VfdPreventativeMaintenance'
+import PowerQualityAssessments from './pages/PowerQualityAssessments'
+import EnergySavingAudits from './pages/EnergySavingAudits'
 import Support from './pages/Support'
 
 export default function App() {
@@ -90,6 +96,12 @@ export default function App() {
             <Route path="/cfw300-datasheets" element={<CFW300Datasheets />} />
             <Route path="/cfw500-datasheets" element={<CFW500Datasheets />} />
             <Route path="/soft-starter-datasheets" element={<SoftStarterDatasheets />} />
+            <Route path="/electrical-services" element={<ElectricalServices />} />
+            <Route path="/infrared-surveys" element={<InfraredSurveys />} />
+            <Route path="/vfd-startup-commissioning" element={<VfdStartupCommissioning />} />
+            <Route path="/vfd-preventative-maintenance" element={<VfdPreventativeMaintenance />} />
+            <Route path="/power-quality-assessments" element={<PowerQualityAssessments />} />
+            <Route path="/energy-saving-audits" element={<EnergySavingAudits />} />
             <Route path="/support" element={<Support />} />
           </Routes>
         </main>

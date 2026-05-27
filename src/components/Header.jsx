@@ -13,6 +13,17 @@ const navLinks = [
 
 const productGroups = [
   {
+    heading: 'Electrical Services',
+    hub: '/electrical-services',
+    items: [
+      { label: 'Infrared Surveys', to: '/infrared-surveys' },
+      { label: 'VFD Startup & Commissioning', to: '/vfd-startup-commissioning' },
+      { label: 'VFD Preventative Maintenance', to: '/vfd-preventative-maintenance' },
+      { label: 'Power Quality Assessments', to: '/power-quality-assessments' },
+      { label: 'Energy Saving Audits', to: '/energy-saving-audits' },
+    ],
+  },
+  {
     heading: 'SE200 Series',
     items: [
       { label: 'Oil Well Drive', to: '/se200-oil-well-drive' },
@@ -183,7 +194,7 @@ export default function Header() {
               </button>
 
               {productsOpen && (
-                <div className="absolute top-full right-0 mt-1 bg-dark border border-white/10 shadow-2xl w-[1025px] grid grid-cols-5 gap-0 z-50">
+                <div className="absolute top-full right-0 mt-1 bg-dark border border-white/10 shadow-2xl w-[1220px] grid grid-cols-6 gap-0 z-50">
                   {productGroups.map((group) => (
                     <div key={group.heading} className="p-5 border-r border-white/5 last:border-r-0">
                       <div className="mb-3 pb-2 border-b border-white/10">
