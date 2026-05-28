@@ -1,5 +1,11 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { CheckCircle, Phone, ArrowRight, FileText, Download } from 'lucide-react'
+
+const mstrImages = [
+  { src: '/select-electrical/images/se200/mstr.jpg', alt: 'SE500 Motor Starter', fit: 'object-contain' },
+  { src: '/select-electrical/images/se200/mstr-inside.png', alt: 'SE500 Motor Starter Interior', fit: 'object-cover' },
+]
 
 const specs = [
   { label: 'Voltage Options', value: '230 / 480 / 600 VAC' },
@@ -24,21 +30,21 @@ const components = [
 ]
 
 const voltageOptions = [
-  {
-    voltage: '480V',
-    hp: '25 / 50 / 100 / 200 / 400 / 600 HP',
-  },
-  {
-    voltage: '600V',
-    hp: '25 / 50 / 100 / 200 / 400 / 600 HP',
-  },
-  {
-    voltage: '230V',
-    hp: '2 / 3 / 5 / 10 / 15 / 20 / 25 / 30 / 50 / 100 / 150 / 200 / 300 HP',
-  },
+  { voltage: '480V', hp: '25 / 50 / 100 / 200 / 400 / 600 HP' },
+  { voltage: '600V', hp: '25 / 50 / 100 / 200 / 400 / 600 HP' },
+  { voltage: '230V', hp: '2 / 3 / 5 / 10 / 15 / 20 / 25 / 30 / 50 / 100 / 150 / 200 / 300 HP' },
 ]
 
 export default function SE500MotorStarter() {
+  const [activeImg, setActiveImg] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveImg(prev => (prev + 1) % mstrImages.length)
+    }, 6000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <>
       {/* Hero */}
@@ -55,22 +61,48 @@ export default function SE500MotorStarter() {
         </div>
         <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-gold/20 to-transparent hidden lg:block z-0" />
         <div className="relative max-w-7xl mx-auto px-6 z-10">
-          <div className="flex items-center gap-2 text-gray-500 text-sm mb-6 flex-wrap">
-            <Link to="/" className="hover:text-gold transition-colors">Home</Link>
-            <span>/</span>
-            <Link to="/vfd-packages" className="hover:text-gold transition-colors">VFD Packages</Link>
-            <span>/</span>
-            <span className="text-gray-300">SE500 Motor Starter</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="flex items-center gap-2 text-gray-500 text-sm mb-6 flex-wrap">
+                <Link to="/" className="hover:text-gold transition-colors">Home</Link>
+                <span>/</span>
+                <Link to="/vfd-packages" className="hover:text-gold transition-colors">VFD Packages</Link>
+                <span>/</span>
+                <span className="text-gray-300">SE500 Motor Starter</span>
+              </div>
+              <div className="inline-block bg-gold/10 border border-gold/30 text-gold text-xs font-semibold tracking-widest uppercase px-3 py-1 mb-5">
+                SEEL Motor Starters
+              </div>
+              <div className="w-16 h-1 bg-gold mb-6" />
+              <h1 className="text-4xl md:text-5xl font-black text-white mb-3">SE500 Motor Starter</h1>
+              <p className="text-gold font-medium text-lg mb-5">NEMA 4 Rated — 230V / 480V / 600V</p>
+              <p className="text-gray-400 text-lg">
+                A NEMA 4 rated, CSA/ETL certified motor starter available in three voltage configurations to suit your application. Factory wired, tested, and ready for field installation with motor sizes from 2 HP up to 600 HP.
+              </p>
+            </div>
+            <div className="hidden lg:block">
+              <div className="relative aspect-[3/4] overflow-hidden border border-gold/20 shadow-2xl bg-[#0d0d0d]">
+                {mstrImages.map((img, i) => (
+                  <img
+                    key={img.src}
+                    src={img.src}
+                    alt={img.alt}
+                    className={`absolute inset-0 w-full h-full ${img.fit} object-center transition-opacity duration-1000 ${i === activeImg ? 'opacity-90' : 'opacity-0'}`}
+                  />
+                ))}
+                <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
+                  {mstrImages.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveImg(i)}
+                      className={`w-2 h-2 rounded-full transition-colors ${i === activeImg ? 'bg-gold' : 'bg-white/40'}`}
+                      aria-label={`View image ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="inline-block bg-gold/10 border border-gold/30 text-gold text-xs font-semibold tracking-widest uppercase px-3 py-1 mb-5">
-            SEEL Motor Starters
-          </div>
-          <div className="w-16 h-1 bg-gold mb-6" />
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-3">SE500 Motor Starter</h1>
-          <p className="text-gold font-medium text-lg mb-5">NEMA 4 Rated — 230V / 480V / 600V</p>
-          <p className="text-gray-400 text-lg max-w-2xl">
-            A NEMA 4 rated, CSA/ETL certified motor starter available in three voltage configurations to suit your application. Factory wired, tested, and ready for field installation with motor sizes from 2 HP up to 600 HP.
-          </p>
         </div>
       </section>
 
@@ -144,8 +176,6 @@ export default function SE500MotorStarter() {
 
             {/* Sidebar */}
             <div className="space-y-6">
-
-              {/* Contact CTA */}
               <div className="bg-dark p-6">
                 <h3 className="text-white font-bold text-lg mb-2">Get a Quote</h3>
                 <p className="text-gray-400 text-sm mb-5">Speak with an engineering technician about your motor starter requirements.</p>
@@ -157,7 +187,6 @@ export default function SE500MotorStarter() {
                 </a>
               </div>
 
-              {/* Brochure */}
               <div className="border border-gray-100 p-6">
                 <div className="flex items-center gap-2 mb-1">
                   <FileText size={15} className="text-gold" />
@@ -175,7 +204,6 @@ export default function SE500MotorStarter() {
                 </a>
               </div>
 
-              {/* 24/7 Support */}
               <div className="border border-gray-100 p-6">
                 <h3 className="font-bold text-dark text-base mb-2">24/7 Technical Support</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">
@@ -183,7 +211,6 @@ export default function SE500MotorStarter() {
                 </p>
               </div>
 
-              {/* VFD Packages link */}
               <div className="border border-gray-100 p-6">
                 <h3 className="font-bold text-dark text-base mb-4">VFD Packages</h3>
                 <Link
@@ -195,7 +222,6 @@ export default function SE500MotorStarter() {
                 </Link>
               </div>
 
-              {/* Certifications */}
               <div className="bg-gold/5 border border-gold/20 p-5">
                 <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Certifications</p>
                 <div className="space-y-2 text-sm text-gray-600">
