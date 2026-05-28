@@ -6,7 +6,7 @@ const INTERVAL_MS = 6000
 
 const productSlides = [
   {
-    title: 'SE200 Packaged Drive Solutions',
+    title: 'VFD Packages',
     subtitle: 'Custom-engineered VFD packages for oil & gas and industrial applications across Alberta',
     image: '/select-electrical/images/hero/SEEL_Packages.jpg',
     to: '/vfd-packages',

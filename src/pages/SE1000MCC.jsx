@@ -1,5 +1,11 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle, Phone, Shield, Download, FileText } from 'lucide-react'
+
+const mccImages = [
+  { src: '/select-electrical/images/hero/mcc.png', alt: 'SE1000 Motor Control Center', fit: 'object-contain' },
+  { src: '/select-electrical/images/hero/mcc-inside.png', alt: 'SE1000 MCC Interior', fit: 'object-cover' },
+]
 
 const specs = [
   { label: 'Maximum Capacity', value: 'Up to 6000A' },
@@ -27,6 +33,15 @@ const features = [
 ]
 
 export default function SE1000MCC() {
+  const [activeImg, setActiveImg] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveImg(prev => (prev + 1) % mccImages.length)
+    }, 6000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <>
       {/* Page hero */}
@@ -41,21 +56,47 @@ export default function SE1000MCC() {
             <rect width="100%" height="100%" fill="url(#grid)" />
           </svg>
         </div>
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-gold/25 to-transparent hidden lg:block" />
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="flex items-center gap-2 text-gray-500 text-sm mb-6 flex-wrap">
-            <Link to="/" className="hover:text-gold transition-colors">Home</Link>
-            <span>/</span>
-            <Link to="/services" className="hover:text-gold transition-colors">Services</Link>
-            <span>/</span>
-            <span className="text-gray-300">SE1000 PDS Motor Control Center</span>
+        <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-gold/20 to-transparent hidden lg:block z-0" />
+        <div className="relative max-w-7xl mx-auto px-6 z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="flex items-center gap-2 text-gray-500 text-sm mb-6 flex-wrap">
+                <Link to="/" className="hover:text-gold transition-colors">Home</Link>
+                <span>/</span>
+                <Link to="/services" className="hover:text-gold transition-colors">Services</Link>
+                <span>/</span>
+                <span className="text-gray-300">SE1000 PDS Motor Control Center</span>
+              </div>
+              <div className="w-16 h-1 bg-gold mb-6" />
+              <h1 className="text-4xl md:text-5xl font-black text-white mb-3">SE1000 PDS Motor Control Center</h1>
+              <p className="text-gold font-medium text-lg mb-5">Industrial MCC — Turnkey & Customizable</p>
+              <p className="text-gray-400 text-lg">
+                A customizable, turnkey Motor Control Center solution designed to reduce field installation time and consolidate motor starters, circuit breakers, VFDs, and power monitoring devices into a single certified assembly.
+              </p>
+            </div>
+            <div className="hidden lg:block">
+              <div className="relative aspect-[3/4] overflow-hidden border border-gold/20 shadow-2xl bg-[#0d0d0d]">
+                {mccImages.map((img, i) => (
+                  <img
+                    key={img.src}
+                    src={img.src}
+                    alt={img.alt}
+                    className={`absolute inset-0 w-full h-full ${img.fit} object-center transition-opacity duration-1000 ${i === activeImg ? 'opacity-90' : 'opacity-0'}`}
+                  />
+                ))}
+                <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2">
+                  {mccImages.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setActiveImg(i)}
+                      className={`w-2 h-2 rounded-full transition-colors ${i === activeImg ? 'bg-gold' : 'bg-white/40'}`}
+                      aria-label={`View image ${i + 1}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="w-16 h-1 bg-gold mb-6" />
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-3">SE1000 PDS Motor Control Center</h1>
-          <p className="text-gold font-medium text-lg mb-5">Industrial MCC — Turnkey & Customizable</p>
-          <p className="text-gray-400 text-lg max-w-2xl">
-            A customizable, turnkey Motor Control Center solution designed to reduce field installation time and consolidate motor starters, circuit breakers, VFDs, and power monitoring devices into a single certified assembly.
-          </p>
         </div>
       </section>
 

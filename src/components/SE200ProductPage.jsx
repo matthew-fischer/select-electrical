@@ -28,7 +28,8 @@ export default function SE200ProductPage({ title, subtitle, description, specs, 
             <rect width="100%" height="100%" fill="url(#grid)" />
           </svg>
         </div>
-        <div className="relative max-w-7xl mx-auto px-6">
+        <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-gold/20 to-transparent hidden lg:block z-0" />
+        <div className="relative max-w-7xl mx-auto px-6 z-10">
           <div className={image ? "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" : ""}>
             <div>
               <div className="flex items-center gap-2 text-gray-500 text-sm mb-6 flex-wrap">
