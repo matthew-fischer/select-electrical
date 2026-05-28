@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
 import {
-  ArrowRight, Zap, Settings, Shield, Award, Users, ChevronRight,
+  ArrowRight, Zap, Settings, ChevronRight,
   CheckCircle, Phone, Wrench, Activity, BarChart3, Thermometer
 } from 'lucide-react'
 import SE200Carousel from '../components/SE200Carousel'
+import HeroCarousel from '../components/HeroCarousel'
 
 const services = [
   {
@@ -53,66 +54,8 @@ const stats = [
 export default function Home() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative min-h-screen flex items-center bg-dark overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#f6cc41" strokeWidth="1"/>
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-          </svg>
-        </div>
-
-        {/* Gold accent block */}
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-gold/25 to-transparent hidden lg:block" />
-        <div className="absolute right-0 top-0 bottom-0 w-1 bg-gold/60 hidden lg:block" />
-
-        <div className="relative max-w-7xl mx-auto px-6 pt-32 pb-20">
-          <div className="max-w-3xl">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold text-sm font-medium px-4 py-2 mb-8">
-              <Zap size={14} fill="currentColor" />
-              Serving Alberta Since 1988
-            </div>
-
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
-              Electrical &{' '}
-              <span className="text-gold">Automation</span>{' '}
-              Solutions
-            </h1>
-
-            <p className="text-lg md:text-xl text-gray-400 leading-relaxed mb-10 max-w-xl">
-              A privately owned electrical, automation and controls company delivering
-              professional, personal, precise, and reliable service across Alberta.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <Link to="/services" className="btn-primary text-base px-8 py-4">
-                Our Services <ArrowRight size={18} />
-              </Link>
-              <Link to="/contact" className="btn-outline text-base px-8 py-4">
-                Get a Quote
-              </Link>
-            </div>
-
-            {/* Trust badges */}
-            <div className="mt-14 flex flex-wrap gap-6 items-center">
-              {['COR Certified', 'ISNetworld', 'Complyworks', 'Avetta'].map((badge) => (
-                <div key={badge} className="flex items-center gap-2 text-gray-500 text-sm">
-                  <CheckCircle size={14} className="text-gold" />
-                  {badge}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-
-      </section>
+      {/* Hero Carousel */}
+      <HeroCarousel />
 
       {/* Stats bar */}
       <section className="bg-gold">
@@ -225,7 +168,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="relative z-10 text-center p-12">
-                  <Zap size={64} className="text-gold mx-auto mb-6" fill="currentColor" />
+                  <img src="/select-electrical/images/Select-Logo.jpg" alt="Select Electrical logo" className="h-20 w-auto object-contain mx-auto mb-6" />
                   <div className="text-white text-5xl font-black mb-2">1988</div>
                   <div className="text-gold text-sm tracking-widest uppercase font-medium">
                     Founded in Alberta

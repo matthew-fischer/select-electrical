@@ -20,6 +20,7 @@ import SE200Industrial from './pages/SE200Industrial'
 import SE200AutomatedPump from './pages/SE200AutomatedPump'
 import SE200PumpProcess from './pages/SE200PumpProcess'
 import SE200ControlSolutions from './pages/SE200ControlSolutions'
+import VFDPackages from './pages/VFDPackages'
 import LowVoltageVFD from './pages/LowVoltageVFD'
 import CFW11 from './pages/CFW11'
 import CFW100 from './pages/CFW100'
@@ -66,6 +67,7 @@ export default function App() {
             <Route path="/power-factor-correction" element={<PowerFactorCorrection />} />
             <Route path="/se1000-pds-motor-control-center" element={<SE1000MCC />} />
             <Route path="/se3000-switchboards" element={<SE3000Switchboards />} />
+            <Route path="/vfd-packages" element={<VFDPackages />} />
             <Route path="/se200-oil-well-drive" element={<SE200OilWell />} />
             <Route path="/se200-esp-drive" element={<SE200ESP />} />
             <Route path="/se200-pcp-pump-drive" element={<SE200PCP />} />
