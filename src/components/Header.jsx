@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { Menu, X, Zap, Phone, ChevronDown, ArrowRight } from 'lucide-react'
+import { Menu, X, Phone, ChevronDown, ArrowRight } from 'lucide-react'
 
 const navLinks = [
   { label: 'Home', to: '/' },
@@ -24,7 +24,8 @@ const productGroups = [
     ],
   },
   {
-    heading: 'SE200 Series',
+    heading: 'VFD Packages',
+    hub: '/vfd-packages',
     items: [
       { label: 'Oil Well Drive', to: '/se200-oil-well-drive' },
       { label: 'ESP Drive', to: '/se200-esp-drive' },
@@ -144,13 +145,15 @@ export default function Header() {
       </div>
 
       {/* Main nav */}
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 relative" ref={dropdownRef}>
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="bg-gold p-2 flex items-center justify-center">
-              <Zap size={20} className="text-dark" fill="currentColor" />
-            </div>
+            <img
+              src="/select-electrical/images/Select-Logo.jpg"
+              alt="Select Electrical logo"
+              className="h-10 w-auto object-contain"
+            />
             <div>
               <div className="text-white font-bold text-base leading-tight tracking-wide">
                 SELECT ELECTRICAL
@@ -181,8 +184,8 @@ export default function Header() {
               )
             })}
 
-            {/* Products dropdown */}
-            <div className="relative" ref={dropdownRef}>
+            {/* Products dropdown trigger */}
+            <div>
               <button
                 onClick={() => setProductsOpen((o) => !o)}
                 className={`relative flex items-center gap-1 px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
@@ -198,45 +201,6 @@ export default function Header() {
                   <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gold" />
                 )}
               </button>
-
-              {productsOpen && (
-                <div className="absolute top-full right-0 mt-1 bg-dark border border-white/10 shadow-2xl w-[1220px] grid grid-cols-6 gap-0 z-50">
-                  {productGroups.map((group) => (
-                    <div key={group.heading} className="p-5 border-r border-white/5 last:border-r-0">
-                      <div className="mb-3 pb-2 border-b border-white/10">
-                        {group.hub ? (
-                          <Link
-                            to={group.hub}
-                            className="text-gold text-xs font-semibold uppercase tracking-widest hover:opacity-75 transition-opacity flex items-center gap-1"
-                          >
-                            {group.heading} <ArrowRight size={10} />
-                          </Link>
-                        ) : (
-                          <span className="text-gold text-xs font-semibold uppercase tracking-widest">
-                            {group.heading}
-                          </span>
-                        )}
-                      </div>
-                      <ul className="space-y-0.5">
-                        {group.items.map((item) => (
-                          <li key={item.to}>
-                            <Link
-                              to={item.to}
-                              className={`block px-2 py-1.5 text-sm rounded transition-colors ${
-                                location.pathname === item.to
-                                  ? 'text-gold'
-                                  : 'text-gray-400 hover:text-white hover:bg-white/5'
-                              }`}
-                            >
-                              {item.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
 
             <Link
@@ -248,6 +212,7 @@ export default function Header() {
           </nav>
 
           {/* Mobile hamburger */}
+
           <button
             className="md:hidden text-white p-2"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -256,6 +221,46 @@ export default function Header() {
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
+
+        {/* Desktop products dropdown — spans full container width */}
+        {productsOpen && (
+          <div className="hidden md:grid absolute top-full left-0 right-0 bg-dark border border-white/10 border-t-0 shadow-2xl grid-cols-6 gap-0 z-50 max-h-[calc(100vh-5rem)] overflow-y-auto">
+            {productGroups.map((group) => (
+              <div key={group.heading} className="p-5 border-r border-white/5 last:border-r-0">
+                <div className="mb-3 pb-2 border-b border-white/10">
+                  {group.hub ? (
+                    <Link
+                      to={group.hub}
+                      className="text-gold text-xs font-semibold uppercase tracking-widest hover:opacity-75 transition-opacity flex items-center gap-1"
+                    >
+                      {group.heading} <ArrowRight size={10} />
+                    </Link>
+                  ) : (
+                    <span className="text-gold text-xs font-semibold uppercase tracking-widest">
+                      {group.heading}
+                    </span>
+                  )}
+                </div>
+                <ul className="space-y-0.5">
+                  {group.items.map((item) => (
+                    <li key={item.to}>
+                      <Link
+                        to={item.to}
+                        className={`block px-2 py-1.5 text-sm rounded transition-colors ${
+                          location.pathname === item.to
+                            ? 'text-gold'
+                            : 'text-gray-400 hover:text-white hover:bg-white/5'
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Mobile hamburger only — menu rendered outside header */}

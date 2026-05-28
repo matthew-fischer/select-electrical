@@ -1,29 +1,34 @@
 import { Link } from 'react-router-dom'
-import { Zap, Phone, Mail, MapPin, Linkedin, ArrowRight } from 'lucide-react'
+import { Phone, Mail, MapPin, Linkedin, ArrowRight } from 'lucide-react'
 
 const serviceLinks = [
-  { label: 'Variable Frequency Drives', to: '/services' },
+  { label: 'VFD Packages', to: '/vfd-packages' },
   { label: 'Motor Control Centers', to: '/se1000-pds-motor-control-center' },
   { label: 'Switchboards', to: '/se3000-switchboards' },
-  { label: 'Electric Motors', to: '/services' },
-  { label: 'Soft Starters', to: '/services' },
+  { label: 'Electric Motors', to: '/motor-datasheets' },
+  { label: 'Soft Starters', to: '/soft-starter-datasheets' },
   { label: 'Power Factor Correction', to: '/power-factor-correction' },
-  { label: 'Installation & Commissioning', to: '/services' },
-  { label: 'Infrared Surveys', to: '/services' },
+  { label: 'Installation & Commissioning', to: '/vfd-startup-commissioning' },
+  { label: 'Infrared Surveys', to: '/infrared-surveys' },
 ]
 
 export default function Footer() {
   return (
-    <footer className="bg-dark text-white">
+    <footer className="bg-dark text-white relative overflow-hidden">
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
+        <img src="/select-electrical/images/Shop.jpg" alt="" className="w-full h-full object-cover object-center" aria-hidden="true" />
+      </div>
       {/* Main footer content */}
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand column */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-5">
-              <div className="bg-gold p-2">
-                <Zap size={20} className="text-dark" fill="currentColor" />
-              </div>
+              <img
+                src="/select-electrical/images/Select-Logo.jpg"
+                alt="Select Electrical logo"
+                className="h-10 w-auto object-contain"
+              />
               <div>
                 <div className="text-white font-bold text-sm leading-tight tracking-wide">
                   SELECT ELECTRICAL
