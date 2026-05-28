@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle, Phone, Shield, Download, FileText } from 'lucide-react'
 
 const mccImages = [
-  { src: '/select-electrical/images/hero/mcc.png', alt: 'SE1000 Motor Control Center', fit: 'object-contain' },
-  { src: '/select-electrical/images/hero/mcc-inside.png', alt: 'SE1000 MCC Interior', fit: 'object-cover' },
+  { src: '/select-electrical/images/hero/mcc.jpg', alt: 'SE1000 Motor Control Center', fit: 'object-contain' },
+  { src: '/select-electrical/images/hero/mcc-inside.jpg', alt: 'SE1000 MCC Interior', fit: 'object-cover' },
 ]
 
 const specs = [

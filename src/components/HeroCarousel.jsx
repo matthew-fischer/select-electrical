@@ -16,7 +16,7 @@ const productSlides = [
   {
     title: 'SE1000 Motor Control Centers',
     subtitle: 'Custom-built MCCs designed and manufactured to your exact specifications',
-    image: '/select-electrical/images/hero/mcc.png',
+    image: '/select-electrical/images/hero/mcc.jpg',
     to: '/se1000-pds-motor-control-center',
     cta: 'View SE1000 MCC',
     tag: 'Motor Control',
@@ -24,7 +24,7 @@ const productSlides = [
   {
     title: 'SE1000 Motor Control Centers',
     subtitle: 'Precision-engineered control gear built to industrial standards',
-    image: '/select-electrical/images/hero/mcc-inside.png',
+    image: '/select-electrical/images/hero/mcc-inside.jpg',
     to: '/se1000-pds-motor-control-center',
     cta: 'View SE1000 MCC',
     tag: 'Motor Control',
@@ -32,7 +32,7 @@ const productSlides = [
   {
     title: 'SE3000 Switchboards',
     subtitle: 'Electrical switchboard design, supply, and installation for industrial facilities',
-    image: '/select-electrical/images/hero/switchboard.png',
+    image: '/select-electrical/images/hero/switchboard.jpg',
     to: '/se3000-switchboards',
     cta: 'View SE3000 Switchboards',
     tag: 'Switchboards',
@@ -40,7 +40,7 @@ const productSlides = [
   {
     title: 'SE3000 Switchboards',
     subtitle: 'Built to CSA standards for demanding commercial and industrial environments',
-    image: '/select-electrical/images/hero/switchgear.png',
+    image: '/select-electrical/images/hero/switchgear.jpg',
     to: '/se3000-switchboards',
     cta: 'View SE3000 Switchboards',
     tag: 'Switchboards',

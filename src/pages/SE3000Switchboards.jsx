@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle, Phone, Shield, Zap, Download, FileText } from 'lucide-react'
 
 const switchImages = [
-  { src: '/select-electrical/images/hero/switchgear.png', alt: 'SE3000 Switchgear', fit: 'object-contain' },
-  { src: '/select-electrical/images/hero/switchboard.png', alt: 'SE3000 Switchboard', fit: 'object-cover' },
+  { src: '/select-electrical/images/hero/switchgear.jpg', alt: 'SE3000 Switchgear', fit: 'object-contain' },
+  { src: '/select-electrical/images/hero/switchboard.jpg', alt: 'SE3000 Switchboard', fit: 'object-cover' },
 ]
 
 const specs = [
