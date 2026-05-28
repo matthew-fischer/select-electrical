@@ -56,6 +56,12 @@ const packages = [
     desc: 'Custom control integration with PLCs, DCS systems, and standalone PID control.',
     tag: 'Control',
   },
+  {
+    model: 'SE500 Motor Starter',
+    to: '/se500-motor-starter',
+    desc: 'NEMA 4 rated motor starter in 230V, 480V, and 600V configurations, up to 600 HP.',
+    tag: 'Motor Starter',
+  },
 ]
 
 const features = [

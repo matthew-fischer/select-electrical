@@ -36,6 +36,7 @@ const productGroups = [
       { label: 'Automated Pump Drive', to: '/se200-automated-pump-drive' },
       { label: 'Pump Process Drive', to: '/se200-pump-process-drive' },
       { label: 'Control Solutions', to: '/se200-control-solutions' },
+      { label: 'SE500 Motor Starter', to: '/se500-motor-starter' },
     ],
   },
   {

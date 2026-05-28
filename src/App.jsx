@@ -48,6 +48,7 @@ import VfdStartupCommissioning from './pages/VfdStartupCommissioning'
 import VfdPreventativeMaintenance from './pages/VfdPreventativeMaintenance'
 import PowerQualityAssessments from './pages/PowerQualityAssessments'
 import EnergySavingAudits from './pages/EnergySavingAudits'
+import SE500MotorStarter from './pages/SE500MotorStarter'
 import Support from './pages/Support'
 
 export default function App() {
@@ -104,6 +105,7 @@ export default function App() {
             <Route path="/vfd-preventative-maintenance" element={<VfdPreventativeMaintenance />} />
             <Route path="/power-quality-assessments" element={<PowerQualityAssessments />} />
             <Route path="/energy-saving-audits" element={<EnergySavingAudits />} />
+            <Route path="/se500-motor-starter" element={<SE500MotorStarter />} />
             <Route path="/support" element={<Support />} />
           </Routes>
         </main>
