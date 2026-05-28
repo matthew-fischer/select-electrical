@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle, Phone, Settings, Download } from 'lucide-react'
+import { ArrowRight, CheckCircle, Phone, Settings } from 'lucide-react'
 
 const applications = [
   { label: 'Oil Well Drive', to: '/se200-oil-well-drive' },
@@ -40,24 +40,37 @@ export default function SE200ControlSolutions() {
             <rect width="100%" height="100%" fill="url(#grid)" />
           </svg>
         </div>
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-gold/25 to-transparent hidden lg:block" />
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="flex items-center gap-2 text-gray-500 text-sm mb-6 flex-wrap">
-            <Link to="/" className="hover:text-gold transition-colors">Home</Link>
-            <span>/</span>
-            <Link to="/services" className="hover:text-gold transition-colors">Services</Link>
-            <span>/</span>
-            <span className="text-gray-300">SE200 Control Solutions</span>
+        <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-gold/20 to-transparent hidden lg:block z-0" />
+        <div className="relative max-w-7xl mx-auto px-6 z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="flex items-center gap-2 text-gray-500 text-sm mb-6 flex-wrap">
+                <Link to="/" className="hover:text-gold transition-colors">Home</Link>
+                <span>/</span>
+                <Link to="/services" className="hover:text-gold transition-colors">Services</Link>
+                <span>/</span>
+                <span className="text-gray-300">SE200 Control Solutions</span>
+              </div>
+              <div className="inline-block bg-gold/10 border border-gold/30 text-gold text-xs font-semibold tracking-widest uppercase px-3 py-1 mb-5">
+                SE200 Series
+              </div>
+              <div className="w-16 h-1 bg-gold mb-6" />
+              <h1 className="text-4xl md:text-5xl font-black text-white mb-3">SE200 Control Solutions</h1>
+              <p className="text-gold font-medium text-lg mb-5">Custom Engineered Packages</p>
+              <p className="text-gray-400 text-lg">
+                In addition to our standard products, SEEL designs and manufactures customized soft starter and control packages tailored to your specific application — integrating VFDs, PLCs, HMIs, and protection components into a single certified solution.
+              </p>
+            </div>
+            <div className="hidden lg:block">
+              <div className="relative aspect-[3/4] overflow-hidden border border-gold/20 shadow-2xl bg-[#0d0d0d]">
+                <img
+                  src="/select-electrical/images/se200/control_solution_1.png"
+                  alt="SE200 Control Solutions"
+                  className="w-full h-full object-contain opacity-90"
+                />
+              </div>
+            </div>
           </div>
-          <div className="inline-block bg-gold/10 border border-gold/30 text-gold text-xs font-semibold tracking-widest uppercase px-3 py-1 mb-5">
-            SE200 Series
-          </div>
-          <div className="w-16 h-1 bg-gold mb-6" />
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-3">SE200 Control Solutions</h1>
-          <p className="text-gold font-medium text-lg mb-5">Custom Engineered Packages</p>
-          <p className="text-gray-400 text-lg max-w-2xl">
-            In addition to our standard products, SEEL designs and manufactures customized soft starter and control packages tailored to your specific application — integrating VFDs, PLCs, HMIs, and protection components into a single certified solution.
-          </p>
         </div>
       </section>
 
@@ -123,21 +136,7 @@ export default function SE200ControlSolutions() {
                 </a>
               </div>
 
-              {/* Brochure download */}
-              <a
-                href="/select-electrical/datasheets/Brochures/SE500-Motor-Starter.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between gap-3 border border-gray-100 p-5 hover:border-gold/40 transition-colors group"
-              >
-                <div>
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1">SE500 Motor Starter</p>
-                  <p className="text-dark font-semibold text-sm group-hover:text-gold transition-colors">Download Brochure</p>
-                </div>
-                <Download size={20} className="text-gold shrink-0" />
-              </a>
-
-              <div className="border border-gray-100 p-6">
+<div className="border border-gray-100 p-6">
                 <h3 className="font-bold text-dark text-base mb-4">SE200 Product Applications</h3>
                 <ul className="space-y-1">
                   {applications.map((app) => (
