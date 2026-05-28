@@ -16,7 +16,7 @@ const mvVFDs = [
   { label: 'MVW3000', to: '/mvw3000' },
 ]
 
-export default function VFDProductPage({ title, category, categoryTo, tagline, description, specs, features, additionalSections }) {
+export default function VFDProductPage({ title, category, categoryTo, tagline, description, specs, features, additionalSections, image }) {
   const isLV = category === 'Low Voltage VFDs'
   const relatedList = isLV ? lvVFDs : mvVFDs
 
@@ -34,22 +34,37 @@ export default function VFDProductPage({ title, category, categoryTo, tagline, d
             <rect width="100%" height="100%" fill="url(#grid)" />
           </svg>
         </div>
-        <div className="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-gold/25 to-transparent hidden lg:block" />
-        <div className="relative max-w-7xl mx-auto px-6">
-          <div className="flex items-center gap-2 text-gray-500 text-sm mb-6 flex-wrap">
-            <Link to="/" className="hover:text-gold transition-colors">Home</Link>
-            <span>/</span>
-            <Link to={categoryTo} className="hover:text-gold transition-colors">{category}</Link>
-            <span>/</span>
-            <span className="text-gray-300">{title}</span>
+        <div className="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-gold/20 to-transparent hidden lg:block z-0" />
+        <div className="relative max-w-7xl mx-auto px-6 z-10">
+          <div className={image ? "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center" : ""}>
+            <div>
+              <div className="flex items-center gap-2 text-gray-500 text-sm mb-6 flex-wrap">
+                <Link to="/" className="hover:text-gold transition-colors">Home</Link>
+                <span>/</span>
+                <Link to={categoryTo} className="hover:text-gold transition-colors">{category}</Link>
+                <span>/</span>
+                <span className="text-gray-300">{title}</span>
+              </div>
+              <div className="inline-block bg-gold/10 border border-gold/30 text-gold text-xs font-semibold tracking-widest uppercase px-3 py-1 mb-5">
+                WEG — {category}
+              </div>
+              <div className="w-16 h-1 bg-gold mb-6" />
+              <h1 className="text-4xl md:text-5xl font-black text-white mb-3">{title}</h1>
+              {tagline && <p className="text-gold font-medium text-lg mb-5">{tagline}</p>}
+              <p className="text-gray-400 text-lg">{description}</p>
+            </div>
+            {image && (
+              <div className="hidden lg:block">
+                <div className="relative aspect-[3/4] overflow-hidden border border-gold/20 shadow-2xl bg-[#0d0d0d]">
+                  <img
+                    src={image}
+                    alt={title}
+                    className="w-full h-full object-contain opacity-90"
+                  />
+                </div>
+              </div>
+            )}
           </div>
-          <div className="inline-block bg-gold/10 border border-gold/30 text-gold text-xs font-semibold tracking-widest uppercase px-3 py-1 mb-5">
-            WEG — {category}
-          </div>
-          <div className="w-16 h-1 bg-gold mb-6" />
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-3">{title}</h1>
-          {tagline && <p className="text-gold font-medium text-lg mb-5">{tagline}</p>}
-          <p className="text-gray-400 text-lg max-w-2xl">{description}</p>
         </div>
       </section>
 

@@ -6,6 +6,7 @@ export default function CFW11() {
       title="CFW11"
       category="Low Voltage VFDs"
       categoryTo="/low-voltage-vfd"
+      image="/select-electrical/images/low-voltage/cfw11.png"
       tagline="Versatile VFD for Almost Any Application"
       description="The CFW11 presents many innovations adding significant benefits to customers. A versatile drive that can be used in almost any application, featuring multiple control modes, built-in DC link inductors, and communication protocols for seamless system integration."
       specs={[

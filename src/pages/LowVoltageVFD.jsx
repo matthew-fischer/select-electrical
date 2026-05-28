@@ -23,6 +23,11 @@ const products = [
     desc: 'Fast commissioning and infinite possibilities for machines. Covers 0.25–10 HP with ambient operation up to 50°C without derating.',
   },
   {
+    model: 'CFW501',
+    to: '/cfw501',
+    desc: 'HVAC-R drive with BACnet/Metasys/Modbus communications, SoftPLC technology, and dual PID loops. Covers 0.25–10 HP.',
+  },
+  {
     model: 'CFW700',
     to: '/cfw700',
     desc: 'High-performance general-purpose drive featuring Vectrue Technology® and Optimal Flux®. Covers 1.5–150 HP.',
@@ -31,11 +36,6 @@ const products = [
     model: 'CFW701',
     to: '/cfw701',
     desc: 'Dedicated HVAC-R drive covering 1.5–175 HP with built-in HVAC-specific features and Vectrue Technology®.',
-  },
-  {
-    model: 'CFW501',
-    to: '/cfw501',
-    desc: 'HVAC-R drive with BACnet/Metasys/Modbus communications, SoftPLC technology, and dual PID loops. Covers 0.25–10 HP.',
   },
 ]
 

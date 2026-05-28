@@ -82,9 +82,9 @@ export default function App() {
             <Route path="/cfw100" element={<CFW100 />} />
             <Route path="/cfw300" element={<CFW300 />} />
             <Route path="/cfw500" element={<CFW500 />} />
+            <Route path="/cfw501" element={<CFW501 />} />
             <Route path="/cfw700" element={<CFW700 />} />
             <Route path="/cfw701" element={<CFW701 />} />
-            <Route path="/cfw501" element={<CFW501 />} />
             <Route path="/medium-voltage-vfd" element={<MediumVoltageVFD />} />
             <Route path="/mvw01" element={<MVW01 />} />
             <Route path="/mvw3000" element={<MVW3000 />} />

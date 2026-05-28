@@ -6,6 +6,7 @@ export default function MVW01() {
       title="MVW01"
       category="Medium Voltage VFDs"
       categoryTo="/medium-voltage-vfd"
+      image="/select-electrical/images/medium-voltage/mvw01.png"
       tagline="High-Efficiency Medium Voltage Drive"
       description="The MVW01 suits a variety of industrial variable speed applications including compressors, pumps, fans, conveyors, and mills. Featuring Voltage Source Inverter (VSI) NPC topology with the latest generation 6.5 kV IGBTs — the highest efficiency design on the market."
       specs={[
