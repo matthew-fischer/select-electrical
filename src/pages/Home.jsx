@@ -92,13 +92,23 @@ export default function Home() {
             {services.map((service, i) => (
               <div
                 key={service.title}
-                className="bg-white p-8 border border-gray-100 hover:border-gold hover:shadow-xl transition-all duration-300 group"
+                className="relative bg-dark-700 p-8 overflow-hidden group hover:bg-dark-600 transition-colors duration-300 border-l-[3px] border-transparent hover:border-gold"
               >
-                <div className="text-gold mb-5 group-hover:scale-110 transition-transform duration-300 inline-block">
-                  {service.icon}
+                {/* Faded background numeral */}
+                <div className="absolute -bottom-3 -right-1 text-[8rem] font-black leading-none select-none pointer-events-none text-white/[0.04] group-hover:text-gold/[0.07] transition-colors duration-300">
+                  {String(i + 1).padStart(2, '0')}
                 </div>
-                <h3 className="text-lg font-bold text-dark mb-3">{service.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{service.desc}</p>
+
+                <div className="relative z-10">
+                  <div className="text-gold mb-6 group-hover:scale-110 transition-transform duration-300 inline-block">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-white font-bold text-lg mb-3">{service.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{service.desc}</p>
+                </div>
+
+                {/* Sliding gold underline on hover */}
+                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-gold group-hover:w-full transition-all duration-500" />
               </div>
             ))}
           </div>
@@ -155,7 +165,7 @@ export default function Home() {
 
             {/* Visual block */}
             <div className="relative">
-              <div className="bg-dark aspect-square max-w-md mx-auto flex items-center justify-center relative overflow-hidden">
+              <div className="bg-dark aspect-square max-w-md mx-auto relative overflow-hidden">
                 {/* Background pattern */}
                 <div className="absolute inset-0 opacity-10">
                   <svg width="100%" height="100%">
@@ -167,14 +177,24 @@ export default function Home() {
                     <rect width="100%" height="100%" fill="url(#dots)" />
                   </svg>
                 </div>
-                <div className="relative z-10 text-center p-12">
-                  <img src="/select-electrical/images/Select-Logo.jpg" alt="Select Electrical logo" className="h-20 w-auto object-contain mx-auto mb-6" />
-                  <div className="text-white text-5xl font-black mb-2">1988</div>
-                  <div className="text-gold text-sm tracking-widest uppercase font-medium">
-                    Founded in Alberta
-                  </div>
-                  <div className="mt-6 text-gray-400 text-sm">
-                    Over 35 years of electrical<br />excellence in Western Canada
+                <div className="relative z-10 flex items-center justify-center h-full p-8">
+                  <div className="relative w-full max-w-[300px] aspect-square flex items-center justify-center">
+                    {/* Outer dashed ring */}
+                    <div className="absolute inset-0 rounded-full border border-dashed border-gold/30" />
+                    {/* Inner solid ring */}
+                    <div className="absolute inset-4 rounded-full border border-gold/20" />
+                    {/* Compass dots */}
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-gold/50" />
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 rounded-full bg-gold/50" />
+                    <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-gold/50" />
+                    <div className="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-gold/50" />
+                    {/* Center content */}
+                    <div className="text-center">
+                      <div className="text-gold text-[10px] tracking-[0.3em] uppercase font-semibold mb-3">Select Electrical</div>
+                      <div className="text-white text-6xl font-black leading-none tracking-tight">1988</div>
+                      <div className="w-8 h-px bg-gold/50 mx-auto my-3" />
+                      <div className="text-gray-400 text-[10px] tracking-[0.2em] uppercase">Stony Plain · AB</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -209,24 +229,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WEG distributor banner */}
-      <section className="py-16 bg-gray-50 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div>
-              <div className="gold-bar" />
-              <h3 className="text-2xl font-bold text-dark">Authorized WEG Distributor & Service Provider</h3>
-              <p className="text-gray-500 mt-2 max-w-lg">
-                We're a proud sales distributor and service provider for WEG Controls and Motors —
-                supplying a full range of VFDs, soft starters, motors, and controls.
-              </p>
-            </div>
-            <Link to="/contact" className="btn-primary whitespace-nowrap text-base px-8 py-4 flex-shrink-0">
-              Enquire Now <ArrowRight size={16} />
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* CTA */}
       <section
