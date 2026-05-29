@@ -18,9 +18,9 @@ const safetyTraining = [
 
 const timeline = [
   { year: '1988', event: 'Select Electrical Enterprises Ltd. founded and incorporated in Stony Plain, Alberta.' },
-  { year: '2000s', event: 'Expanded services to include custom VFD packages and motor control centers for industrial clients.' },
-  { year: '2010s', event: 'Became an authorized WEG Controls and Motors distributor and service provider.' },
-  { year: 'Today', event: 'Serving industrial, oil & gas, mining, agricultural, and renewable energy clients across Alberta.' },
+  { year: '2000s', event: 'Provided field services for industrial clients across Western Canada.' },
+  { year: '2010s', event: 'Expanded services to include custom VFD packages for industrial clients.' },
+  { year: 'Today', event: 'Currently producing VFD packages, and motor control centers for industrial clients.' },
 ]
 
 export default function Company() {
@@ -81,14 +81,20 @@ export default function Company() {
                 professional field installation and commissioning services — providing a single
                 accountable partner for your electrical and automation needs.
               </p>
-
-              <div className="flex items-start gap-3 bg-gold/10 border-l-4 border-gold p-5">
-                <Zap size={20} className="text-gold flex-shrink-0 mt-0.5" fill="currentColor" />
-                <p className="text-dark font-medium text-sm leading-relaxed">
-                  "Professional, Personal, Precise, and Reliable" — the four values that have guided
-                  Select Electrical since 1988.
-                </p>
-              </div>
+              <p className="text-gray-500 leading-relaxed mb-8">
+                Select Electrical Enterprises Ltd is also a proud sales distributor and service provide
+                for WEG Controls and Motors, offering a comprehensive range of high-quality products to meet
+                the diverse needs of our clients across Alberta's industrial sectors.
+              </p>
+              <p className="text-gray-500 leading-relaxed mb-8">
+                We are committed to delivering service that is professional, personal, precise, and reliable.
+                Our team provides high-quality support both during and after project completion, always
+                striving to exceed client expectations and build long-term partnerships.
+              </p>
+              <p className="text-gray-500 leading-relaxed mb-8">
+                We have extensive experience and an excellent reputation with our customer base of industrial,
+                oil & gas, mining, agricultural, forestry, pulp & paper, data center, and renewable energy clients.
+              </p>
             </div>
 
             {/* Stats */}
