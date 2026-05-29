@@ -10,7 +10,7 @@ const services = [
   {
     icon: <Zap size={28} />,
     title: 'Variable Frequency Drives',
-    desc: 'Custom VFD packages and standard solutions including WEG CFW and MVW series for precise motor speed control.',
+    desc: 'Custom VFD packages and standard solutions including WEG CFW series for precise motor speed control.',
   },
   {
     icon: <Settings size={28} />,
