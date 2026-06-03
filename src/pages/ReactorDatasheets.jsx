@@ -15,7 +15,8 @@ function uniq(arr) {
   return [...new Set(arr)].sort((a, b) => a - b)
 }
 
-const allHP      = uniq(reactors.map(r => r.hp))
+// Derive unique HP values from lineHp (they mirror loadHp, so either works)
+const allHP      = uniq(reactors.map(r => r.lineHp))
 const allVoltage = [ALL, '480V', '575V', '230V']
 const allBrand   = [ALL, 'TCI', 'MTE']
 
@@ -66,10 +67,10 @@ export default function ReactorDatasheets() {
       .filter(r =>
         (brand   === ALL || r.brand   === brand) &&
         (voltage === ALL || r.voltage === voltage) &&
-        (hp      === ALL || r.hp      === hp)
+        (hp      === ALL || r.lineHp  === hp)
       )
       .sort((a, b) =>
-        a.hp - b.hp ||
+        a.lineHp - b.lineHp ||
         a.brand.localeCompare(b.brand) ||
         a.voltage.localeCompare(b.voltage)
       )
@@ -188,7 +189,8 @@ export default function ReactorDatasheets() {
                 <tr className="bg-[#0d0d0d] border-b border-white/8">
                   <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Brand</th>
                   <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Voltage</th>
-                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">HP</th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Line HP</th>
+                  <th className="text-left px-4 py-3 text-xs font-semibold text-gray-500 uppercase tracking-widest">Load HP</th>
                   <th className="px-4 py-3"></th>
                 </tr>
               </thead>
@@ -206,7 +208,8 @@ export default function ReactorDatasheets() {
                       </span>
                     </td>
                     <td className="px-4 py-3 text-gray-300">{r.voltage}</td>
-                    <td className="px-4 py-3 text-white font-semibold">{r.hp} HP</td>
+                    <td className="px-4 py-3 text-white font-semibold">{r.lineHp} HP</td>
+                    <td className="px-4 py-3 text-white font-semibold">{r.loadHp} HP</td>
                     <td className="px-4 py-3 text-right">
                       <a
                         href={pdfPath(r.brand, r.voltage, r.file)}
