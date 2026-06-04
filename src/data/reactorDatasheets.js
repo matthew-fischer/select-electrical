@@ -1,4 +1,4 @@
-const reactors = [
+const baseReactors = [
   // TCI 480V
   { brand:'TCI', voltage:'480V', lineHp:1,    loadHp:1,    file:'KDR-MA5L1-1hp' },
   { brand:'TCI', voltage:'480V', lineHp:1.5,  loadHp:1.5,  file:'KDR-MA6L1-1.5hp' },
@@ -161,12 +161,107 @@ const reactors = [
   { brand:'MTE', voltage:'575V', lineHp:400,  loadHp:400,  file:'RL-40002B14-1' },
 ]
 
+const rlwReactors = [
+  { brand:'RLW', voltage:'240V', lineHp:0.25, loadHp:0.25, file:'RLW-01P601.webp' },
+  { brand:'RLW', voltage:'240V', lineHp:0.33, loadHp:0.25, file:'RLW-02P101.webp' },
+  { brand:'RLW', voltage:'240V', lineHp:0.5, loadHp:0.33, file:'RLW-03P401.jpg' },
+  { brand:'RLW', voltage:'240V', lineHp:0.75, loadHp:0.33, file:'RLW-03P401.jpg' },
+  { brand:'RLW', voltage:'240V', lineHp:1, loadHp:0.75, file:'RLW-04P801.webp' },
+  { brand:'RLW', voltage:'240V', lineHp:1.5, loadHp:1, file:'RLW-07P601.jpg' },
+  { brand:'RLW', voltage:'240V', lineHp:2, loadHp:1, file:'RLW-07P601.jpg' },
+  { brand:'RLW', voltage:'240V', lineHp:3, loadHp:2, file:'RLW-001101.webp' },
+  { brand:'RLW', voltage:'240V', lineHp:5, loadHp:3, file:'RLW-002101.webp' },
+  { brand:'RLW', voltage:'240V', lineHp:7.5, loadHp:5, file:'RLW-002801.webp' },
+  { brand:'RLW', voltage:'240V', lineHp:10, loadHp:5, file:'RLW-002801.webp' },
+  { brand:'RLW', voltage:'240V', lineHp:15, loadHp:10, file:'RLW-004601.webp' },
+  { brand:'RLW', voltage:'240V', lineHp:20, loadHp:15, file:'RLW-005501.jpg' },
+  { brand:'RLW', voltage:'240V', lineHp:25, loadHp:20, file:'RLW-008301.webp' },
+  { brand:'RLW', voltage:'240V', lineHp:30, loadHp:25, file:'RLW-008301.webp' },
+  { brand:'RLW', voltage:'240V', lineHp:40, loadHp:30, file:'RLW-010401.webp' },
+  { brand:'RLW', voltage:'240V', lineHp:50, loadHp:40, file:'RLW-013001.jpg' },
+  { brand:'RLW', voltage:'240V', lineHp:60, loadHp:50, file:'RLW-016001.jpg' },
+  { brand:'RLW', voltage:'240V', lineHp:75, loadHp:60, file:'RLW-020001.webp' },
+  { brand:'RLW', voltage:'240V', lineHp:100, loadHp:75, file:'RLW-025001.webp' },
+  { brand:'RLW', voltage:'240V', lineHp:125, loadHp:100, file:'RLW-032201.jpg' },
+  { brand:'RLW', voltage:'240V', lineHp:150, loadHp:125, file:'RLW-041401.webp' },
+  { brand:'RLW', voltage:'240V', lineHp:200, loadHp:150, file:'RLW-051501.jpg' },
+  { brand:'RLW', voltage:'240V', lineHp:250, loadHp:200, file:'RLW-060001.webp' },
+  { brand:'RLW', voltage:'240V', lineHp:300, loadHp:250, file:'RLW-075001.jpg' },
+  { brand:'RLW', voltage:'480V', lineHp:0.25, loadHp:0.25, file:'RLW-0P7503.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:0.33, loadHp:0.25, file:'RLW-01P105.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:0.5, loadHp:0.33, file:'RLW-01P103.jpg' },
+  { brand:'RLW', voltage:'480V', lineHp:0.75, loadHp:0.5, file:'RLW-01P603.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:1, loadHp:0.75, file:'RLW-02P103.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:1.5, loadHp:1, file:'RLW-03P403.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:2, loadHp:1, file:'RLW-03P403.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:3, loadHp:2, file:'RLW-04P803.jpg' },
+  { brand:'RLW', voltage:'480V', lineHp:5, loadHp:3, file:'RLW-07P603.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:7.5, loadHp:5, file:'RLW-001103.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:10, loadHp:7.5, file:'RLW-001403.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:15, loadHp:10, file:'RLW-002103.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:20, loadHp:15, file:'RLW-002803.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:25, loadHp:20, file:'RLW-003503.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:30, loadHp:25, file:'RLW-004603.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:40, loadHp:30, file:'RLW-005503.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:50, loadHp:40, file:'RLW-006503.gif' },
+  { brand:'RLW', voltage:'480V', lineHp:60, loadHp:50, file:'RLW-008303.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:75, loadHp:60, file:'RLW-010403.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:100, loadHp:75, file:'RLW-013003.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:125, loadHp:100, file:'RLW-016003.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:150, loadHp:125, file:'RLW-020003.gif' },
+  { brand:'RLW', voltage:'480V', lineHp:200, loadHp:150, file:'RLW-025003.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:250, loadHp:200, file:'RLW-032203.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:300, loadHp:250, file:'RLW-041403.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:350, loadHp:300, file:'RLW-051503.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:400, loadHp:350, file:'RLW-060003.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:500, loadHp:400, file:'RLW-075003.webp' },
+  { brand:'RLW', voltage:'480V', lineHp:600, loadHp:500, file:'RLW-075003.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:0.25, loadHp:0.25, file:'RLW-00P505.jpg' },
+  { brand:'RLW', voltage:'600V', lineHp:0.33, loadHp:0.25, file:'RLW-0P7505.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:0.5, loadHp:0.25, file:'RLW-01P105.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:0.75, loadHp:0.5, file:'RLW-01P605.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:1, loadHp:0.75, file:'RLW-02P105.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:1.5, loadHp:1, file:'RLW-03P405.jpg' },
+  { brand:'RLW', voltage:'600V', lineHp:2, loadHp:1, file:'RLW-03P405.jpg' },
+  { brand:'RLW', voltage:'600V', lineHp:3, loadHp:2, file:'RLW-04P805.jpg' },
+  { brand:'RLW', voltage:'600V', lineHp:5, loadHp:3, file:'RLW-07P605.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:7.5, loadHp:5, file:'RLW-001105.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:10, loadHp:7.5, file:'RLW-001103.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:15, loadHp:10, file:'RLW-002105.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:20, loadHp:15, file:'RLW-002805.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:25, loadHp:20, file:'RLW-002803.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:30, loadHp:25, file:'RLW-003503.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:40, loadHp:30, file:'RLW-004603.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:50, loadHp:40, file:'RLW-005503.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:60, loadHp:50, file:'RLW-006503.gif' },
+  { brand:'RLW', voltage:'600V', lineHp:75, loadHp:60, file:'RLW-008303.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:100, loadHp:75, file:'RLW-010403.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:125, loadHp:100, file:'RLW-013003.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:150, loadHp:125, file:'RLW-016003.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:200, loadHp:150, file:'RLW-020003.gif' },
+  { brand:'RLW', voltage:'600V', lineHp:250, loadHp:200, file:'RLW-025003.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:300, loadHp:250, file:'RLW-032203.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:350, loadHp:300, file:'RLW-041403.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:400, loadHp:350, file:'RLW-041403.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:500, loadHp:400, file:'RLW-051503.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:600, loadHp:500, file:'RLW-060003.webp' },
+  { brand:'RLW', voltage:'600V', lineHp:700, loadHp:600, file:'RLW-075003.webp' },
+]
+
+const reactors = [
+  ...baseReactors.map(r => ({ ...r, brand: 'MTE - RL' })),
+  ...rlwReactors.map(r => ({ ...r, brand: 'MTE - RLW' })),
+]
+
 export function pdfPath(brand, voltage, file) {
   const base = `${import.meta.env.BASE_URL}datasheets/3%25%20Impedance%20Reactor`
-  if (brand === 'MTE' && voltage === '230V') {
+  if (brand === 'MTE - RLW') {
+    return `${import.meta.env.BASE_URL}datasheets/RLW%20Reactors/${encodeURIComponent(file)}`
+  }
+  if ((brand === 'MTE - RL' || brand === 'MTE') && voltage === '230V') {
     return `${base}/230V-MTE/${encodeURIComponent(file)}.pdf`
   }
-  if (brand === 'MTE' && voltage === '575V') {
+  if ((brand === 'MTE - RL' || brand === 'MTE') && voltage === '575V') {
     return `${base}/575V-MTE/${encodeURIComponent(file)}.pdf`
   }
   return `${base}/${encodeURIComponent(file)}.pdf`

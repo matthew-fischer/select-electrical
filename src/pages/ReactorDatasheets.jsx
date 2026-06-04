@@ -17,12 +17,14 @@ function uniq(arr) {
 
 // Derive unique HP values from lineHp (they mirror loadHp, so either works)
 const allHP      = uniq(reactors.map(r => r.lineHp))
-const allVoltage = [ALL, '480V', '575V', '230V']
-const allBrand   = [ALL, 'TCI', 'MTE']
+const allVoltage = [ALL, '240V', '480V', '575V', '600V', '230V']
+const allBrand   = [ALL, 'TCI', 'MTE - RL', 'MTE - RLW']
 
 const brandInfo = {
   TCI: { badge: 'bg-blue-900/40 text-blue-300 border-blue-700/40' },
   MTE: { badge: 'bg-orange-900/40 text-orange-300 border-orange-700/40' },
+  'MTE - RL': { badge: 'bg-orange-900/40 text-orange-300 border-orange-700/40' },
+  'MTE - RLW': { badge: 'bg-emerald-900/40 text-emerald-300 border-emerald-700/40' },
 }
 
 function FilterBtn({ active, onClick, children }) {
@@ -218,7 +220,7 @@ export default function ReactorDatasheets() {
                         className="inline-flex items-center gap-1.5 bg-gold text-dark text-xs font-bold px-3 py-1.5 hover:bg-yellow-300 transition-colors"
                       >
                         <Download size={12} />
-                        PDF
+                        {r.brand === 'MTE - RLW' ? 'OPEN' : 'PDF'}
                       </a>
                     </td>
                   </tr>
