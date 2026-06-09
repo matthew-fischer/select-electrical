@@ -249,7 +249,7 @@ const rlwReactors = [
 ]
 
 const reactors = [
-  ...baseReactors.map(r => ({ ...r, brand: 'MTE - RL' })),
+  ...baseReactors.map(r => ({ ...r, brand: r.brand === 'MTE' ? 'MTE - RL' : r.brand })),
   ...rlwReactors.map(r => ({ ...r, brand: 'MTE - RLW' })),
 ]
 
