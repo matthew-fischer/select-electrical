@@ -45,12 +45,6 @@ const manuals = [
     file: 'SE200-ALC-Drive.pdf',
     tag: 'Artificial Lift',
   },
-  {
-    title: 'SE200 Automated Pump Drive',
-    description: 'Complete manual for the SE200 automated pump control drive.',
-    file: 'SE200-Automated-Pump-Drive.pdf',
-    tag: 'Automation',
-  },
 ]
 
 const tagColors = {
@@ -58,7 +52,6 @@ const tagColors = {
   'Oil & Gas':      'bg-amber-900/40 text-amber-300 border-amber-700/40',
   'Process':        'bg-green-900/40 text-green-300 border-green-700/40',
   'Artificial Lift':'bg-purple-900/40 text-purple-300 border-purple-700/40',
-  'Automation':     'bg-teal-900/40 text-teal-300 border-teal-700/40',
 }
 
 const steps = [
