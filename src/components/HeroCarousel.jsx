@@ -91,7 +91,7 @@ export default function HeroCarousel() {
           </svg>
         </div>
 
-        {/* Vertically centered content — adjusted mobile padding values */}
+        {/* Vertically centered content */}
         <div className="relative h-full max-w-7xl mx-auto px-8 sm:px-12 md:px-6 flex flex-col justify-center pt-32 pb-24">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold text-xs sm:text-sm font-medium px-4 py-2 mb-6 sm:mb-8">
@@ -135,16 +135,18 @@ export default function HeroCarousel() {
             active === i + 1 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
           }`}
         >
-          {/* Background image placement */}
-          <div className="absolute inset-0 py-24 sm:py-20 opacity-40 sm:opacity-100">
+          {/* Background image placement - Changed mobile opacity from 40% to 90% */}
+          <div className="absolute inset-0 py-24 sm:py-20 opacity-90 sm:opacity-100">
             <img
               src={s.image}
               alt={s.title}
               className="w-full h-full object-contain object-center"
             />
           </div>
-          {/* Enhanced backdrop overlay mask specifically for mobile screen contrast values */}
-          <div className="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/75 to-dark/90 sm:bg-dark/65" />
+
+          {/* Original Overlay Mask structure - Significantly reduced darkness/opacity values */}
+          <div className="absolute inset-0 bg-gradient-to-b from-dark/40 via-dark/20 to-dark/40 sm:bg-dark/25" />
+          
           {/* Gold accent line */}
           <div className="absolute right-0 top-0 bottom-0 w-1 bg-gold/60 hidden lg:block" />
 
