@@ -53,7 +53,8 @@ const stats = [
 
 export default function Home() {
   return (
-    <>
+    // The wrapping main div acts as the structural safety buffer behind the fixed navigation header
+    <div className="pt-16 md:pt-[116px]">
       {/* Hero Carousel */}
       <HeroCarousel />
 
@@ -229,7 +230,6 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* CTA */}
       <section
         className="py-24 relative overflow-hidden"
@@ -254,6 +254,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   )
 }
