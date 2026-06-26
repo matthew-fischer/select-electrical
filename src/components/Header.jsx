@@ -275,65 +275,63 @@ export default function Header() {
             
             {/* Primary Link Group Area */}
             <div className="flex flex-col gap-1">
-              {navLinks
-                .filter(link => link.label !== 'Contact') // Filter prevents duplicate contact route in stack
-                .map((link, index) => (
-                  <div key={link.to} className="flex flex-col">
-                    <Link
-                      to={link.to}
-                      className={`px-3 py-3 text-base font-medium border-b border-white/5 transition-colors ${
-                        location.pathname === link.to ? 'text-gold' : 'text-gray-300'
-                      }`}
-                    >
-                      {link.label}
-                    </Link>
+              {navLinks.map((link, index) => (
+                <div key={link.to} className="flex flex-col">
+                  <Link
+                    to={link.to}
+                    className={`px-3 py-3 text-base font-medium border-b border-white/5 transition-colors ${
+                      location.pathname === link.to ? 'text-gold' : 'text-gray-300'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
 
-                    {/* Integrated Mobile Accordion Trigger */}
-                    {index === 1 && (
-                      <div className="flex flex-col">
-                        <button
-                          onClick={() => setMobileProductsOpen((o) => !o)}
-                          className={`flex items-center justify-between px-3 py-3 text-base font-medium border-b border-white/5 transition-colors ${
-                            productsActive || mobileProductsOpen ? 'text-gold' : 'text-gray-300'
+                  {/* Integrated Mobile Accordion Trigger right after 'Company' (Index 1) */}
+                  {index === 1 && (
+                    <div className="flex flex-col">
+                      <button
+                        onClick={() => setMobileProductsOpen((o) => !o)}
+                        className={`flex items-center justify-between px-3 py-3 text-base font-medium border-b border-white/5 transition-colors ${
+                          productsActive || mobileProductsOpen ? 'text-gold' : 'text-gray-300'
+                        }`}
+                      >
+                        Products
+                        <ChevronDown
+                          size={16}
+                          className={`transition-transform duration-200 ${
+                            mobileProductsOpen ? 'rotate-180' : ''
                           }`}
-                        >
-                          Products
-                          <ChevronDown
-                            size={16}
-                            className={`transition-transform duration-200 ${
-                              mobileProductsOpen ? 'rotate-180' : ''
-                            }`}
-                          />
-                        </button>
+                        />
+                      </button>
 
-                        {/* Scrollable Sub-link Group Nested View */}
-                        {mobileProductsOpen && (
-                          <div className="bg-white/5 px-4 py-2 flex flex-col gap-1 max-h-[380px] overflow-y-auto border-b border-white/10">
-                            {productGroups.map((group) => (
-                              <div key={group.heading} className="py-2">
-                                <div className="text-gold text-xs font-semibold uppercase tracking-wider mb-1">
-                                  {group.heading}
-                                </div>
-                                <div className="flex flex-col pl-2 border-l border-white/10 gap-1.5">
-                                  {group.items.map((item) => (
-                                    <Link
-                                      key={item.to}
-                                      to={item.to}
-                                      className={`text-sm py-1 transition-colors ${
-                                        location.pathname === item.to ? 'text-gold' : 'text-gray-400 hover:text-white'
-                                      }`}
-                                    >
-                                      {item.label}
-                                    </Link>
-                                  ))}
-                                </div>
+                      {/* Scrollable Sub-link Group Nested View */}
+                      {mobileProductsOpen && (
+                        <div className="bg-white/5 px-4 py-2 flex flex-col gap-1 max-h-[380px] overflow-y-auto border-b border-white/10">
+                          {productGroups.map((group) => (
+                            <div key={group.heading} className="py-2">
+                              <div className="text-gold text-xs font-semibold uppercase tracking-wider mb-1">
+                                {group.heading}
                               </div>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    )}
-                  </div>
+                              <div className="flex flex-col pl-2 border-l border-white/10 gap-1.5">
+                                {group.items.map((item) => (
+                                  <Link
+                                    key={item.to}
+                                    to={item.to}
+                                    className={`text-sm py-1 transition-colors ${
+                                      location.pathname === item.to ? 'text-gold' : 'text-gray-400 hover:text-white'
+                                    }`}
+                                  >
+                                    {item.label}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
 
