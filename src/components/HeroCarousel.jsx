@@ -91,33 +91,33 @@ export default function HeroCarousel() {
           </svg>
         </div>
 
-        {/* Vertically centered content — pt-20 clears the fixed header */}
-        <div className="relative h-full max-w-7xl mx-auto px-6 flex flex-col justify-center pt-28 pb-16">
+        {/* Vertically centered content — adjusted mobile padding values */}
+        <div className="relative h-full max-w-7xl mx-auto px-8 sm:px-12 md:px-6 flex flex-col justify-center pt-32 pb-24">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold text-sm font-medium px-4 py-2 mb-8">
+            <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold text-xs sm:text-sm font-medium px-4 py-2 mb-6 sm:mb-8">
               <Zap size={14} fill="currentColor" />
               Serving Alberta Since 1988
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
               Electrical &{' '}
               <span className="text-gold">Automation</span>{' '}
               Solutions
             </h1>
-            <p className="text-lg md:text-xl text-gray-400 leading-relaxed mb-10 max-w-xl">
+            <p className="text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed mb-8 sm:text-left mb-10 max-w-xl">
               A privately owned electrical, automation and controls company delivering
               professional, personal, precise, and reliable service across Alberta.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/services" className="btn-primary text-base px-8 py-4">
+              <Link to="/services" className="btn-primary text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4">
                 Our Services <ArrowRight size={18} />
               </Link>
-              <Link to="/contact" className="btn-outline text-base px-8 py-4">
+              <Link to="/contact" className="btn-outline text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4">
                 Get a Quote
               </Link>
             </div>
-            <div className="mt-14 flex flex-wrap gap-6 items-center">
+            <div className="mt-10 sm:mt-14 flex flex-wrap gap-4 sm:gap-6 items-center">
               {['COR Certified', 'ISNetworld', 'Complyworks', 'Avetta'].map((badge) => (
-                <div key={badge} className="flex items-center gap-2 text-gray-500 text-sm">
+                <div key={badge} className="flex items-center gap-2 text-gray-500 text-xs sm:text-sm">
                   <CheckCircle size={14} className="text-gold" />
                   {badge}
                 </div>
@@ -135,38 +135,38 @@ export default function HeroCarousel() {
             active === i + 1 ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
           }`}
         >
-          {/* Background image */}
-          <div className="absolute inset-0 py-20">
+          {/* Background image placement */}
+          <div className="absolute inset-0 py-24 sm:py-20 opacity-40 sm:opacity-100">
             <img
               src={s.image}
               alt={s.title}
               className="w-full h-full object-contain object-center"
             />
           </div>
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-dark/65" />
+          {/* Enhanced backdrop overlay mask specifically for mobile screen contrast values */}
+          <div className="absolute inset-0 bg-gradient-to-b from-dark/90 via-dark/75 to-dark/90 sm:bg-dark/65" />
           {/* Gold accent line */}
           <div className="absolute right-0 top-0 bottom-0 w-1 bg-gold/60 hidden lg:block" />
 
-          {/* Vertically centered content — pt-20 clears the fixed header, pb-20 clears the nav bar */}
-          <div className="relative h-full max-w-7xl mx-auto px-6 flex flex-col justify-center pt-20 pb-20">
-            <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold text-sm font-medium px-4 py-2 mb-6">
+          {/* Expanded side text gutters via layout spacing definitions */}
+          <div className="relative h-full max-w-7xl mx-auto px-8 sm:px-12 md:px-6 flex flex-col justify-center pt-28 pb-24">
+            <div className="max-w-2xl relative z-20">
+              <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold text-xs sm:text-sm font-medium px-4 py-2 mb-4 sm:mb-6">
                 <Zap size={14} fill="currentColor" />
                 Serving Alberta Since 1988
               </div>
               <div className="mb-4">
-                <span className="text-xs font-semibold tracking-widest uppercase text-gray-400 border border-white/20 px-3 py-1.5">
+                <span className="text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-gray-400 border border-white/20 px-2.5 py-1 sm:px-3 sm:py-1.5">
                   {s.tag}
                 </span>
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-5">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-4 sm:mb-5">
                 {s.title}
               </h2>
-              <p className="text-lg text-gray-300 leading-relaxed mb-10 max-w-lg">
+              <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mb-8 sm:mb-10 max-w-lg">
                 {s.subtitle}
               </p>
-              <Link to={s.to} className="btn-primary text-base px-8 py-4">
+              <Link to={s.to} className="btn-primary text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4">
                 {s.cta} <ArrowRight size={18} />
               </Link>
             </div>
@@ -174,15 +174,15 @@ export default function HeroCarousel() {
         </div>
       ))}
 
-      {/* === NAVIGATION — pause only on hover over controls, not the whole section === */}
+      {/* === NAVIGATION BAR CONTROLS === */}
       <div
-        className="absolute bottom-8 left-0 right-0 z-20 flex items-center justify-center gap-4 px-6"
+        className="absolute bottom-10 sm:bottom-8 left-0 right-0 z-20 flex items-center justify-center gap-4 px-6"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
         <button
           onClick={prev}
-          className="w-10 h-10 bg-dark/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-gray-300 hover:border-gold hover:text-gold transition-colors"
+          className="w-10 h-10 bg-dark/75 backdrop-blur-sm border border-white/20 flex items-center justify-center text-gray-300 hover:border-gold hover:text-gold transition-colors"
           aria-label="Previous slide"
         >
           <ChevronLeft size={20} />
@@ -203,7 +203,7 @@ export default function HeroCarousel() {
 
         <button
           onClick={next}
-          className="w-10 h-10 bg-dark/60 backdrop-blur-sm border border-white/20 flex items-center justify-center text-gray-300 hover:border-gold hover:text-gold transition-colors"
+          className="w-10 h-10 bg-dark/75 backdrop-blur-sm border border-white/20 flex items-center justify-center text-gray-300 hover:border-gold hover:text-gold transition-colors"
           aria-label="Next slide"
         >
           <ChevronRight size={20} />
