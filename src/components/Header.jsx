@@ -167,49 +167,48 @@ export default function Header() {
 
           {/* Desktop nav */}
           <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => {
-              const active = location.pathname === link.to
-              return (
+            {navLinks.map((link, index) => (
+              <>
                 <Link
                   key={link.to}
                   to={link.to}
                   className={`relative px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
-                    active ? 'text-gold' : 'text-gray-300 hover:text-white'
+                    location.pathname === link.to
+                      ? 'text-gold'
+                      : 'text-gray-300 hover:text-white'
                   }`}
                 >
                   {link.label}
-                  {active && (
+                  {location.pathname === link.to && (
                     <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gold" />
                   )}
                 </Link>
-              )
-            })}
 
-            {/* Products dropdown trigger */}
-            <div>
-              <button
-                onClick={() => setProductsOpen((o) => !o)}
-                className={`relative flex items-center gap-1 px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
-                  productsActive || productsOpen ? 'text-gold' : 'text-gray-300 hover:text-white'
-                }`}
-              >
-                Products
-                <ChevronDown
-                  size={14}
-                  className={`transition-transform duration-200 ${productsOpen ? 'rotate-180' : ''}`}
-                />
-                {productsActive && !productsOpen && (
-                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gold" />
+                {index === 1 && (
+                  <div>
+                    <button
+                      onClick={() => setProductsOpen((o) => !o)}
+                      className={`relative flex items-center gap-1 px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
+                        productsActive || productsOpen
+                          ? 'text-gold'
+                          : 'text-gray-300 hover:text-white'
+                      }`}
+                    >
+                      Products
+                      <ChevronDown
+                        size={14}
+                        className={`transition-transform duration-200 ${
+                          productsOpen ? 'rotate-180' : ''
+                        }`}
+                      />
+                      {productsActive && !productsOpen && (
+                        <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gold" />
+                      )}
+                    </button>
+                  </div>
                 )}
-              </button>
-            </div>
-
-            <Link
-              to="/contact"
-              className="ml-4 bg-gold text-dark text-sm font-semibold px-5 py-2.5 hover:bg-gold-dark transition-colors duration-200"
-            >
-              Get a Quote
-            </Link>
+              </>
+            ))}
           </nav>
 
           {/* Mobile hamburger */}
