@@ -144,7 +144,7 @@ export default function VFDPackages() {
       {/* Package grid */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-black text-dark mb-2">SE200 Package Lineup</h2>
+          <h2 className="text-3xl font-black text-dark mb-2">VFD Package Lineup</h2>
           <p className="text-gray-500 mb-10">Select the package that matches your application below.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {packages.map((pkg) => (
