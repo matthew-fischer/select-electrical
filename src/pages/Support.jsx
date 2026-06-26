@@ -4,7 +4,7 @@ import { Download, FileText, X, CheckCircle, ClipboardList, UserCheck, ArrowDown
 
 const manuals = [
   {
-    title: 'SE200 Industrial Drive',
+    title: 'SE200 Industrial/PID Drive',
     description: 'Installation, operation & maintenance manual for the SE200 Industrial VFD.',
     file: 'SE200-Industrial-Drive.pdf',
     tag: 'Industrial',
