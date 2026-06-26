@@ -85,8 +85,6 @@ const productGroups = [
   },
 ]
 
-const mobileProductItems = productGroups.flatMap((g) => g.items)
-
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [productsOpen, setProductsOpen] = useState(false)
@@ -127,65 +125,64 @@ export default function Header() {
 
   return (
     <>
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-dark shadow-2xl' : 'bg-dark/95'
-      }`}
-    >
-      {/* Top bar */}
-      <div className="bg-gold hidden md:block">
-        <div className="max-w-7xl mx-auto px-6 py-2 flex justify-end items-center gap-6 text-sm font-medium text-dark">
-          <a href="tel:7809688859" className="flex items-center gap-1.5 hover:opacity-70 transition-opacity">
-            <Phone size={14} />
-            780-968-8859
-          </a>
-          <a href="mailto:info@selectelectricalent.com" className="hover:opacity-70 transition-opacity">
-            info@selectelectricalent.com
-          </a>
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled ? 'bg-dark shadow-2xl' : 'bg-dark/95'
+        }`}
+      >
+        {/* Top bar */}
+        <div className="bg-gold hidden md:block">
+          <div className="max-w-7xl mx-auto px-6 py-2 flex justify-end items-center gap-6 text-sm font-medium text-dark">
+            <a href="tel:7809688859" className="flex items-center gap-1.5 hover:opacity-70 transition-opacity">
+              <Phone size={14} />
+              780-968-8859
+            </a>
+            <a href="mailto:info@selectelectricalent.com" className="hover:opacity-70 transition-opacity">
+              info@selectelectricalent.com
+            </a>
+          </div>
         </div>
-      </div>
 
-      {/* Main nav */}
-      <div className="max-w-7xl mx-auto px-6 relative" ref={dropdownRef}>
-        <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <img
-              src="/images/Select-Logo.jpg"
-              alt="Select Electrical logo"
-              className="h-10 w-auto object-contain"
-            />
-            <div>
-              <div className="text-white font-bold text-base leading-tight tracking-wide">
-                SELECT ELECTRICAL
+        {/* Main nav wrapper */}
+        <div className="max-w-7xl mx-auto px-6 relative" ref={dropdownRef}>
+          <div className="flex items-center justify-between h-16 md:h-20">
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-3 group">
+              <img
+                src="/images/Select-Logo.jpg"
+                alt="Select Electrical logo"
+                className="h-10 w-auto object-contain"
+              />
+              <div>
+                <div className="text-white font-bold text-base leading-tight tracking-wide">
+                  SELECT ELECTRICAL
+                </div>
+                <div className="text-gold text-xs font-medium tracking-widest uppercase">
+                  Enterprises Ltd.
+                </div>
               </div>
-              <div className="text-gold text-xs font-medium tracking-widest uppercase">
-                Enterprises Ltd.
-              </div>
-            </div>
-          </Link>
+            </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1">
-            {navLinks.map((link, index) => (
-              <>
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className={`relative px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
-                    location.pathname === link.to
-                      ? 'text-gold'
-                      : 'text-gray-300 hover:text-white'
-                  }`}
-                >
-                  {link.label}
-                  {location.pathname === link.to && (
-                    <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gold" />
-                  )}
-                </Link>
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center gap-1">
+              {navLinks.map((link, index) => (
+                <div key={link.to} className="flex items-center">
+                  <Link
+                    to={link.to}
+                    className={`relative px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
+                      location.pathname === link.to
+                        ? 'text-gold'
+                        : 'text-gray-300 hover:text-white'
+                    }`}
+                  >
+                    {link.label}
+                    {location.pathname === link.to && (
+                      <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gold" />
+                    )}
+                  </Link>
 
-                {index === 1 && (
-                  <div>
+                  {/* Inject Desktop "Products" dropdown trigger right after "Company" */}
+                  {index === 1 && (
                     <button
                       onClick={() => setProductsOpen((o) => !o)}
                       className={`relative flex items-center gap-1 px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
@@ -205,132 +202,157 @@ export default function Header() {
                         <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-gold" />
                       )}
                     </button>
-                  </div>
-                )}
-              </>
-            ))}
-            <Link
-              to="/contact"
-              className="ml-4 bg-gold text-dark text-sm font-semibold px-5 py-2.5 hover:bg-gold-dark transition-colors duration-200"
-            >
-              Get a Quote
-            </Link>
-          </nav>
-
-          {/* Mobile hamburger */}
-
-          <button
-            className="md:hidden text-white p-2"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Desktop products dropdown — spans full container width */}
-        {productsOpen && (
-          <div className="hidden md:grid absolute top-full left-0 right-0 bg-dark border border-white/10 border-t-0 shadow-2xl grid-cols-6 gap-0 z-50 max-h-[calc(100vh-5rem)] overflow-y-auto">
-            {productGroups.map((group) => (
-              <div key={group.heading} className="p-5 border-r border-white/5 last:border-r-0">
-                <div className="mb-3 pb-2 border-b border-white/10">
-                  {group.hub ? (
-                    <Link
-                      to={group.hub}
-                      className="text-gold text-xs font-semibold uppercase tracking-widest hover:opacity-75 transition-opacity flex items-center gap-1"
-                    >
-                      {group.heading} <ArrowRight size={10} />
-                    </Link>
-                  ) : (
-                    <span className="text-gold text-xs font-semibold uppercase tracking-widest">
-                      {group.heading}
-                    </span>
                   )}
                 </div>
-                <ul className="space-y-0.5">
-                  {group.items.map((item) => (
-                    <li key={item.to}>
-                      <Link
-                        to={item.to}
-                        className={`block px-2 py-1.5 text-sm rounded transition-colors ${
-                          location.pathname === item.to
-                            ? 'text-gold'
-                            : 'text-gray-400 hover:text-white hover:bg-white/5'
-                        }`}
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              ))}
+              <Link
+                to="/contact"
+                className="ml-4 bg-gold text-dark text-sm font-semibold px-5 py-2.5 hover:bg-gold-dark transition-colors duration-200"
+              >
+                Get a Quote
+              </Link>
+            </nav>
+
+            {/* Mobile Hamburger Toggle */}
+            <button
+              className="md:hidden text-white p-2"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
-        )}
-      </div>
 
-      {/* Mobile hamburger only — menu rendered outside header */}
-    </header>
-
-    {/* Mobile menu — outside <header> so fixed positioning works reliably on iOS */}
-    {menuOpen && (
-      <div className="md:hidden fixed top-16 left-0 right-0 bottom-0 z-40 bg-dark border-t border-white/10 overflow-y-auto" style={{ WebkitOverflowScrolling: 'touch' }}>
-        <div className="px-6 py-4 flex flex-col gap-1">
-          {navLinks.map((link, index) => (
-          <>
-            <Link
-              key={link.to}
-              to={link.to}
-              className={`px-3 py-3 text-sm font-medium border-b border-white/5 transition-colors ${
-                location.pathname === link.to ? 'text-gold' : 'text-gray-300'
-              }`}
-            >
-              {link.label}
-            </Link>
-
-            {index === 1 && (
-              <>
-                <button
-                  onClick={() => setMobileProductsOpen((o) => !o)}
-                  className={`flex items-center justify-between px-3 py-3 text-sm font-medium border-b border-white/5 transition-colors ${
-                    productsActive || mobileProductsOpen
-                      ? 'text-gold'
-                      : 'text-gray-300'
-                  }`}
-                >
-                  Products
-                  <ChevronDown
-                    size={14}
-                    className={`transition-transform duration-200 ${
-                      mobileProductsOpen ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-
-                {mobileProductsOpen && (
-                  <div className="bg-white/5 px-3 py-2 mb-1">
-                    {/* Keep your existing accordion contents here */}
+          {/* Desktop Mega-Dropdown Context */}
+          {productsOpen && (
+            <div className="hidden md:grid absolute top-full left-0 right-0 bg-dark border border-white/10 border-t-0 shadow-2xl grid-cols-6 gap-0 z-50 max-h-[calc(100vh-5rem)] overflow-y-auto">
+              {productGroups.map((group) => (
+                <div key={group.heading} className="p-5 border-r border-white/5 last:border-r-0">
+                  <div className="mb-3 pb-2 border-b border-white/10">
+                    {group.hub ? (
+                      <Link
+                        to={group.hub}
+                        className="text-gold text-xs font-semibold uppercase tracking-widest hover:opacity-75 transition-opacity flex items-center gap-1"
+                      >
+                        {group.heading} <ArrowRight size={10} />
+                      </Link>
+                    ) : (
+                      <span className="text-gold text-xs font-semibold uppercase tracking-widest">
+                        {group.heading}
+                      </span>
+                    )}
                   </div>
-                )}
-              </>
-            )}
-          </>
-        ))}
+                  <ul className="space-y-0.5">
+                    {group.items.map((item) => (
+                      <li key={item.to}>
+                        <Link
+                          to={item.to}
+                          className={`block px-2 py-1.5 text-sm rounded transition-colors ${
+                            location.pathname === item.to
+                              ? 'text-gold'
+                              : 'text-gray-400 hover:text-white hover:bg-white/5'
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </header>
 
-          <div className="pt-3 flex flex-col gap-3">
-            <a href="tel:7809688859" className="flex items-center gap-2 text-gold text-sm font-medium">
-              <Phone size={14} /> 780-968-8859
-            </a>
-            <Link
-              to="/contact"
-              className="bg-gold text-dark text-sm font-semibold px-5 py-3 text-center"
-            >
-              Get a Quote
-            </Link>
+      {/* Mobile Menu Panel Layout */}
+      {menuOpen && (
+        <div 
+          className="md:hidden fixed inset-0 top-16 z-40 bg-dark border-t border-white/10 overflow-y-auto" 
+          style={{ WebkitOverflowScrolling: 'touch' }}
+        >
+          <div className="px-6 py-6 flex flex-col gap-1 min-h-[calc(100vh-4rem)] justify-between">
+            
+            {/* Primary Link Group Area */}
+            <div className="flex flex-col gap-1">
+              {navLinks
+                .filter(link => link.label !== 'Contact') // Filter prevents duplicate contact route in stack
+                .map((link, index) => (
+                  <div key={link.to} className="flex flex-col">
+                    <Link
+                      to={link.to}
+                      className={`px-3 py-3 text-base font-medium border-b border-white/5 transition-colors ${
+                        location.pathname === link.to ? 'text-gold' : 'text-gray-300'
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+
+                    {/* Integrated Mobile Accordion Trigger */}
+                    {index === 1 && (
+                      <div className="flex flex-col">
+                        <button
+                          onClick={() => setMobileProductsOpen((o) => !o)}
+                          className={`flex items-center justify-between px-3 py-3 text-base font-medium border-b border-white/5 transition-colors ${
+                            productsActive || mobileProductsOpen ? 'text-gold' : 'text-gray-300'
+                          }`}
+                        >
+                          Products
+                          <ChevronDown
+                            size={16}
+                            className={`transition-transform duration-200 ${
+                              mobileProductsOpen ? 'rotate-180' : ''
+                            }`}
+                          />
+                        </button>
+
+                        {/* Scrollable Sub-link Group Nested View */}
+                        {mobileProductsOpen && (
+                          <div className="bg-white/5 px-4 py-2 flex flex-col gap-1 max-h-[380px] overflow-y-auto border-b border-white/10">
+                            {productGroups.map((group) => (
+                              <div key={group.heading} className="py-2">
+                                <div className="text-gold text-xs font-semibold uppercase tracking-wider mb-1">
+                                  {group.heading}
+                                </div>
+                                <div className="flex flex-col pl-2 border-l border-white/10 gap-1.5">
+                                  {group.items.map((item) => (
+                                    <Link
+                                      key={item.to}
+                                      to={item.to}
+                                      className={`text-sm py-1 transition-colors ${
+                                        location.pathname === item.to ? 'text-gold' : 'text-gray-400 hover:text-white'
+                                      }`}
+                                    >
+                                      {item.label}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+              ))}
+            </div>
+
+            {/* Sticky Lower Action Stack */}
+            <div className="pt-6 mt-auto flex flex-col gap-4">
+              <a href="tel:7809688859" className="flex items-center justify-center gap-2 text-gold text-base font-medium py-2">
+                <Phone size={16} /> 780-968-8859
+              </a>
+              <Link
+                to="/contact"
+                className="bg-gold text-dark text-sm font-bold px-5 py-3.5 text-center tracking-wide uppercase transition-colors hover:bg-gold-dark"
+              >
+                Get a Quote
+              </Link>
+            </div>
+
           </div>
         </div>
-      </div>
-    )}
+      )}
     </>
   )
 }
