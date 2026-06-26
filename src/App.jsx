@@ -53,7 +53,7 @@ import Support from './pages/Support'
 
 export default function App() {
   return (
-    <BrowserRouter basename="/select-electrical">
+    <BrowserRouter>
       <div className="flex flex-col min-h-screen">
         <ScrollToTop />
         <Header />
