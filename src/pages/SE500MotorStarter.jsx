@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { CheckCircle, Phone, ArrowRight, FileText, Download } from 'lucide-react'
 
 const mstrImages = [
-  { src: '/select-electrical/images/se200/mstr.jpg', alt: 'SE500 Motor Starter', fit: 'object-contain' },
-  { src: '/select-electrical/images/se200/mstr-inside.png', alt: 'SE500 Motor Starter Interior', fit: 'object-cover' },
+  { src: '/images/se200/mstr.jpg', alt: 'SE500 Motor Starter', fit: 'object-contain' },
+  { src: '/images/se200/mstr-inside.png', alt: 'SE500 Motor Starter Interior', fit: 'object-cover' },
 ]
 
 const specs = [
@@ -195,7 +195,7 @@ export default function SE500MotorStarter() {
                 <p className="text-dark font-bold text-sm mb-1">SE500 Motor Starter</p>
                 <p className="text-gray-500 text-xs mb-4">Complete product brochure including specifications and application details.</p>
                 <a
-                  href="/select-electrical/datasheets/Brochures/SE500-Motor-Starter.pdf"
+                  href="/datasheets/Brochures/SE500-Motor-Starter.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 bg-dark text-white text-xs font-semibold px-4 py-2.5 hover:bg-gold hover:text-dark transition-colors w-full"

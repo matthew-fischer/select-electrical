@@ -3,12 +3,12 @@ import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucid
 import motors, { pdfPath } from '../data/motorDatasheets'
 
 const manuals = [
-  { tag: 'W01',       label: 'W01 Motor Manual',         url: '/select-electrical/datasheets/Manuals/Motors/WEG-WO1-MOTOR-MANUAL.pdf' },
-  { tag: 'W21',       label: 'W21XP Motor Manual',        url: '/select-electrical/datasheets/Manuals/Motors/WEG-MOTOR-W21XP-MANUAL.pdf' },
-  { tag: 'W22',       label: 'W22 Motor Manual',          url: '/select-electrical/datasheets/Manuals/Motors/WEG-MOTOR-W22-MANUAL.pdf' },
-  { tag: 'W22',       label: 'W22 Technical Catalog',     url: '/select-electrical/datasheets/Manuals/Motors/WEG-MOTOR-W22-TECHNICAL-CATALOG.pdf' },
-  { tag: 'W22',       label: 'W22 Three Phase Datasheet', url: '/select-electrical/datasheets/Manuals/Motors/WEG-MOTOR-W22-THREE-PHASE.pdf' },
-  { tag: 'Farm Duty', label: 'Standard Stock Catalog',    url: '/select-electrical/datasheets/Manuals/Motors/WEG-05-A-2020-standard-stock-us100-english.pdf' },
+  { tag: 'W01',       label: 'W01 Motor Manual',         url: '/datasheets/Manuals/Motors/WEG-WO1-MOTOR-MANUAL.pdf' },
+  { tag: 'W21',       label: 'W21XP Motor Manual',        url: '/datasheets/Manuals/Motors/WEG-MOTOR-W21XP-MANUAL.pdf' },
+  { tag: 'W22',       label: 'W22 Motor Manual',          url: '/datasheets/Manuals/Motors/WEG-MOTOR-W22-MANUAL.pdf' },
+  { tag: 'W22',       label: 'W22 Technical Catalog',     url: '/datasheets/Manuals/Motors/WEG-MOTOR-W22-TECHNICAL-CATALOG.pdf' },
+  { tag: 'W22',       label: 'W22 Three Phase Datasheet', url: '/datasheets/Manuals/Motors/WEG-MOTOR-W22-THREE-PHASE.pdf' },
+  { tag: 'Farm Duty', label: 'Standard Stock Catalog',    url: '/datasheets/Manuals/Motors/WEG-05-A-2020-standard-stock-us100-english.pdf' },
 ]
 
 const tagBadge = {
@@ -152,7 +152,7 @@ export default function MotorDatasheets() {
               }`}
             >
               <img
-                src={`/select-electrical/images/${img}`}
+                src={`/images/${img}`}
                 alt={seriesInfo[key].label}
                 className="w-full h-36 object-cover object-center"
               />

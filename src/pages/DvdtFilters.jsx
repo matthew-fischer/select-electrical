@@ -3,11 +3,11 @@ import { SlidersHorizontal, X, ChevronLeft, ChevronRight, Download } from 'lucid
 import dvdtFilters from '../data/dvdtFilterData'
 
 const manuals = [
-  { tag: 'TCI', label: 'V1K Filter Size Chart',       url: '/select-electrical/datasheets/Manuals/TCI%20DVDT%20Filter/V1K-FILTER-SIZE-CHART.pdf' },
-  { tag: 'TCI', label: 'V1K Manual',                   url: '/select-electrical/datasheets/Manuals/TCI%20DVDT%20Filter/V1K-MANUAL.pdf' },
-  { tag: 'TCI', label: 'V1K Brochure',                 url: '/select-electrical/datasheets/Manuals/TCI%20DVDT%20Filter/VIK-BROCHURE.pdf' },
-  { tag: 'MTE', label: 'DVS Solution Catalog',         url: '/select-electrical/datasheets/Manuals/MTE%20DVDT%20Filter/DVS-SOLUTION-CATALOG.pdf' },
-  { tag: 'MTE', label: 'Technical Reference Manual',   url: '/select-electrical/datasheets/Manuals/MTE%20DVDT%20Filter/DVS-TECHNICAL-REFERENCE-MANUAL.pdf' },
+  { tag: 'TCI', label: 'V1K Filter Size Chart',       url: '/datasheets/Manuals/TCI%20DVDT%20Filter/V1K-FILTER-SIZE-CHART.pdf' },
+  { tag: 'TCI', label: 'V1K Manual',                   url: '/datasheets/Manuals/TCI%20DVDT%20Filter/V1K-MANUAL.pdf' },
+  { tag: 'TCI', label: 'V1K Brochure',                 url: '/datasheets/Manuals/TCI%20DVDT%20Filter/VIK-BROCHURE.pdf' },
+  { tag: 'MTE', label: 'DVS Solution Catalog',         url: '/datasheets/Manuals/MTE%20DVDT%20Filter/DVS-SOLUTION-CATALOG.pdf' },
+  { tag: 'MTE', label: 'Technical Reference Manual',   url: '/datasheets/Manuals/MTE%20DVDT%20Filter/DVS-TECHNICAL-REFERENCE-MANUAL.pdf' },
 ]
 
 const ALL = 'All'

@@ -3,11 +3,11 @@ import { SlidersHorizontal, X, ChevronLeft, ChevronRight, Download } from 'lucid
 import harmonicFilters from '../data/harmonicFilterData'
 
 const manuals = [
-  { tag: 'Mirus', label: 'Lineator Brochure',         url: '/select-electrical/datasheets/Manuals/Mirus%20Harmonic%20Filter/AUHF-Lineator-Brochure.pdf' },
-  { tag: 'Mirus', label: 'Lineator Manual',            url: '/select-electrical/datasheets/Manuals/Mirus%20Harmonic%20Filter/AUHF-Lineator-Manual.pdf' },
-  { tag: 'Mirus', label: 'Typical Specification',      url: '/select-electrical/datasheets/Manuals/Mirus%20Harmonic%20Filter/AUHF-Lineator-Typical-Specification.pdf' },
-  { tag: 'MTE',   label: 'MAP Solution Catalog',       url: '/select-electrical/datasheets/Manuals/MTE%20Harmonic%20Filter/MTE-MAP-SOLUTION-CATALOG.pdf' },
-  { tag: 'MTE',   label: 'Technical Reference Manual', url: '/select-electrical/datasheets/Manuals/MTE%20Harmonic%20Filter/MTE-MAP-TECHNICAL-REFERENCES-AND-MANUAL-1.pdf' },
+  { tag: 'Mirus', label: 'Lineator Brochure',         url: '/datasheets/Manuals/Mirus%20Harmonic%20Filter/AUHF-Lineator-Brochure.pdf' },
+  { tag: 'Mirus', label: 'Lineator Manual',            url: '/datasheets/Manuals/Mirus%20Harmonic%20Filter/AUHF-Lineator-Manual.pdf' },
+  { tag: 'Mirus', label: 'Typical Specification',      url: '/datasheets/Manuals/Mirus%20Harmonic%20Filter/AUHF-Lineator-Typical-Specification.pdf' },
+  { tag: 'MTE',   label: 'MAP Solution Catalog',       url: '/datasheets/Manuals/MTE%20Harmonic%20Filter/MTE-MAP-SOLUTION-CATALOG.pdf' },
+  { tag: 'MTE',   label: 'Technical Reference Manual', url: '/datasheets/Manuals/MTE%20Harmonic%20Filter/MTE-MAP-TECHNICAL-REFERENCES-AND-MANUAL-1.pdf' },
 ]
 
 const ALL = 'All'

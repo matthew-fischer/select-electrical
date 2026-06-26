@@ -3,11 +3,11 @@ import { SlidersHorizontal, X, ChevronLeft, ChevronRight, Download } from 'lucid
 import sineFilters from '../data/sineFilterData'
 
 const manuals = [
-  { tag: 'Mirus', label: 'AUSF Brochure',                   url: '/select-electrical/datasheets/Manuals/Mirus%20Sinewave%20Filter/AUSF-BROCHURE.pdf' },
-  { tag: 'Mirus', label: 'Installation & Operation Guide',   url: '/select-electrical/datasheets/Manuals/Mirus%20Sinewave%20Filter/AUSF-INSTALLATION-OPERATION-AND-MAINTENANCE-GUIDE.pdf' },
-  { tag: 'Mirus', label: 'Technical Data',                   url: '/select-electrical/datasheets/Manuals/Mirus%20Sinewave%20Filter/AUSF-TECHNICAL-DATA.pdf' },
-  { tag: 'MTE',   label: 'SWG Solution Catalog',             url: '/select-electrical/datasheets/Manuals/MTE%20Sinewave%20Filter/SWG-SOLUTION-CATALOG.pdf' },
-  { tag: 'MTE',   label: 'Technical Reference Manual',       url: '/select-electrical/datasheets/Manuals/MTE%20Sinewave%20Filter/SWG-TECHNICAL-REFERENCE-MANUAL.pdf' },
+  { tag: 'Mirus', label: 'AUSF Brochure',                   url: '/datasheets/Manuals/Mirus%20Sinewave%20Filter/AUSF-BROCHURE.pdf' },
+  { tag: 'Mirus', label: 'Installation & Operation Guide',   url: '/datasheets/Manuals/Mirus%20Sinewave%20Filter/AUSF-INSTALLATION-OPERATION-AND-MAINTENANCE-GUIDE.pdf' },
+  { tag: 'Mirus', label: 'Technical Data',                   url: '/datasheets/Manuals/Mirus%20Sinewave%20Filter/AUSF-TECHNICAL-DATA.pdf' },
+  { tag: 'MTE',   label: 'SWG Solution Catalog',             url: '/datasheets/Manuals/MTE%20Sinewave%20Filter/SWG-SOLUTION-CATALOG.pdf' },
+  { tag: 'MTE',   label: 'Technical Reference Manual',       url: '/datasheets/Manuals/MTE%20Sinewave%20Filter/SWG-TECHNICAL-REFERENCE-MANUAL.pdf' },
 ]
 
 const ALL = 'All'

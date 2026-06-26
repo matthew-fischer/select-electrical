@@ -143,7 +143,7 @@ export default function Services() {
       {/* Page hero */}
       <section
         className="pt-36 pb-20 relative overflow-hidden"
-        style={{ backgroundImage: "url('/select-electrical/images/SEEL_Packages.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 25%' }}
+        style={{ backgroundImage: "url('/images/SEEL_Packages.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 25%' }}
       >
         <div className="absolute inset-0 bg-dark opacity-75" />
         <div className="absolute inset-0 opacity-5">
@@ -269,7 +269,7 @@ export default function Services() {
       {/* CTA */}
       <section
         className="py-20 relative overflow-hidden"
-        style={{ backgroundImage: "url('/select-electrical/images/image-1998.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}
+        style={{ backgroundImage: "url('/images/image-1998.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
         <div className="absolute inset-0 bg-gold opacity-80" />
         <div className="relative max-w-4xl mx-auto px-6 text-center">

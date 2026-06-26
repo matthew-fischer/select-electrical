@@ -3,9 +3,9 @@ import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucid
 import drives, { pdfPath, partNumber } from '../data/cfw500Data'
 
 const manuals = [
-  { tag: 'CFW500', label: "User's Manual",             url: '/select-electrical/datasheets/CFW500/WEG-CFW500-USERS-MANUAL.pdf' },
-  { tag: 'CFW500', label: 'Control Brochure',          url: '/select-electrical/datasheets/CFW500/WEG-CFW500-CONTROL-BROCHURE.pdf' },
-  { tag: 'CFW500', label: 'Quick Parameter Reference', url: '/select-electrical/datasheets/CFW500/WEG-CFW500-QUICK-PARAMETER-REFERENCE.pdf' },
+  { tag: 'CFW500', label: "User's Manual",             url: '/datasheets/CFW500/WEG-CFW500-USERS-MANUAL.pdf' },
+  { tag: 'CFW500', label: 'Control Brochure',          url: '/datasheets/CFW500/WEG-CFW500-CONTROL-BROCHURE.pdf' },
+  { tag: 'CFW500', label: 'Quick Parameter Reference', url: '/datasheets/CFW500/WEG-CFW500-QUICK-PARAMETER-REFERENCE.pdf' },
 ]
 
 const tagBadge = {

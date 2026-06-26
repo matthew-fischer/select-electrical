@@ -3,16 +3,16 @@ import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucid
 import softStarters, { pdfPath, partNumber } from '../data/softStarterData'
 
 const manuals = [
-  { brand: 'WEG', model: 'SSW05', label: "User's Manual",           url: '/select-electrical/datasheets/Soft%20Starters/SSW05/WEG-SSW05-User-Manual.pdf' },
-  { brand: 'WEG', model: 'SSW05', label: 'Quick Parameter Ref.',    url: '/select-electrical/datasheets/Soft%20Starters/SSW05/WEG-SSW05-Quick-Parameter-Reference.pdf' },
-  { brand: 'WEG', model: 'SSW05', label: 'Products Brochure',       url: '/select-electrical/datasheets/Soft%20Starters/SSW05/WEG-SSW05-Products-Brochure.pdf' },
-  { brand: 'WEG', model: 'SSW07', label: "User's Manual",           url: '/select-electrical/datasheets/Soft%20Starters/SSW07/WEG-SSW07-User-Manual.pdf' },
-  { brand: 'WEG', model: 'SSW07', label: 'Quick Parameter Ref.',    url: '/select-electrical/datasheets/Soft%20Starters/SSW07/WEG-SSW07-Quick-Parameter-Reference.pdf' },
-  { brand: 'WEG', model: 'SSW07', label: 'Products Brochure',       url: '/select-electrical/datasheets/Soft%20Starters/SSW07/WEG-SSW07-Products-Brochure.pdf' },
-  { brand: 'WEG', model: 'SSW900', label: "User's Manual",          url: '/select-electrical/datasheets/Soft%20Starters/SSW900/WEG-SSW900-user-manual.pdf' },
-  { brand: 'WEG', model: 'SSW900', label: 'Programming Manual',     url: '/select-electrical/datasheets/Soft%20Starters/SSW900/WEG-SSW900-programing-manual.pdf' },
-  { brand: 'WEG', model: 'SSW900', label: 'Installation Guide',     url: '/select-electrical/datasheets/Soft%20Starters/SSW900/WEG-SSW900-installation-guide.pdf' },
-  { brand: 'WEG', model: 'SSW900', label: 'Catalog',                url: '/select-electrical/datasheets/Soft%20Starters/SSW900/WEG-SSW900-catalog.pdf' },
+  { brand: 'WEG', model: 'SSW05', label: "User's Manual",           url: '/datasheets/Soft%20Starters/SSW05/WEG-SSW05-User-Manual.pdf' },
+  { brand: 'WEG', model: 'SSW05', label: 'Quick Parameter Ref.',    url: '/datasheets/Soft%20Starters/SSW05/WEG-SSW05-Quick-Parameter-Reference.pdf' },
+  { brand: 'WEG', model: 'SSW05', label: 'Products Brochure',       url: '/datasheets/Soft%20Starters/SSW05/WEG-SSW05-Products-Brochure.pdf' },
+  { brand: 'WEG', model: 'SSW07', label: "User's Manual",           url: '/datasheets/Soft%20Starters/SSW07/WEG-SSW07-User-Manual.pdf' },
+  { brand: 'WEG', model: 'SSW07', label: 'Quick Parameter Ref.',    url: '/datasheets/Soft%20Starters/SSW07/WEG-SSW07-Quick-Parameter-Reference.pdf' },
+  { brand: 'WEG', model: 'SSW07', label: 'Products Brochure',       url: '/datasheets/Soft%20Starters/SSW07/WEG-SSW07-Products-Brochure.pdf' },
+  { brand: 'WEG', model: 'SSW900', label: "User's Manual",          url: '/datasheets/Soft%20Starters/SSW900/WEG-SSW900-user-manual.pdf' },
+  { brand: 'WEG', model: 'SSW900', label: 'Programming Manual',     url: '/datasheets/Soft%20Starters/SSW900/WEG-SSW900-programing-manual.pdf' },
+  { brand: 'WEG', model: 'SSW900', label: 'Installation Guide',     url: '/datasheets/Soft%20Starters/SSW900/WEG-SSW900-installation-guide.pdf' },
+  { brand: 'WEG', model: 'SSW900', label: 'Catalog',                url: '/datasheets/Soft%20Starters/SSW900/WEG-SSW900-catalog.pdf' },
 ]
 
 const ALL = 'All'

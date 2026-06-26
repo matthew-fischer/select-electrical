@@ -25,8 +25,8 @@ export default function SE200GasCompressor() {
         'Compatible with compressors or pumps of any size or model',
         'Precise speed control with reduced energy consumption',
       ]}
-      brochureUrl="/select-electrical/datasheets/Brochures/SE200-Gas-Compressor-Drive.pdf"
-      image="/select-electrical/images/se200/Gas.jpg"
+      brochureUrl="/datasheets/Brochures/SE200-Gas-Compressor-Drive.pdf"
+      image="/images/se200/Gas.jpg"
     />
   )
 }

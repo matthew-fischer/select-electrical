@@ -6,7 +6,7 @@ export default function MVW3000() {
       title="MVW3000"
       category="Medium Voltage VFDs"
       categoryTo="/medium-voltage-vfd"
-      image="/select-electrical/images/medium-voltage/mvw3000.png"
+      image="/images/medium-voltage/mvw3000.png"
       tagline="Efficient, Robust Medium Voltage Solution"
       description="The MVW3000 is an efficient and robust solution that, in addition to speed control, enables energy savings and lower maintenance costs. Features sinusoidal output voltage and current, IEEE 519 harmonic compliance, and a high power factor above 0.95 — no external filters required."
       specs={[

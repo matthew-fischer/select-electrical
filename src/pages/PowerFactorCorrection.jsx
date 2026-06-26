@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle, Phone, Zap, BarChart3, Download, FileText } from 'lucide-react'
 
 const pfcImages = [
-  { src: '/select-electrical/images/pfc.png', alt: 'Power Factor Correction Unit', fit: 'object-contain' },
-  { src: '/select-electrical/images/pfc-inside.png', alt: 'Power Factor Correction Interior', fit: 'object-cover' },
+  { src: '/images/pfc.png', alt: 'Power Factor Correction Unit', fit: 'object-contain' },
+  { src: '/images/pfc-inside.png', alt: 'Power Factor Correction Interior', fit: 'object-cover' },
 ]
 
 const correctionMethods = [
@@ -224,7 +224,7 @@ export default function PowerFactorCorrection() {
                 <p className="text-dark font-bold text-sm mb-1">SE700 Power Factor Correction</p>
                 <p className="text-gray-500 text-xs mb-4">Overview of the SE700 automatic power factor correction system.</p>
                 <a
-                  href="/select-electrical/datasheets/Brochures/SE700-Power-Factor-Correction.pdf"
+                  href="/datasheets/Brochures/SE700-Power-Factor-Correction.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 bg-dark text-white text-xs font-semibold px-4 py-2.5 hover:bg-gold hover:text-dark transition-colors w-full"

@@ -66,7 +66,7 @@ export default function Contact() {
       {/* Page hero */}
       <section
         className="pt-36 pb-20 relative overflow-hidden"
-        style={{ backgroundImage: "url('/select-electrical/images/truck.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 40%' }}
+        style={{ backgroundImage: "url('/images/truck.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 40%' }}
       >
         <div className="absolute inset-0 bg-dark opacity-75" />
         <div className="absolute inset-0 opacity-5">

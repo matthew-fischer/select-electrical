@@ -74,7 +74,7 @@ const drives = [
 ]
 
 export function pdfPath(file) {
-  return `/select-electrical/datasheets/CFW11/${file}-datapack.pdf`
+  return `/datasheets/CFW11/${file}-datapack.pdf`
 }
 
 export default drives

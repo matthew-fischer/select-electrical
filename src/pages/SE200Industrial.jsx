@@ -22,8 +22,8 @@ export default function SE200Industrial() {
         'Short return on investment timeline',
         'Suitable for compressors, pumps, conveyors, fans, and elevators',
       ]}
-      brochureUrl="/select-electrical/datasheets/Brochures/SE200-Industrial-Drive.pdf"
-      image="/select-electrical/images/se200/Industrial.jpg"
+      brochureUrl="/datasheets/Brochures/SE200-Industrial-Drive.pdf"
+      image="/images/se200/Industrial.jpg"
     />
   )
 }

@@ -151,7 +151,7 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
             <img
-              src="/select-electrical/images/Select-Logo.jpg"
+              src="/images/Select-Logo.jpg"
               alt="Select Electrical logo"
               className="h-10 w-auto object-contain"
             />

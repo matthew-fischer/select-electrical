@@ -54,7 +54,7 @@ const softStarters = [
 ]
 
 export function pdfPath(model, file) {
-  return `/select-electrical/datasheets/Soft%20Starters/${model}/${file}`
+  return `/datasheets/Soft%20Starters/${model}/${file}`
 }
 
 export function partNumber(file) {

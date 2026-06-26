@@ -3,9 +3,9 @@ import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucid
 import drives, { pdfPath } from '../data/cfw100Data'
 
 const manuals = [
-  { tag: 'CFW100', label: "User's Manual",             url: '/select-electrical/datasheets/CFW100/WEG-CFW100-MANUAL.pdf' },
-  { tag: 'CFW100', label: 'Quick Parameter Reference', url: '/select-electrical/datasheets/CFW100/WEG-CFW100-QUICK-PARAMETER-REFERENCE.pdf' },
-  { tag: 'CFW100', label: 'CFW100 Brochure',           url: '/select-electrical/datasheets/CFW100/WEG-CFW100-BROCHURE.pdf' },
+  { tag: 'CFW100', label: "User's Manual",             url: '/datasheets/CFW100/WEG-CFW100-MANUAL.pdf' },
+  { tag: 'CFW100', label: 'Quick Parameter Reference', url: '/datasheets/CFW100/WEG-CFW100-QUICK-PARAMETER-REFERENCE.pdf' },
+  { tag: 'CFW100', label: 'CFW100 Brochure',           url: '/datasheets/CFW100/WEG-CFW100-BROCHURE.pdf' },
 ]
 
 const tagBadge = {

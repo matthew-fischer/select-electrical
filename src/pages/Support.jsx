@@ -77,7 +77,7 @@ const steps = [
 
 function triggerDownload(manual) {
   const link = document.createElement('a')
-  link.href = `/select-electrical/datasheets/Brochures/${manual.file}`
+  link.href = `/datasheets/Brochures/${manual.file}`
   link.download = manual.file
   link.target = '_blank'
   link.rel = 'noopener noreferrer'
@@ -162,7 +162,7 @@ function Modal({ manual, onClose }) {
                 Your download should begin automatically. If it didn't, use the button below.
               </p>
               <a
-                href={`/select-electrical/datasheets/Brochures/${manual.file}`}
+                href={`/datasheets/Brochures/${manual.file}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-gold text-dark font-semibold text-sm px-6 py-3 hover:bg-yellow-300 transition-colors"
@@ -275,7 +275,7 @@ export default function Support() {
       {/* Hero */}
       <section
         className="pt-36 pb-20 relative overflow-hidden"
-        style={{ backgroundImage: "url('/select-electrical/images/canola_pumpjacks.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 40%' }}
+        style={{ backgroundImage: "url('/images/canola_pumpjacks.jpg')", backgroundSize: 'cover', backgroundPosition: 'center 40%' }}
       >
         <div className="absolute inset-0 bg-dark opacity-75" />
         <div className="absolute inset-0 opacity-5">

@@ -6,7 +6,7 @@ export default function CFW500() {
       title="CFW500"
       category="Low Voltage VFDs"
       categoryTo="/low-voltage-vfd"
-      image="/select-electrical/images/low-voltage/cfw500.png"
+      image="/images/low-voltage/cfw500.png"
       tagline="Fast Commissioning & Infinite Possibilities"
       description="The CFW500 covers power levels from 0.18 to 7.5 kW (0.25 to 10 HP) and is designed for fast commissioning in machine applications. Operates in ambient temperatures up to 50°C without derating, with full fieldbus communication support."
       specs={[

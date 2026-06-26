@@ -3,13 +3,13 @@ import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucid
 import reactors, { pdfPath } from '../data/reactorDatasheets'
 
 const manuals = [
-  { tag: 'MTE - RL', label: 'Reactor Catalog & Manual',         url: '/select-electrical/datasheets/Manuals/MTE%203%25%20Impedance%20Reactor/RL-REACTOR-CATALOG-AND-MANUAL.pdf' },
-  { tag: 'TCI', label: 'KDR Brochure',                     url: '/select-electrical/datasheets/Manuals/TCI%203%25%20Impendance%20Reactor/KDR-BROCHURE.pdf' },
-  { tag: 'TCI', label: 'Installation Instructions',         url: '/select-electrical/datasheets/Manuals/TCI%203%25%20Impendance%20Reactor/KDR-REACTOR-INSTRUCTION-INSTALLATION.pdf' },
-  { tag: 'TCI', label: 'Reactor/Filter Size Chart',         url: '/select-electrical/datasheets/Manuals/TCI%203%25%20Impendance%20Reactor/REACTOR-FILTER-SIZE-CHART.pdf' },
-  { tag: 'MTE - RLW', label: 'RLW Specifications',          url: '/select-electrical/datasheets/RLW%20Reactors/RLW-Specs.pdf' },
-  { tag: 'MTE - RLW', label: 'RLW Manual',                  url: '/select-electrical/datasheets/RLW%20Reactors/RLW-Manual.pdf' },
-  { tag: 'MTE - RLW', label: 'RLW Brochure',                url: '/select-electrical/datasheets/RLW%20Reactors/RLW-Brochure.pdf' },
+  { tag: 'MTE - RL', label: 'Reactor Catalog & Manual',         url: '/datasheets/Manuals/MTE%203%25%20Impedance%20Reactor/RL-REACTOR-CATALOG-AND-MANUAL.pdf' },
+  { tag: 'TCI', label: 'KDR Brochure',                     url: '/datasheets/Manuals/TCI%203%25%20Impendance%20Reactor/KDR-BROCHURE.pdf' },
+  { tag: 'TCI', label: 'Installation Instructions',         url: '/datasheets/Manuals/TCI%203%25%20Impendance%20Reactor/KDR-REACTOR-INSTRUCTION-INSTALLATION.pdf' },
+  { tag: 'TCI', label: 'Reactor/Filter Size Chart',         url: '/datasheets/Manuals/TCI%203%25%20Impendance%20Reactor/REACTOR-FILTER-SIZE-CHART.pdf' },
+  { tag: 'MTE - RLW', label: 'RLW Specifications',          url: '/datasheets/RLW%20Reactors/RLW-Specs.pdf' },
+  { tag: 'MTE - RLW', label: 'RLW Manual',                  url: '/datasheets/RLW%20Reactors/RLW-Manual.pdf' },
+  { tag: 'MTE - RLW', label: 'RLW Brochure',                url: '/datasheets/RLW%20Reactors/RLW-Brochure.pdf' },
 ]
 
 const ALL = 'All'

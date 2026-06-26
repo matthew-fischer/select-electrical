@@ -6,7 +6,7 @@ export default function CFW300() {
       title="CFW300"
       category="Low Voltage VFDs"
       categoryTo="/low-voltage-vfd"
-      image="/select-electrical/images/low-voltage/cfw300.png"
+      image="/images/low-voltage/cfw300.png"
       tagline="Precise Control & Easy Operation"
       description="The CFW300 is a high-performance variable speed drive designed for three-phase induction motors that require precise control and easy operation. Expandable via accessory slots and compatible with optional remote HMI for flexible installation."
       specs={[

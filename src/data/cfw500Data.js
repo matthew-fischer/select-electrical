@@ -84,7 +84,7 @@ const drives = [
 ]
 
 export function pdfPath(file) {
-  return `/select-electrical/datasheets/CFW500/${file}`
+  return `/datasheets/CFW500/${file}`
 }
 
 // Strip -datapack.pdf or .pdf suffix to get the clean part number

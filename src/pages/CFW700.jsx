@@ -6,7 +6,7 @@ export default function CFW700() {
       title="CFW700"
       category="Low Voltage VFDs"
       categoryTo="/low-voltage-vfd"
-      image="/select-electrical/images/low-voltage/cfw700.png"
+      image="/images/low-voltage/cfw700.png"
       tagline="High-Performance General Purpose Drive"
       description="The CFW700 is a high-performance product with torque and speed control, covering power levels from 1.1 to 132 kW (1.5 to 150 HP). Built for robust general-purpose industrial applications with WEG's Vectrue Technology® and Optimal Flux® for maximum efficiency."
       specs={[

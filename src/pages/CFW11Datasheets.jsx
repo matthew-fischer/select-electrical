@@ -3,11 +3,11 @@ import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucid
 import drives, { pdfPath } from '../data/cfw11Data'
 
 const manuals = [
-  { tag: 'CFW11', label: 'CFW11 Catalog',                url: '/select-electrical/datasheets/Manuals/CFW11/WEG-CFW11-CATALOG.pdf' },
-  { tag: 'CFW11', label: 'Quick Parameter Reference',    url: '/select-electrical/datasheets/Manuals/CFW11/WEG-CFW11-QUICK-PARAMETER-REFERENCE.pdf' },
-  { tag: 'CFW11', label: "User's Manual (200–460V)",     url: '/select-electrical/datasheets/Manuals/CFW11/WEG-CFW11-USERS-MANUAL-200-460V.pdf' },
-  { tag: 'CFW11', label: "User's Manual (460V)",         url: '/select-electrical/datasheets/Manuals/CFW11/WEG-CFW11-USERS-MNAUAL-460V.pdf' },
-  { tag: 'CFW11', label: "User's Manual (600V)",         url: '/select-electrical/datasheets/Manuals/CFW11/WEG-CFW11-USERS-MANUAL-600V.pdf' },
+  { tag: 'CFW11', label: 'CFW11 Catalog',                url: '/datasheets/Manuals/CFW11/WEG-CFW11-CATALOG.pdf' },
+  { tag: 'CFW11', label: 'Quick Parameter Reference',    url: '/datasheets/Manuals/CFW11/WEG-CFW11-QUICK-PARAMETER-REFERENCE.pdf' },
+  { tag: 'CFW11', label: "User's Manual (200–460V)",     url: '/datasheets/Manuals/CFW11/WEG-CFW11-USERS-MANUAL-200-460V.pdf' },
+  { tag: 'CFW11', label: "User's Manual (460V)",         url: '/datasheets/Manuals/CFW11/WEG-CFW11-USERS-MNAUAL-460V.pdf' },
+  { tag: 'CFW11', label: "User's Manual (600V)",         url: '/datasheets/Manuals/CFW11/WEG-CFW11-USERS-MANUAL-600V.pdf' },
 ]
 
 const tagBadge = {

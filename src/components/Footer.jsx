@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <footer className="bg-dark text-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-[0.18] pointer-events-none">
-        <img src="/select-electrical/images/Shop.jpg" alt="" className="w-full h-full object-cover object-center filter brightness-110" aria-hidden="true" />
+        <img src="/images/Shop.jpg" alt="" className="w-full h-full object-cover object-center filter brightness-110" aria-hidden="true" />
       </div>
       {/* Main footer content */}
       <div className="max-w-7xl mx-auto px-6 py-16">
@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-5">
               <img
-                src="/select-electrical/images/Select-Logo.jpg"
+                src="/images/Select-Logo.jpg"
                 alt="Select Electrical logo"
                 className="h-10 w-auto object-contain"
               />

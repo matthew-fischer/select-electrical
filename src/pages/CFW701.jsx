@@ -6,7 +6,7 @@ export default function CFW701() {
       title="CFW701"
       category="Low Voltage VFDs"
       categoryTo="/low-voltage-vfd"
-      image="/select-electrical/images/low-voltage/cfw701.png"
+      image="/images/low-voltage/cfw701.png"
       tagline="Dedicated HVAC-R Drive"
       description="The HVAC-R market deserves a dedicated and complete drive. The CFW701 covers power levels from 1.1 to 132 kW (1.5 to 175 HP) with built-in features specifically designed for heating, ventilation, air conditioning, and refrigeration applications."
       specs={[

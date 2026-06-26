@@ -64,7 +64,7 @@ export default function SE200ControlSolutions() {
             <div className="hidden lg:block">
               <div className="relative aspect-[3/4] overflow-hidden border border-gold/20 shadow-2xl bg-[#0d0d0d]">
                 <img
-                  src="/select-electrical/images/se200/control_solution_1.png"
+                  src="/images/se200/control_solution_1.png"
                   alt="SE200 Control Solutions"
                   className="w-full h-full object-contain opacity-90"
                 />

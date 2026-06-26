@@ -24,8 +24,8 @@ export default function SE200AutomatedPump() {
         'Shutdown annunciation on VFD HMI',
         'Precise speed control for energy optimization',
       ]}
-      brochureUrl="/select-electrical/datasheets/Brochures/SE200-Automated-Pump-Drive.pdf"
-      image="/select-electrical/images/se200/Automated.jpg"
+      brochureUrl="/datasheets/Brochures/SE200-Automated-Pump-Drive.pdf"
+      image="/images/se200/Automated.jpg"
     />
   )
 }

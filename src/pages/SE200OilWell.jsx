@@ -24,8 +24,8 @@ export default function SE200OilWell() {
         'Reduces maintenance on mechanical equipment and downhole components',
         'Short return on investment timeline',
       ]}
-      brochureUrl="/select-electrical/datasheets/Brochures/SE200-Oilwell-Drive.pdf"
-      image="/select-electrical/images/se200/OilWell.jpg"
+      brochureUrl="/datasheets/Brochures/SE200-Oilwell-Drive.pdf"
+      image="/images/se200/OilWell.jpg"
     />
   )
 }
