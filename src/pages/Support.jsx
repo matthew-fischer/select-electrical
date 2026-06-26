@@ -6,7 +6,7 @@ const manuals = [
   {
     title: 'SE200 Industrial/PID Drive',
     description: 'Installation, operation & maintenance manual for the SE200 Industrial VFD.',
-    file: 'SE200-Industrial-Drive.pdf',
+    file: 'SE200-Industrial-PID-Drive.pdf',
     tag: 'Industrial',
   },
   {
@@ -77,7 +77,7 @@ const steps = [
 
 function triggerDownload(manual) {
   const link = document.createElement('a')
-  link.href = `/datasheets/Brochures/${manual.file}`
+  link.href = `/datasheets/manual/${manual.file}`
   link.download = manual.file
   link.target = '_blank'
   link.rel = 'noopener noreferrer'
@@ -162,7 +162,7 @@ function Modal({ manual, onClose }) {
                 Your download should begin automatically. If it didn't, use the button below.
               </p>
               <a
-                href={`/datasheets/Brochures/${manual.file}`}
+                href={`/datasheets/manual/${manual.file}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-gold text-dark font-semibold text-sm px-6 py-3 hover:bg-yellow-300 transition-colors"
