@@ -148,7 +148,7 @@ export default function ElectricalServices() {
                 35+ Years of Field Expertise
               </h2>
               <p className="text-gray-400 leading-relaxed mb-5">
-                Select Electrical Enterprises Ltd. has been serving Alberta since 1988, operated by a
+                Select Electrical Enterprises Ltd. is operated by a
                 team of skilled Engineering Technologists and Electricians.
               </p>
               <p className="text-gray-400 leading-relaxed mb-8">
