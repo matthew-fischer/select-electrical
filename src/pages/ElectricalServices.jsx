@@ -72,8 +72,7 @@ export default function ElectricalServices() {
           <h1 className="text-4xl md:text-5xl font-black text-white mb-5">Electrical Services</h1>
           <p className="text-gray-400 text-lg max-w-2xl leading-relaxed">
             Select Electrical Enterprises Ltd. has extensive automation experience across all sectors.
-            We provide efficient, industry-leading field services from our Stony Plain base —
-            travelling throughout Alberta.
+            We provide efficient, industry-leading field services from our Stony Plain base.
           </p>
         </div>
       </section>
@@ -150,8 +149,7 @@ export default function ElectricalServices() {
               </h2>
               <p className="text-gray-400 leading-relaxed mb-5">
                 Select Electrical Enterprises Ltd. has been serving Alberta since 1988, operated by a
-                team of skilled Engineering Technologists and Electricians. Our service team is based
-                in Stony Plain and travels throughout the province.
+                team of skilled Engineering Technologists and Electricians.
               </p>
               <p className="text-gray-400 leading-relaxed mb-8">
                 Our experience spans Variable Frequency Drive applications, custom VFD package
