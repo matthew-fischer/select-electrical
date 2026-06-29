@@ -95,9 +95,9 @@ export default function SE200Carousel() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
             <div className="w-16 h-1 bg-gold mb-6" />
-            <h2 className="text-3xl md:text-4xl font-black text-white">SE200 Packaged Drive Solutions</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-white">Packaged Solutions</h2>
             <p className="text-gray-400 mt-3 max-w-xl">
-              Custom-engineered VFD packages built for Alberta's oil & gas and industrial sectors.
+              Custom-engineered VFD packages built for oil & gas and many other industrial sectors.
             </p>
           </div>
           <Link
