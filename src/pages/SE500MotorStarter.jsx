@@ -212,24 +212,16 @@ export default function SE500MotorStarter() {
               </div>
 
               <div className="border border-gray-100 p-6">
-                <h3 className="font-bold text-dark text-base mb-4">VFD Packages</h3>
+                <h3 className="font-bold text-dark text-base mb-4">Package Solutions</h3>
                 <Link
-                  to="/vfd-packages"
+                  to="/package-solutions"
                   className="flex items-center gap-2 text-sm text-gray-500 hover:text-gold transition-colors"
                 >
                   <ArrowRight size={13} className="shrink-0" />
-                  View All VFD Packages
+                  View All Package Solutions
                 </Link>
               </div>
 
-              <div className="bg-gold/5 border border-gold/20 p-5">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Certifications</p>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div>CSA / ETL Certified Manufacturer</div>
-                  <div>COR Certified</div>
-                  <div>ISNetworld</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

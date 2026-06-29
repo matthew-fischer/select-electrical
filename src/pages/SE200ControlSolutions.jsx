@@ -153,14 +153,6 @@ export default function SE200ControlSolutions() {
                 </ul>
               </div>
 
-              <div className="bg-gold/5 border border-gold/20 p-5">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Certifications</p>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div>CSA / ETL Certified Manufacturer</div>
-                  <div>COR Certified</div>
-                  <div>ISNetworld</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
