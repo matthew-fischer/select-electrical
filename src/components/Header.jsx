@@ -37,8 +37,6 @@ const productGroups = [
       { label: 'CFW300', to: '/cfw300' },
       { label: 'CFW500', to: '/cfw500' },
       { label: 'CFW501', to: '/cfw501' },
-      { label: 'CFW700', to: '/cfw700' },
-      { label: 'CFW701', to: '/cfw701' },
     ],
   },
   {

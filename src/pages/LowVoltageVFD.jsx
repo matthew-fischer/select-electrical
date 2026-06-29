@@ -27,16 +27,6 @@ const products = [
     to: '/cfw501',
     desc: 'HVAC-R drive with BACnet/Metasys/Modbus communications, SoftPLC technology, and dual PID loops. Covers 0.25–10 HP.',
   },
-  {
-    model: 'CFW700',
-    to: '/cfw700',
-    desc: 'High-performance general-purpose drive featuring Vectrue Technology® and Optimal Flux®. Covers 1.5–150 HP.',
-  },
-  {
-    model: 'CFW701',
-    to: '/cfw701',
-    desc: 'Dedicated HVAC-R drive covering 1.5–175 HP with built-in HVAC-specific features and Vectrue Technology®.',
-  },
 ]
 
 export default function LowVoltageVFD() {
@@ -68,7 +58,7 @@ export default function LowVoltageVFD() {
           <h1 className="text-4xl md:text-5xl font-black text-white mb-3">Low Voltage VFDs</h1>
           <p className="text-gold font-medium text-lg mb-5">WEG Low Voltage Variable Frequency Drives</p>
           <p className="text-gray-400 text-lg max-w-2xl">
-            Select Electrical Enterprises Ltd. has partnered with WEG to distribute low voltage VFDs in Edmonton, Alberta and surrounding areas. We offer the complete WEG CFW series — from compact fractional HP drives to high-power industrial solutions.
+            Select Electrical Enterprises Ltd. has partnered with WEG to distribute low voltage VFDs. We offer the complete WEG CFW series — from compact fractional HP drives to high-power industrial solutions.
           </p>
         </div>
       </section>

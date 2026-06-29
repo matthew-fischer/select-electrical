@@ -25,8 +25,6 @@ import CFW11 from './pages/CFW11'
 import CFW100 from './pages/CFW100'
 import CFW300 from './pages/CFW300'
 import CFW500 from './pages/CFW500'
-import CFW700 from './pages/CFW700'
-import CFW701 from './pages/CFW701'
 import CFW501 from './pages/CFW501'
 import MediumVoltageVFD from './pages/MediumVoltageVFD'
 import MVW01 from './pages/MVW01'
@@ -83,8 +81,6 @@ export default function App() {
             <Route path="/cfw300" element={<CFW300 />} />
             <Route path="/cfw500" element={<CFW500 />} />
             <Route path="/cfw501" element={<CFW501 />} />
-            <Route path="/cfw700" element={<CFW700 />} />
-            <Route path="/cfw701" element={<CFW701 />} />
             <Route path="/medium-voltage-vfd" element={<MediumVoltageVFD />} />
             <Route path="/mvw01" element={<MVW01 />} />
             <Route path="/mvw3000" element={<MVW3000 />} />
