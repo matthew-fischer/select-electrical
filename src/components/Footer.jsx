@@ -39,7 +39,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              A privately owned electrical, automation and controls company proudly serving Alberta since 1988.
+              A privately owned electrical, automation and controls company proudly serving since 1988.
             </p>
             <a
               href="https://www.linkedin.com/company/select-electrical-enterprises-ltd"

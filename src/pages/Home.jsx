@@ -153,7 +153,6 @@ export default function Home() {
                   'Custom VFD and MCC packages built to spec',
                   'In-house engineering and manufacturing',
                   'Full installation and commissioning services',
-                  'Safety-certified workforce (COR, H2S, WHMIS, First Aid)',
                 ].map((point) => (
                   <li key={point} className="flex items-start gap-3 text-sm text-gray-600">
                     <CheckCircle size={16} className="text-gold mt-0.5 flex-shrink-0" />
@@ -216,7 +215,7 @@ export default function Home() {
             <div className="w-16 h-1 bg-gold mx-auto mb-6" />
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Industries We Serve</h2>
             <p className="text-gray-400 max-w-xl mx-auto">
-              From oil sands to renewable energy — our solutions power operations across Alberta's most demanding sectors.
+              From oil sands to renewable energy — our solutions power operations in the most demanding sectors.
             </p>
           </div>
 
