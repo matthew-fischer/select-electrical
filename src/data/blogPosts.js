@@ -2,7 +2,7 @@ export const blogPosts = [
   {
     slug: 'passive-harmonic-filters-power-quality',
     title: 'Passive Harmonic Filters & Power Quality',
-    date: 'August 15, 2025',
+    date: 'May 15, 2026',
     author: 'Matthew Fischer',
     excerpt: "In today's power-hungry world, maintaining clean, stable electricity isn't just a technical preference, it's a business priority.",
     sections: [
@@ -98,7 +98,7 @@ export const blogPosts = [
   {
     slug: 'what-are-motor-control-centers',
     title: 'What are Motor Control Centers?',
-    date: 'August 15, 2025',
+    date: 'November 14, 2025',
     author: 'Matthew Fischer',
     excerpt: 'Electric motors are everywhere – from HVAC systems and water pumps to conveyors and manufacturing equipment.',
     sections: [
@@ -162,7 +162,7 @@ export const blogPosts = [
   {
     slug: 'use-of-industrial-bearings-in-electric-motors',
     title: 'Use of Industrial Bearings in Electric Motors',
-    date: 'August 15, 2025',
+    date: 'August 12, 2025',
     author: 'Matthew Fischer',
     excerpt: 'Electric motors are the workhorses of modern industry, powering everything from HVAC systems to conveyor belts and precision machinery.',
     sections: [
@@ -225,7 +225,7 @@ export const blogPosts = [
   {
     slug: 'what-is-an-electrical-switchboard',
     title: 'What is an Electrical Switchboard?',
-    date: 'August 15, 2025',
+    date: 'June 5, 2025',
     author: 'Matthew Fischer',
     excerpt: 'In any commercial or industrial facility, reliable power distribution is critical to daily operations.',
     sections: [
@@ -272,7 +272,7 @@ export const blogPosts = [
   {
     slug: 'benefits-of-vfds',
     title: 'Benefits of VFDs',
-    date: 'August 15, 2025',
+    date: 'May 10, 2025',
     author: 'Matthew Fischer',
     excerpt: 'Variable Frequency Drives (VFDs) have become an essential tool for optimizing motor performance across countless applications.',
     sections: [
@@ -355,7 +355,7 @@ export const blogPosts = [
   {
     slug: 'benefits-of-automatic-power-factor-correction',
     title: 'Benefits of Automatic Power Factor Correction',
-    date: 'August 15, 2025',
+    date: 'March 25, 2025',
     author: 'Matthew Fischer',
     excerpt: 'Automatic Power Factor Correction systems monitor and adjust power factor continuously, reducing reactive power and energy losses.',
     sections: [
@@ -405,7 +405,7 @@ export const blogPosts = [
   {
     slug: 'benefits-of-dvdt-filters',
     title: 'Benefits of DVDT Filters',
-    date: 'August 14, 2025',
+    date: 'March 2, 2025',
     author: 'Matthew Fischer',
     excerpt: "As variable frequency drives (VFDs) become standard in modern motor control systems, their benefits – like energy efficiency and precision control – are well known.",
     sections: [
