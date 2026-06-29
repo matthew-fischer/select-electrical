@@ -10,7 +10,7 @@ const products = [
   {
     model: 'CFW100',
     to: '/cfw100',
-    desc: 'The smallest drive on the market.',
+    desc: 'An extremely compact, high-performance VFD designed for single-phase input to control three-phase induction motors.',
   },
   {
     model: 'CFW300',
