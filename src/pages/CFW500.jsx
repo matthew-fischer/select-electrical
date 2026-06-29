@@ -8,15 +8,8 @@ export default function CFW500() {
       categoryTo="/low-voltage-vfd"
       image="/images/low-voltage/cfw500.png"
       tagline="Fast Commissioning & Infinite Possibilities"
-      description="The CFW500 covers power levels from 0.18 to 7.5 kW (0.25 to 10 HP) and is designed for fast commissioning in machine applications. Operates in ambient temperatures up to 50°C without derating, with full fieldbus communication support."
-      specs={[
-        { label: 'Power Range', value: '0.25–10 HP (0.18–7.5 kW)' },
-        { label: 'Voltage Options', value: '200–240V, 380–480V, 500–600V' },
-        { label: 'Current Range', value: '1.0–56A' },
-        { label: 'Ambient Temp', value: 'Up to 50°C (no derating)' },
-        { label: 'Conformal Coating', value: 'Class 3C2' },
-        { label: 'Braking IGBT', value: 'Built-in (optional)' },
-      ]}
+      description="With a modern design and power ranging from 0.25 to 75 cv, the CFW500 frequency inverter is a high performance variable speed drive, which assists in controlling speed and torque of three-phase induction motors."
+      technicalSpecsLink="https://pamensky.com/cfw500.html"
       features={[
         'Operates up to 50°C ambient temperature without derating',
         'Built-in braking IGBT capability (optional)',
