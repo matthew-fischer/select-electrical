@@ -148,7 +148,7 @@ export default function Footer() {
         </p>
         <div className="flex items-center gap-4">
           <p className="text-gray-600 text-xs">
-            Proudly serving Alberta since 1988
+            Providing Industry Leading Electrical, Automation, and Controls Services Since 1988
           </p>
           <span className="text-gray-700 text-xs hidden md:block">·</span>
           <p className="text-gray-600 text-xs">
