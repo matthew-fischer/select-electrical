@@ -7,7 +7,7 @@ const INTERVAL_MS = 6000
 const productSlides = [
   {
     title: 'VFD Packages',
-    subtitle: 'Custom-engineered VFD packages for oil & gas and industrial applications across Alberta',
+    subtitle: 'Custom-engineered VFD packages for oil & gas and industrial applications',
     image: '/images/hero/SEEL_Packages.jpg',
     to: '/vfd-packages',
     cta: 'View VFD Packages',
@@ -96,7 +96,7 @@ export default function HeroCarousel() {
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold text-xs sm:text-sm font-medium px-4 py-2 mb-6 sm:mb-8">
               <Zap size={14} fill="currentColor" />
-              Serving Alberta Since 1988
+              Providing Industry Leading Services Since 1988
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-6">
               Electrical &{' '}
@@ -105,7 +105,7 @@ export default function HeroCarousel() {
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed mb-8 sm:text-left mb-10 max-w-xl">
               A privately owned electrical, automation and controls company delivering
-              professional, personal, precise, and reliable service across Alberta.
+              professional, personal, precise, and reliable services.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/services" className="btn-primary text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4">
@@ -155,7 +155,7 @@ export default function HeroCarousel() {
             <div className="max-w-2xl relative z-20">
               <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 text-gold text-xs sm:text-sm font-medium px-4 py-2 mb-4 sm:mb-6">
                 <Zap size={14} fill="currentColor" />
-                Serving Alberta Since 1988
+                Providing Industry Leading Services Since 1988
               </div>
               <div className="mb-4">
                 <span className="text-[10px] sm:text-xs font-semibold tracking-widest uppercase text-gray-400 border border-white/20 px-2.5 py-1 sm:px-3 sm:py-1.5">
