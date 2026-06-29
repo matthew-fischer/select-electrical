@@ -23,7 +23,7 @@ import VFDPackages from './pages/VFDPackages'
 import LowVoltageVFD from './pages/LowVoltageVFD'
 import CFW11 from './pages/CFW11'
 import CFW100 from './pages/CFW100'
-import CFW300 from './pages/CFW300'
+import CFW320 from './pages/CFW320'
 import CFW500 from './pages/CFW500'
 import CFW501 from './pages/CFW501'
 import MediumVoltageVFD from './pages/MediumVoltageVFD'
@@ -78,7 +78,7 @@ export default function App() {
             <Route path="/low-voltage-vfd" element={<LowVoltageVFD />} />
             <Route path="/cfw11" element={<CFW11 />} />
             <Route path="/cfw100" element={<CFW100 />} />
-            <Route path="/cfw300" element={<CFW300 />} />
+            <Route path="/cfw320" element={<CFW320 />} />
             <Route path="/cfw500" element={<CFW500 />} />
             <Route path="/cfw501" element={<CFW501 />} />
             <Route path="/medium-voltage-vfd" element={<MediumVoltageVFD />} />

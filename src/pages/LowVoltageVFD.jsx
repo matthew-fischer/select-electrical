@@ -13,8 +13,8 @@ const products = [
     desc: 'An extremely compact, high-performance VFD designed for single-phase input to control three-phase induction motors.',
   },
   {
-    model: 'CFW300',
-    to: '/cfw300',
+    model: 'CFW320',
+    to: '/cfw320',
     desc: 'High-performance VSD for three-phase induction motors requiring precise control and easy operation.',
   },
   {

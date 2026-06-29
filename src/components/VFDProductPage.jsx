@@ -4,7 +4,7 @@ import { CheckCircle, Phone, ArrowRight, Zap } from 'lucide-react'
 const lvVFDs = [
   { label: 'CFW11', to: '/cfw11' },
   { label: 'CFW100', to: '/cfw100' },
-  { label: 'CFW300', to: '/cfw300' },
+  { label: 'CFW320', to: '/cfw320' },
   { label: 'CFW500', to: '/cfw500' },
   { label: 'CFW501', to: '/cfw501' },
 ]
