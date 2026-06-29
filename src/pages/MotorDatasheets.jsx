@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react'
 import motors, { pdfPath } from '../data/motorDatasheets'
 
 const manuals = [
@@ -9,6 +9,13 @@ const manuals = [
   { tag: 'W22',       label: 'W22 Technical Catalog',     url: '/datasheets/Manuals/Motors/WEG-MOTOR-W22-TECHNICAL-CATALOG.pdf' },
   { tag: 'W22',       label: 'W22 Three Phase Datasheet', url: '/datasheets/Manuals/Motors/WEG-MOTOR-W22-THREE-PHASE.pdf' },
   { tag: 'Farm Duty', label: 'Standard Stock Catalog',    url: '/datasheets/Manuals/Motors/WEG-05-A-2020-standard-stock-us100-english.pdf' },
+]
+
+const websiteLinks = [
+  { tag: 'Farm Duty', label: 'Farm Duty Product Page', url: 'https://pamensky.com/single-phase-farm-duty-tefc.html' },
+  { tag: 'W21',      label: 'W21XP Product Page',        url: 'https://pamensky.com/w21x-explosion-proof-three-phase-nema-premium.html' },
+  { tag: 'W22',      label: 'W22 Product Page',          url: 'https://pamensky.com/w22-three-phase-nema-premium-tefc.html' },
+  { tag: 'W01',      label: 'W01 Product Page',          url: 'https://pamensky.com/w01-three-phase-nema-premium-tefc.html' },
 ]
 
 const tagBadge = {
@@ -121,6 +128,19 @@ export default function MotorDatasheets() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-10">
+
+        <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Links</p>
+        <div className="flex flex-wrap gap-2 mb-2">
+          {websiteLinks.map(m => (
+            <a key={m.url} href={m.url} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#0d0d0d] border border-white/8 px-3 py-2 text-xs hover:border-gold/40 transition-colors group">
+              <span className={`font-semibold text-xs px-1.5 py-0.5 border ${tagBadge[m.tag]}`}>{m.tag}</span>
+              <span className="text-gray-400 group-hover:text-white transition-colors">{m.label}</span>
+              <ArrowUpRight size={11} className="text-gold" />
+            </a>
+          ))}
+        </div>
+
         {/* Manuals */}
         <div className="mb-8 pb-8 border-b border-white/5">
           <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Manuals &amp; Documentation</p>
