@@ -5,12 +5,12 @@ const products = [
   {
     model: 'CFW11',
     to: '/cfw11',
-    desc: 'A versatile VFD for almost any application with multiple control modes. Available from 1.5 to 600 cv across single and three-phase inputs up to 690V.',
+    desc: 'A versatile VFD for almost any application with multiple control modes.',
   },
   {
     model: 'CFW100',
     to: '/cfw100',
-    desc: 'The smallest drive on the market. Covers 0.25–1 HP with single-phase 220V input, plug-and-play operation, and DIN rail mounting.',
+    desc: 'The smallest drive on the market.',
   },
   {
     model: 'CFW300',
@@ -20,12 +20,12 @@ const products = [
   {
     model: 'CFW500',
     to: '/cfw500',
-    desc: 'Fast commissioning and infinite possibilities for machines. Covers 0.25–10 HP with ambient operation up to 50°C without derating.',
+    desc: 'Fast commissioning and infinite possibilities for machines.',
   },
   {
     model: 'CFW501',
     to: '/cfw501',
-    desc: 'HVAC-R drive with BACnet/Metasys/Modbus communications, SoftPLC technology, and dual PID loops. Covers 0.25–10 HP.',
+    desc: 'HVAC-R drive with BACnet/Metasys/Modbus communications, SoftPLC technology, and dual PID loops.',
   },
 ]
 
