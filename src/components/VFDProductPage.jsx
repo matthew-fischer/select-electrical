@@ -14,7 +14,7 @@ const mvVFDs = [
   { label: 'MVW3000', to: '/mvw3000' },
 ]
 
-export default function VFDProductPage({ title, category, categoryTo, tagline, description, specs, features, additionalSections, image }) {
+export default function VFDProductPage({ title, category, categoryTo, tagline, description, specs, features, additionalSections, image, technicalSpecsLink, }) {
   const isLV = category === 'Low Voltage VFDs'
   const relatedList = isLV ? lvVFDs : mvVFDs
 
@@ -87,8 +87,9 @@ export default function VFDProductPage({ title, category, categoryTo, tagline, d
                       Review the technical documentation, then continue into the core product characteristics below.
                     </p>
                   </div>
+                  {technicalSpecsLink && (
                   <a
-                    href="https://pamensky.com/cfw11.html"
+                    href={technicalSpecsLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary self-start flex items-center justify-center gap-2 group"
@@ -99,6 +100,7 @@ export default function VFDProductPage({ title, category, categoryTo, tagline, d
                       className="transition-transform duration-300 group-hover:translate-x-1"
                     />
                   </a>
+                )}
                 </div>
 
                 {specs && specs.length > 0 && (

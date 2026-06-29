@@ -9,6 +9,7 @@ export default function CFW11() {
       image="/images/low-voltage/cfw11.png"
       tagline="Versatile VFD for Almost Any Application"
       description="The CFW11 presents many innovations adding significant benefits to customers. A versatile drive that can be used in almost any application, featuring multiple control modes, built-in DC link inductors, and communication protocols for seamless system integration."
+      technicalSpecsLink="https://pamensky.com/cfw11.html"
       features={[
         'Built-in inductors on DC link — reduces harmonics without external components',
         'Space-saving panel design',
