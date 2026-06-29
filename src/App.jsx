@@ -4,7 +4,6 @@ import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Company from './pages/Company'
-import Services from './pages/Services'
 import Contact from './pages/Contact'
 import Blogs from './pages/Blogs'
 import BlogPost from './pages/BlogPost'
@@ -61,7 +60,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/company" element={<Company />} />
-            <Route path="/services" element={<Services />} />
+            <Route path="/electrical-services" element={<ElectricalServices />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blogs />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
@@ -99,7 +98,6 @@ export default function App() {
             <Route path="/cfw300-datasheets" element={<CFW300Datasheets />} />
             <Route path="/cfw500-datasheets" element={<CFW500Datasheets />} />
             <Route path="/soft-starter-datasheets" element={<SoftStarterDatasheets />} />
-            <Route path="/electrical-services" element={<ElectricalServices />} />
             <Route path="/infrared-surveys" element={<InfraredSurveys />} />
             <Route path="/vfd-startup-commissioning" element={<VfdStartupCommissioning />} />
             <Route path="/vfd-preventative-maintenance" element={<VfdPreventativeMaintenance />} />
