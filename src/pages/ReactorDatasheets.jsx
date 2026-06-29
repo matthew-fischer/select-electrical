@@ -15,6 +15,7 @@ const manuals = [
 const websiteLinks = [
   { tag: 'MTE - RL',  label: 'RL Reactors',  url: 'https://mtecorp.com/products/reactors/rl-reactors/' },
   { tag: 'MTE - RLW', label: 'RLW Reactors', url: 'https://mtecorp.com/products/reactors/rlw-reactors/' },
+  { tag: 'TCI',        label: 'KDR Reactors', url: 'https://www.transcoil.com/products/kdr-line-reactor/' },
 ]
 
 const ALL = 'All'
