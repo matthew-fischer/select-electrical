@@ -73,7 +73,7 @@ const features = [
   '24/7 technical support via phone or field deployment',
 ]
 
-const industries = ['Oil & Gas', 'Mining', 'Industrial', 'Pulp & Paper', 'Saw Mills', 'Commercial']
+const industries = ['Oil & Gas', 'Industrial', 'Mining', 'Agriculture', 'Forestry', 'Pulp & Paper', 'Data Centers', 'Renewable Energy',]
 
 export default function VFDPackages() {
   return (
@@ -95,13 +95,13 @@ export default function VFDPackages() {
           <div className="flex items-center gap-2 text-gray-500 text-sm mb-6">
             <Link to="/" className="hover:text-gold transition-colors">Home</Link>
             <span>/</span>
-            <span className="text-gray-300">VFD Packages</span>
+            <span className="text-gray-300">Package Solutions</span>
           </div>
           <div className="inline-block bg-gold/10 border border-gold/30 text-gold text-xs font-semibold tracking-widest uppercase px-3 py-1 mb-5">
-            Serving Alberta Since 1988
+            Providing Industry Leading Services Since 1988
           </div>
           <div className="w-16 h-1 bg-gold mb-6" />
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-3">VFD Packages</h1>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-3">Package Solutions</h1>
           <p className="text-gold font-medium text-lg mb-5">SEEL Customized VFD & Control Packages</p>
           <p className="text-gray-400 text-lg max-w-2xl">
             Select Electrical manufactures and distributes customized Variable Frequency Drive packages completely wired, tested, and ready for field installation. Every package is built for the demands of your specific application.
@@ -144,7 +144,7 @@ export default function VFDPackages() {
       {/* Package grid */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-3xl font-black text-dark mb-2">VFD Package Lineup</h2>
+          <h2 className="text-3xl font-black text-dark mb-2">Package Lineup</h2>
           <p className="text-gray-500 mb-10">Select the package that matches your application below.</p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {packages.map((pkg) => (

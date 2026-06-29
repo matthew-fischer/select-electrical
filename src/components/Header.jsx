@@ -13,19 +13,8 @@ const navLinks = [
 
 const productGroups = [
   {
-    heading: 'Electrical Services',
-    hub: '/electrical-services',
-    items: [
-      { label: 'Infrared Surveys', to: '/infrared-surveys' },
-      { label: 'VFD Startup & Commissioning', to: '/vfd-startup-commissioning' },
-      { label: 'VFD Preventative Maintenance', to: '/vfd-preventative-maintenance' },
-      { label: 'Power Quality Assessments', to: '/power-quality-assessments' },
-      { label: 'Energy Saving Audits', to: '/energy-saving-audits' },
-    ],
-  },
-  {
-    heading: 'VFD Packages',
-    hub: '/vfd-packages',
+    heading: 'Package Solutions',
+    hub: '/package-solutions',
     items: [
       { label: 'Oil Well Drive', to: '/se200-oil-well-drive' },
       { label: 'ESP Drive', to: '/se200-esp-drive' },
