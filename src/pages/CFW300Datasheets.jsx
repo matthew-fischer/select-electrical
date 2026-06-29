@@ -3,13 +3,13 @@ import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucid
 import drives, { pdfPath } from '../data/cfw300Data'
 
 const manuals = [
-  { tag: 'CFW300', label: "User's Manual",             url: '/datasheets/CFW300/WEG-CFW300-USERS-MANUAL.pdf' },
-  { tag: 'CFW300', label: 'Quick Parameter Reference', url: '/datasheets/CFW300/WEG-CFW300-QUICK-PARAMETER-REFERENCE.pdf' },
-  { tag: 'CFW300', label: 'CFW300 Catalog',            url: '/datasheets/CFW300/WEG-CFW300-CATALOG.pdf' },
+  { tag: 'CFW320', label: "User's Manual",             url: '/datasheets/CFW300/WEG-CFW300-USERS-MANUAL.pdf' },
+  { tag: 'CFW320', label: 'Quick Parameter Reference', url: '/datasheets/CFW300/WEG-CFW300-QUICK-PARAMETER-REFERENCE.pdf' },
+  { tag: 'CFW320', label: 'CFW320 Catalog',            url: '/datasheets/CFW300/WEG-CFW300-CATALOG.pdf' },
 ]
 
 const tagBadge = {
-  'CFW300': 'bg-indigo-900/40 text-indigo-300 border-indigo-700/40',
+  'CFW320': 'bg-indigo-900/40 text-indigo-300 border-indigo-700/40',
 }
 
 const ALL = 'All'
@@ -92,10 +92,10 @@ export default function CFW300Datasheets() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="w-16 h-1 bg-gold mb-6" />
           <h1 className="text-3xl md:text-4xl font-black text-white mb-3">
-            CFW300 Datasheets
+            CFW320 Datasheets
           </h1>
           <p className="text-gray-400 max-w-xl">
-            Filter by voltage class and horsepower to find and download the correct WEG CFW300 VFD datapack.
+            Filter by voltage class and horsepower to find and download the correct WEG CFW320 VFD datapack.
           </p>
         </div>
       </div>
