@@ -7,8 +7,6 @@ const lvVFDs = [
   { label: 'CFW300', to: '/cfw300' },
   { label: 'CFW500', to: '/cfw500' },
   { label: 'CFW501', to: '/cfw501' },
-  { label: 'CFW700', to: '/cfw700' },
-  { label: 'CFW701', to: '/cfw701' },
 ]
 
 const mvVFDs = [
@@ -76,28 +74,62 @@ export default function VFDProductPage({ title, category, categoryTo, tagline, d
             {/* Main content */}
             <div className="lg:col-span-2 space-y-12">
 
-              {specs && specs.length > 0 && (
-                <div>
-                  <div className="gold-bar" />
-                  <h2 className="text-2xl font-bold text-dark mb-6">Technical Specifications</h2>
+              <div className="bg-gray-50 border border-gray-100 p-6 md:p-8 shadow-sm">
+                <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-6">
+                  <div>
+                    <div className="text-xs font-semibold text-gold uppercase tracking-[0.28em] mb-2">
+                      Product Resources
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-black text-dark leading-tight">
+                      Technical Specifications
+                    </h2>
+                    <p className="text-sm text-gray-500 mt-2 max-w-2xl">
+                      Review the technical documentation, then continue into the core product characteristics below.
+                    </p>
+                  </div>
+                  <a
+                    href="https://pamensky.com/cfw11.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary self-start flex items-center justify-center gap-2 group"
+                  >
+                    <span>Technical Specifications</span>
+                    <ArrowRight
+                      size={16}
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                  </a>
+                </div>
+
+                {specs && specs.length > 0 && (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {specs.map((spec) => (
-                      <div key={spec.label} className="bg-gray-50 border border-gray-100 p-4">
-                        <div className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1">{spec.label}</div>
-                        <div className="text-dark font-semibold text-lg">{spec.value}</div>
+                      <div
+                        key={spec.label}
+                        className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm"
+                      >
+                        <div className="text-[11px] font-semibold text-gray-400 uppercase tracking-[0.24em] mb-2">
+                          {spec.label}
+                        </div>
+                        <div className="text-dark font-semibold text-base md:text-lg leading-snug">
+                          {spec.value}
+                        </div>
                       </div>
                     ))}
                   </div>
-                </div>
-              )}
+                )}
+              </div>
 
               {features && features.length > 0 && (
-                <div>
+                <div className="pt-2 md:pt-4">
                   <div className="gold-bar" />
-                  <h2 className="text-2xl font-bold text-dark mb-6">Main Characteristics</h2>
-                  <ul className="space-y-3">
+                  <div className="flex items-center gap-3 mb-6">
+                    <h2 className="text-2xl font-bold text-dark">Main Characteristics</h2>
+                    <span className="hidden sm:inline-flex h-px flex-1 bg-gray-200" />
+                  </div>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
                     {features.map((f, i) => (
-                      <li key={i} className="flex items-start gap-3">
+                      <li key={i} className="flex items-start gap-3 rounded-lg bg-gray-50 border border-gray-100 p-4">
                         <CheckCircle size={18} className="text-gold mt-0.5 shrink-0" />
                         <span className="text-gray-600 leading-snug">{f}</span>
                       </li>
@@ -187,14 +219,6 @@ export default function VFDProductPage({ title, category, categoryTo, tagline, d
                 </Link>
               </div>
 
-              <div className="bg-gold/5 border border-gold/20 p-5">
-                <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Certifications</p>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div>Authorized WEG Distributor</div>
-                  <div>CSA / ETL Certified</div>
-                  <div>COR Certified</div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
