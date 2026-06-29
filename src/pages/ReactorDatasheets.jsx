@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react'
 import reactors, { pdfPath } from '../data/reactorDatasheets'
 
 const manuals = [
@@ -10,6 +10,11 @@ const manuals = [
   { tag: 'MTE - RLW', label: 'RLW Specifications',          url: '/datasheets/RLW%20Reactors/RLW-Specs.pdf' },
   { tag: 'MTE - RLW', label: 'RLW Manual',                  url: '/datasheets/RLW%20Reactors/RLW-Manual.pdf' },
   { tag: 'MTE - RLW', label: 'RLW Brochure',                url: '/datasheets/RLW%20Reactors/RLW-Brochure.pdf' },
+]
+
+const websiteLinks = [
+  { tag: 'MTE - RL',  label: 'RL Reactors',  url: 'https://mtecorp.com/products/reactors/rl-reactors/' },
+  { tag: 'MTE - RLW', label: 'RLW Reactors', url: 'https://mtecorp.com/products/reactors/rlw-reactors/' },
 ]
 
 const ALL = 'All'
@@ -106,6 +111,20 @@ export default function ReactorDatasheets() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-10">
+
+        {/* MTE Website Links */}
+        <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Links</p>
+        <div className="flex flex-wrap gap-2 mb-2">
+          {websiteLinks.map(m => (
+            <a key={m.url} href={m.url} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#0d0d0d] border border-white/8 px-3 py-2 text-xs hover:border-gold/40 transition-colors group">
+              <span className={`font-semibold text-xs px-1.5 py-0.5 border ${brandInfo[m.tag].badge}`}>{m.tag}</span>
+              <span className="text-gray-400 group-hover:text-white transition-colors">{m.label}</span>
+              <ArrowUpRight size={11} className="text-gold" />
+            </a>
+          ))}
+        </div>
+
         {/* Manuals */}
         <div className="mb-8 pb-8 border-b border-white/5">
           <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Manuals &amp; Documentation</p>
