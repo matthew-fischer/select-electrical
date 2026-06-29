@@ -8,13 +8,12 @@ const switchImages = [
 ]
 
 const specs = [
-  { label: 'Maximum Capacity', value: 'Up to 6000A' },
+  { label: 'Maximum Capacity', value: 'Up to 10kA' },
   { label: 'Voltage Options', value: '208V, 480V, 600V' },
   { label: 'Bus Bracing', value: 'Standard 65kA' },
   { label: 'Bus Material', value: 'Tin copper bus bar' },
   { label: 'Cable Entry', value: 'Configurable top & bottom' },
-  { label: 'Withdrawable Buckets', value: 'Up to 600A' },
-  { label: 'Operating Temp', value: '-10 to +40°C' },
+  { label: 'Operating Temp', value: '-40 to +40°C' },
   { label: 'Finish', value: 'RAL7035 textured powder coat' },
 ]
 
@@ -116,7 +115,7 @@ export default function SE3000Switchboards() {
                   Electrical switchboards manage and control power flow within facilities, distributing electricity from the source to branch circuits while providing circuit protection and control. They serve as the central hub of a building's power distribution system.
                 </p>
                 <p className="text-gray-500 leading-relaxed">
-                  The SE3000 is SEEL's custom switchboard product line, designed for industrial and commercial clients across Alberta who require fast delivery, in-house engineering support, and full compliance with Canadian electrical standards.
+                  The SE3000 is SEEL's custom switchboard product line, designed for industrial and commercial clients who require fast delivery, in-house engineering support, and full compliance with Canadian electrical standards.
                 </p>
               </div>
 

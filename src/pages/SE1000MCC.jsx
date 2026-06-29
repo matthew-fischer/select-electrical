@@ -214,7 +214,7 @@ export default function SE1000MCC() {
       {/* CTA */}
       <section className="py-16 bg-gray-50 border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-black text-dark mb-4">Custom MCC Solutions for Alberta Industry</h2>
+          <h2 className="text-3xl font-black text-dark mb-4">Custom MCC Solutions</h2>
           <p className="text-gray-500 mb-8 max-w-xl mx-auto">
             Our in-house engineering team designs and builds Motor Control Centers to your exact specifications, with fast lead times from our Stony Plain, Alberta facility.
           </p>

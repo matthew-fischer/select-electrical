@@ -12,7 +12,6 @@ const correctionMethods = [
   'Automatic capacitor banks',
   'Minimizing idle motor operation',
   'Replacing standard motors with energy-efficient models',
-  'Installing variable frequency drives (VFDs)',
 ]
 
 const benefits = [
@@ -71,7 +70,7 @@ export default function PowerFactorCorrection() {
               <h1 className="text-4xl md:text-5xl font-black text-white mb-3">Power Factor Correction</h1>
               <p className="text-gold font-medium text-lg mb-5">Improve Efficiency. Reduce Utility Costs.</p>
               <p className="text-gray-400 text-lg">
-                Power factor is the ratio between real power absorbed by the load and the apparent power flowing in the circuit. When apparent power (kVA) exceeds real power (kW), utilities must supply additional reactive current — and pass those costs on to you.
+                A power factor correction controller reduces excess demand by supplying reactive power locally, minimizing what needs to be drawn from the grid.
               </p>
             </div>
             <div className="hidden lg:block">
@@ -115,7 +114,7 @@ export default function PowerFactorCorrection() {
                   Power factor is the ratio between the real power (kW) your equipment actually uses and the apparent power (kVA) your utility must supply. A power factor below 1.0 means your facility is drawing more current than necessary to do the same amount of work — resulting in higher utility bills, reduced system capacity, and increased wear on electrical infrastructure.
                 </p>
                 <p className="text-gray-500 leading-relaxed">
-                  A power factor correction controller reduces this excess demand by supplying reactive power locally, minimizing what needs to be drawn from the grid.
+                  A power factor correction controller reduces this excess demand and is the solution for you.
                 </p>
               </div>
 
@@ -237,8 +236,6 @@ export default function PowerFactorCorrection() {
                 <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Certifications</p>
                 <div className="space-y-2 text-sm text-gray-600">
                   <div>CSA / ETL Certified Manufacturer</div>
-                  <div>COR Certified</div>
-                  <div>ISNetworld</div>
                 </div>
               </div>
             </div>
