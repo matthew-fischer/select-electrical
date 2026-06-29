@@ -84,8 +84,8 @@ export default function Home() {
             <div className="gold-bar" />
             <h2 className="section-title">What We Do</h2>
             <p className="section-subtitle">
-              From custom VFD packages to complete motor control centers — we design, supply,
-              install, and service electrical and automation systems across Western Canada.
+              From custom VFD packages to complete Motor Control Centers — we design, supply,
+              install, and service electrical and automation systems across various industries.
             </p>
           </div>
 
@@ -114,9 +114,12 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-10 text-center">
+          <div className="mt-10 text-center flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/services" className="btn-outline-dark inline-flex">
               View All Services <ArrowRight size={16} />
+            </Link>
+            <Link to="/package-solutions" className="btn-outline-dark inline-flex">
+              View Package Solutions <ArrowRight size={16} />
             </Link>
           </div>
         </div>

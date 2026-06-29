@@ -68,7 +68,7 @@ export default function App() {
             <Route path="/power-factor-correction" element={<PowerFactorCorrection />} />
             <Route path="/se1000-pds-motor-control-center" element={<SE1000MCC />} />
             <Route path="/se3000-switchboards" element={<SE3000Switchboards />} />
-            <Route path="/vfd-packages" element={<VFDPackages />} />
+            <Route path="/package-solutions" element={<VFDPackages />} />
             <Route path="/se200-oil-well-drive" element={<SE200OilWell />} />
             <Route path="/se200-esp-drive" element={<SE200ESP />} />
             <Route path="/se200-pcp-pump-drive" element={<SE200PCP />} />
