@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { SlidersHorizontal, X, ChevronLeft, ChevronRight, Download } from 'lucide-react'
+import { SlidersHorizontal, X, ChevronLeft, ChevronRight, Download, ArrowUpRight} from 'lucide-react'
 import harmonicFilters from '../data/harmonicFilterData'
 
 const manuals = [
@@ -8,6 +8,11 @@ const manuals = [
   { tag: 'Mirus', label: 'Typical Specification',      url: '/datasheets/Manuals/Mirus%20Harmonic%20Filter/AUHF-Lineator-Typical-Specification.pdf' },
   { tag: 'MTE',   label: 'MAP Solution Catalog',       url: '/datasheets/Manuals/MTE%20Harmonic%20Filter/MTE-MAP-SOLUTION-CATALOG.pdf' },
   { tag: 'MTE',   label: 'Technical Reference Manual', url: '/datasheets/Manuals/MTE%20Harmonic%20Filter/MTE-MAP-TECHNICAL-REFERENCES-AND-MANUAL-1.pdf' },
+]
+
+const websiteLinks = [
+  { tag: 'MTE', label: 'MTE Product Page', url: 'https://mtecorp.com/products/harmonic-filters/' },
+  { tag: 'Mirus', label: 'Mirus Product Page', url: 'https://www.mirusinternational.com/lineator.php' },
 ]
 
 const ALL = 'All'
@@ -105,6 +110,19 @@ export default function HarmonicFilters() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-10">
+
+        <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Links</p>
+        <div className="flex flex-wrap gap-2 mb-2">
+          {websiteLinks.map(m => (
+            <a key={m.url} href={m.url} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#0d0d0d] border border-white/8 px-3 py-2 text-xs hover:border-gold/40 transition-colors group">
+              <span className={`font-semibold text-xs px-1.5 py-0.5 border ${brandInfo[m.tag].badge}`}>{m.tag}</span>
+              <span className="text-gray-400 group-hover:text-white transition-colors">{m.label}</span>
+              <ArrowUpRight size={11} className="text-gold" />
+            </a>
+          ))}
+        </div>
+        
         {/* Manuals */}
         <div className="mb-8 pb-8 border-b border-white/5">
           <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Manuals &amp; Documentation</p>
