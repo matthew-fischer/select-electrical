@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react'
 import drives, { pdfPath } from '../data/cfw11Data'
 
 const manuals = [
@@ -8,6 +8,10 @@ const manuals = [
   { tag: 'CFW11', label: "User's Manual (200–460V)",     url: '/datasheets/Manuals/CFW11/WEG-CFW11-USERS-MANUAL-200-460V.pdf' },
   { tag: 'CFW11', label: "User's Manual (460V)",         url: '/datasheets/Manuals/CFW11/WEG-CFW11-USERS-MNAUAL-460V.pdf' },
   { tag: 'CFW11', label: "User's Manual (600V)",         url: '/datasheets/Manuals/CFW11/WEG-CFW11-USERS-MANUAL-600V.pdf' },
+]
+
+const websiteLinks = [
+  { tag: 'CFW11', label: 'CFW11 Product Page', url: 'https://pamensky.com/cfw11.html' },
 ]
 
 const tagBadge = {
@@ -105,6 +109,19 @@ export default function CFW11Datasheets() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 py-10">
+
+        <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Links</p>
+        <div className="flex flex-wrap gap-2 mb-2">
+          {websiteLinks.map(m => (
+            <a key={m.url} href={m.url} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-[#0d0d0d] border border-white/8 px-3 py-2 text-xs hover:border-gold/40 transition-colors group">
+              <span className={`font-semibold text-xs px-1.5 py-0.5 border ${tagBadge[m.tag]}`}>{m.tag}</span>
+              <span className="text-gray-400 group-hover:text-white transition-colors">{m.label}</span>
+              <ArrowUpRight size={11} className="text-gold" />
+            </a>
+          ))}
+        </div>
+
         {/* Manuals */}
         <div className="mb-8 pb-8 border-b border-white/5">
           <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">Manuals &amp; Documentation</p>
