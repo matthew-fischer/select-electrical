@@ -8,7 +8,7 @@ export const blogPosts = [
     sections: [
       {
         type: 'p',
-        content: "Modern facilities require reliable electrical power to function efficiently. Poor power quality causes equipment malfunctions, unexpected downtime, and increased energy costs. A primary culprit is harmonic distortion, which affects data centers, manufacturing plants, hospitals, and office buildings.",
+        content: "From data centers and manufacturing plants to hospitals and office buildings, poor power quality can lead to equipment malfunctions, unexpected downtime, and rising energy costs. One of the most common reasons for this is Harmonic Distortion.",
       },
       {
         type: 'h2',
@@ -16,11 +16,11 @@ export const blogPosts = [
       },
       {
         type: 'p',
-        content: "Harmonic distortion occurs when electrical signals deviate from an ideal waveform. Rather than maintaining a smooth sine wave, the waveform becomes distorted and is no longer a pure sine wave. Higher-frequency waveforms called harmonics mix into the power signal, creating distortion.",
+        content: "Harmonic distortion occurs when electrical signals deviate from their ideal waveform, specifically when the current or voltage waveform becomes distorted due to the presence of harmonics. In a perfect world, AC power has a smooth sine waveform, but in real systems that sine wave gets “polluted” by additional waveforms at higher frequencies. These higher-frequency waveforms are called harmonics. Harmonics are voltage or current components at frequencies that are integer multiples of the fundamental frequency. When these harmonics mix into the power signal, the waveform becomes distorted and therefore is no longer a pure sine wave.",
       },
       {
         type: 'p',
-        content: "Harmonics are voltage or current components at frequencies that are integer multiples of the fundamental frequency. Non-linear loads cause this problem by drawing current in short pulses rather than smoothly. Common sources include:",
+        content: "Harmonic distortion is mainly caused by on-linear loads, electrical devices that draw current in short pulses rather than smoothly. This includes",
       },
       {
         type: 'ul',
@@ -33,25 +33,31 @@ export const blogPosts = [
         ],
       },
       {
+        type: 'img',
+        src: '/images/blog/harmonic_filter.png',
+        alt: 'Passive harmonic filter installed in electrical panel',
+        caption: 'A passive harmonic filter helps clean up distorted waveforms.',
+      },
+      {
         type: 'h2',
         content: 'What is Power Quality?',
       },
       {
         type: 'p',
-        content: "Power quality represents the reliability and cleanliness of electrical power flowing through systems. It focuses on maintaining ideal voltage and current ranges, free from disturbances like harmonics. Poor power quality creates unpredictable equipment behavior and failures, increasing maintenance costs and reducing productivity.",
+        content: "Power quality refers to the reliability and cleanliness of the electrical power flowing through your system. It’s about having voltage and current that remain within ideal ranges, free of disturbances such as harmonics. When power quality is poor, everything from lighting systems to sensitive electronics can behave unpredictably or fail outright. Over time, this translates into higher maintenance costs, lost productivity, and even equipment damage. On the other hand, good power quality enhances operational efficiency, protects assets, and reduces unplanned downtime, making it a critical factor in both day-to-day reliability and long-term performance. ",
       },
       {
         type: 'p',
-        content: 'Harmonic distortion negatively impacts power quality, causing:',
+        content: "Harmonic distortion impacts power quality and can lead to: ",
       },
       {
         type: 'ul',
         items: [
-          'Transformer and motor overheating',
+          'Overheating of transformers and motors',
           'Tripped circuit breakers and false alarms',
           'Equipment malfunction or failure',
           'Reduced efficiency and increased power losses',
-          'Voltage distortion throughout electrical systems',
+          'Voltage distortion throughout the electrical system',
         ],
       },
       {
@@ -60,20 +66,32 @@ export const blogPosts = [
       },
       {
         type: 'p',
-        content: "Passive harmonic filters are fixed components — typically made of inductors, capacitors, and resistors — designed to block or absorb specific harmonic frequencies. Installed at disturbance points, they require no programming or active monitoring.",
+        content: "Passive harmonic filters are fixed components – typically made of inductors, capacitors, and resistors – designed to block or absorb specific harmonic frequencies. Installed at the point of disturbance, they don’t require programming or active monitoring. Instead, they quietly and reliably clean up power in the background. ",
       },
       {
         type: 'p',
-        content: 'Benefits include:',
+        content: 'The benefits of passive harmonic filters include: ',
       },
       {
         type: 'ul',
         items: [
-          'Extended equipment lifespan through reduced electrical stress',
-          'Increased efficiency via cleaner power and lower energy losses',
-          'System stability with fewer nuisance trips',
-          'Low maintenance requirements with long-term dependability',
+          'Improved Equipment Lifespan - Reduced electrical stress means motors, drives, and transformers last longer',
+          'Increased Efficiency - Cleaner power equals lower energy losses',
+          'System Stability - Fewer nuisance trips and voltage fluctuations',
+          'Low Maintenance - Passive filters require no software or recalibration, just dependable, long-term performance',
         ],
+      },
+      {
+        type: 'h2',
+        content: 'Conclusion',
+      },
+      {
+        type: 'p',
+        content: "Power quality isn’t just a technical buzzword, it’s a vital part of running a cost-efficient, high-performing facility. Passive harmonic filters are one of the simplest, most effective ways to improve power quality, reduce risk, and ensure your electrical systems are built to last. ",
+      },
+      {
+        type: 'p',
+        content: "Are you unsure about the level of harmonics in your system? Select Electrical Enterprises Ltd offers passive harmonic filters, tailored solutions, and professional power quality assessments to help you pinpoint issues and act before they become costly problems. If you are ready to reduce downtime, protect your equipment, and optimize your energy use, we encourage you to reach out to us by giving us a call (780-968-8859) or by filling out our online contact form. Our team of experts will work with you to ensure the best option for your operations. ",
       },
     ],
   },

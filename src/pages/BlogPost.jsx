@@ -27,6 +27,21 @@ function renderSection(section, index) {
           ))}
         </ul>
       )
+    case 'img':
+      return (
+        <figure key={index} className="my-8">
+          <img
+            src={section.src}
+            alt={section.alt}
+            className="w-1/2 rounded-sm object-cover"
+          />
+          {section.caption && (
+            <figcaption className="text-sm text-gray-400 mt-2 italic">
+              {section.caption}
+            </figcaption>
+          )}
+        </figure>
+      )
     default:
       return null
   }
