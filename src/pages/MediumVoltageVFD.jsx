@@ -5,16 +5,12 @@ const products = [
   {
     model: 'MVW01',
     to: '/mvw01',
-    power: '500–22,500 HP (400–16,000 kW)',
-    voltage: '2.3 kV to 6.9 kV',
-    desc: 'Voltage Source Inverter with NPC topology and latest-generation 6.5 kV IGBTs. Ideal for compressors, pumps, fans, conveyors, and mills.',
+    desc: 'MVW01 is a highly reliable, IoT-ready medium-voltage variable frequency drive designed to maximize efficiency and reduce operating costs in critical high-power applications.',
   },
   {
     model: 'MVW3000',
     to: '/mvw3000',
-    power: 'Up to 340A (higher on request)',
-    voltage: '1.15 kV to 13.8 kV',
-    desc: 'Fully integrated solution with sinusoidal output, IEEE 519 harmonic compliance, and high power factor (>0.95) — no filters required.',
+    desc: 'MVW3000 is perfect for a wide range of industrial applications that require speed variation, such as compressors, pumps, fans, conveyor belts and mills.',
   },
 ]
 
@@ -47,15 +43,15 @@ export default function MediumVoltageVFD() {
           <h1 className="text-4xl md:text-5xl font-black text-white mb-3">Medium Voltage VFDs</h1>
           <p className="text-gold font-medium text-lg mb-5">WEG Medium Voltage Variable Frequency Drives</p>
           <p className="text-gray-400 text-lg max-w-2xl">
-            Select Electrical Enterprises Ltd. has partnered with WEG to distribute medium voltage VFDs in Edmonton, Alberta and surrounding areas. Our team provides full application engineering, startup, and commissioning support.
+            Select Electrical Enterprises Ltd. has partnered with WEG to distribute medium voltage VFDs. Our team provides full application engineering, startup, and commissioning support.
           </p>
         </div>
       </section>
 
       {/* Product cards */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full">
             {products.map((product) => (
               <Link
                 key={product.model}
@@ -71,16 +67,6 @@ export default function MediumVoltageVFD() {
                   <p className="text-gold text-xs font-semibold uppercase tracking-widest mt-1">Medium Voltage VFD</p>
                 </div>
                 <div className="p-6 flex flex-col flex-1">
-                  <div className="grid grid-cols-2 gap-3 mb-5">
-                    <div className="bg-gray-50 p-3">
-                      <div className="text-xs text-gray-400 uppercase tracking-widest mb-1">Power</div>
-                      <div className="text-dark font-semibold text-sm">{product.power}</div>
-                    </div>
-                    <div className="bg-gray-50 p-3">
-                      <div className="text-xs text-gray-400 uppercase tracking-widest mb-1">Voltage</div>
-                      <div className="text-dark font-semibold text-sm">{product.voltage}</div>
-                    </div>
-                  </div>
                   <p className="text-gray-500 text-sm leading-relaxed flex-1 mb-5">{product.desc}</p>
                   <span className="flex items-center gap-1.5 text-gold text-sm font-medium group-hover:gap-2.5 transition-all">
                     View Product <ArrowRight size={14} />
@@ -91,7 +77,7 @@ export default function MediumVoltageVFD() {
           </div>
 
           {/* Services callout */}
-          <div className="mt-16 bg-dark p-10 max-w-4xl">
+          <div className="mt-16 bg-dark p-10 max-w-4xl w-full">
             <h2 className="text-white font-black text-2xl mb-4">Medium Voltage VFD Services</h2>
             <p className="text-gray-400 mb-6 max-w-2xl">
               In addition to supply, Select Electrical offers full medium voltage VFD services including startup and commissioning, preventative maintenance programs, power quality assessments, and energy saving audits.

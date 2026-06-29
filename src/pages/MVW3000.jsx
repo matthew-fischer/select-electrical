@@ -8,15 +8,8 @@ export default function MVW3000() {
       categoryTo="/medium-voltage-vfd"
       image="/images/medium-voltage/mvw3000.png"
       tagline="Efficient, Robust Medium Voltage Solution"
-      description="The MVW3000 is an efficient and robust solution that, in addition to speed control, enables energy savings and lower maintenance costs. Features sinusoidal output voltage and current, IEEE 519 harmonic compliance, and a high power factor above 0.95 — no external filters required."
-      specs={[
-        { label: 'Motor Voltage', value: '1.15 kV to 13.8 kV' },
-        { label: 'Input Voltage', value: '1.15 kV to 13.8 kV' },
-        { label: 'Motor Current', value: 'Up to 340A (higher on request)' },
-        { label: 'Power Factor', value: '>0.95' },
-        { label: 'Cooling', value: 'High-efficiency air cooling' },
-        { label: 'Harmonics', value: 'IEEE 519 compliant — no filters needed' },
-      ]}
+      description="The MVW3000 is an efficient and robust solution that, in addition to speed control, enables energy savings and lower maintenance costs."
+      technicalSpecsLink="https://pamensky.com/mvw3000.html"      
       features={[
         'Motor and input voltage from 1.15 kV to 13.8 kV',
         'High-efficiency air cooling system',

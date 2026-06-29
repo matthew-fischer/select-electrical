@@ -168,9 +168,8 @@ export default function VFDProductPage({ title, category, categoryTo, tagline, d
                     <Zap size={24} className="text-gold" fill="currentColor" />
                     <span className="text-gold font-semibold text-lg">Authorized WEG Distributor</span>
                   </div>
-                  <p className="text-white text-xl font-bold mb-2">Alberta's WEG VFD specialists</p>
                   <p className="text-gray-400">
-                    Select Electrical Enterprises Ltd. is an authorized WEG distributor and service provider serving Alberta since 1988. Our engineering team provides full application support, startup, and commissioning.
+                    Select Electrical Enterprises Ltd. is an authorized WEG distributor and service provider. Our engineering team provides full application support, startup, and commissioning.
                   </p>
                 </div>
               </div>
