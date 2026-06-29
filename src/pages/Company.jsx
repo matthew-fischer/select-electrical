@@ -20,7 +20,7 @@ const timeline = [
   { year: '1988', event: 'Select Electrical Enterprises Ltd. founded and incorporated in Stony Plain, Alberta.' },
   { year: '2000s', event: 'Provided field services for industrial clients across Western Canada.' },
   { year: '2010s', event: 'Expanded services to include custom VFD packages for industrial clients.' },
-  { year: 'Today', event: 'Currently producing VFD packages, and motor control centers for industrial clients.' },
+  { year: 'Today', event: 'Currently producing VFD packages, and Motor Control Centers for industrial clients.' },
 ]
 
 export default function Company() {
@@ -52,7 +52,7 @@ export default function Company() {
           <h1 className="text-4xl md:text-5xl font-black text-white mb-5">About Our Company</h1>
           <p className="text-gray-400 text-lg max-w-2xl">
             A privately owned electrical, automation and controls company with over 35 years of
-            experience serving Alberta's industrial and commercial sectors.
+            experience serving industrial and commercial sectors.
           </p>
         </div>
       </section>
@@ -65,10 +65,9 @@ export default function Company() {
               <div className="gold-bar" />
               <h2 className="section-title">Who We Are</h2>
               <p className="text-gray-500 leading-relaxed mb-5">
-                Select Electrical Enterprises Ltd. was founded and incorporated in 1988, and has been
-                serving Alberta with dedication for over three decades. Headquartered in Stony Plain,
-                AB, we are strategically positioned to serve a large regional service area across
-                Western Canada.
+                Select Electrical Enterprises Ltd. was founded and incorporated in 1988. 
+                Headquartered in Stony Plain, Alberta, we have proudly served customers for over three decades. 
+                While our roots are in Western Canada, our products and engineered solutions are trusted by customers across North America and internationally.
               </p>
               <p className="text-gray-500 leading-relaxed mb-5">
                 We are a privately owned electrical, automation and controls company. Our team of
@@ -80,11 +79,6 @@ export default function Company() {
                 Our approach combines in-house engineering and manufacturing capabilities with
                 professional field installation and commissioning services — providing a single
                 accountable partner for your electrical and automation needs.
-              </p>
-              <p className="text-gray-500 leading-relaxed mb-8">
-                Select Electrical Enterprises Ltd is also a proud sales distributor and service provide
-                for WEG Controls and Motors, offering a comprehensive range of high-quality products to meet
-                the diverse needs of our clients across Alberta's industrial sectors.
               </p>
               <p className="text-gray-500 leading-relaxed mb-8">
                 We are committed to delivering service that is professional, personal, precise, and reliable.
@@ -163,7 +157,7 @@ export default function Company() {
             <div className="gold-bar" />
             <h2 className="section-title">Industries We Serve</h2>
             <p className="section-subtitle">
-              Our solutions are trusted by companies across Alberta's most demanding industrial sectors.
+              Our solutions are trusted by companies across in the most demanding industrial sectors.
             </p>
           </div>
 
@@ -223,7 +217,7 @@ export default function Company() {
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
                 All employees complete mandatory safety training to ensure they can work safely in
-                industrial and hazardous environments throughout Alberta.
+                industrial and hazardous environments.
               </p>
               <div className="space-y-3">
                 {safetyTraining.map((training) => (

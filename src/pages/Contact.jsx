@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, Linkedin, Send, CheckCircle, Clock, Loader2, AlertCircle } from 'lucide-react'
 
 const serviceOptions = [
+  'General Enquiry',
   'Variable Frequency Drives (VFDs)',
   'Motor Control Centers (MCCs)',
   'Switchboards',
@@ -12,7 +13,6 @@ const serviceOptions = [
   'Installation & Commissioning',
   'Infrared Survey',
   'Energy Savings Audit',
-  'General Enquiry',
 ]
 
 export default function Contact() {
@@ -203,7 +203,7 @@ export default function Contact() {
               {/* Serving Alberta */}
               <div className="bg-gold/10 border-l-4 border-gold p-5">
                 <p className="text-dark text-sm font-medium">
-                  Proudly serving Alberta since 1988.
+                  Providing Industry Leading Services Since 1988
                 </p>
                 <p className="text-dark/60 text-xs mt-1">
                   Industrial, Oil & Gas, Mining, Agricultural, Forestry, Pulp & Paper,
