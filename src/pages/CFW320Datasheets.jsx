@@ -3,9 +3,9 @@ import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight, ArrowUpRight
 import drives, { pdfPath } from '../data/cfw320Data'
 
 const manuals = [
-  { tag: 'CFW320', label: "User's Manual",             url: '/datasheets/CFW300/WEG-CFW300-USERS-MANUAL.pdf' },
-  { tag: 'CFW320', label: 'Quick Parameter Reference', url: '/datasheets/CFW300/WEG-CFW300-QUICK-PARAMETER-REFERENCE.pdf' },
-  { tag: 'CFW320', label: 'CFW320 Catalog',            url: '/datasheets/CFW300/WEG-CFW300-CATALOG.pdf' },
+  { tag: 'CFW320', label: "User's Manual",             url: '/datasheets/CFW320/cfw320-user-manual.pdf' },
+  { tag: 'CFW320', label: 'Quick Installation Guide', url: '/datasheets/CFW320/cfw320-installation-guide.pdf' },
+  { tag: 'CFW320', label: 'CFW320 Catalog',            url: '/datasheets/CFW320/cfw320-catalog.pdf' },
 ]
 
 const websiteLinks = [
