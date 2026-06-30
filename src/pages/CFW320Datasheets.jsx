@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react'
 import { Download, SlidersHorizontal, X, ChevronLeft, ChevronRight, ArrowUpRight } from 'lucide-react'
-import drives, { pdfPath } from '../data/cfw300Data'
+import drives, { pdfPath } from '../data/cfw320Data'
 
 const manuals = [
   { tag: 'CFW320', label: "User's Manual",             url: '/datasheets/CFW300/WEG-CFW300-USERS-MANUAL.pdf' },
@@ -23,12 +23,13 @@ function uniq(arr) {
 }
 
 const allHP      = uniq(drives.map(d => d.hp))
-const allVoltage = [ALL, '230V 3PH', '230V 1PH', '115V']
+const allVoltage = [ALL, '120V', '230V 1PH', '230V 3PH', '480V 3PH']
 
 const voltageInfo = {
   '230V 3PH': { label: '230V (3-Phase)', badge: 'bg-blue-900/40 text-blue-300 border-blue-700/40' },
   '230V 1PH': { label: '230V (1-Phase)', badge: 'bg-purple-900/40 text-purple-300 border-purple-700/40' },
-  '115V':     { label: '115V',           badge: 'bg-green-900/40 text-green-300 border-green-700/40' },
+  '120V':     { label: '120V',           badge: 'bg-green-900/40 text-green-300 border-green-700/40' },
+  '480V 3PH': { label: '480V (3-Phase)', badge: 'bg-yellow-900/40 text-yellow-300 border-yellow-700/40' },
 }
 
 function FilterBtn({ active, onClick, children }) {
@@ -61,9 +62,9 @@ function pageRange(current, total) {
   return pages
 }
 
-const voltageOrder = { '230V 3PH': 0, '230V 1PH': 1, '115V': 2 }
+const voltageOrder = { '120V': 0, '230V 1PH': 1, '230V 3PH': 2, '480V 3PH': 3 }
 
-export default function CFW300Datasheets() {
+export default function CFW320Datasheets() {
   const [voltage, setVoltage] = useState(ALL)
   const [hp,      setHp]      = useState(ALL)
   const [page,    setPage]    = useState(1)
@@ -214,7 +215,7 @@ export default function CFW300Datasheets() {
                       </span>
                     </td>
                     <td className="px-4 py-3 text-white font-semibold">{d.hp} HP</td>
-                    <td className="px-4 py-3 font-mono text-xs text-gray-400">{d.file ?? '—'}</td>
+                    <td className="px-4 py-3 font-mono text-xs text-gray-400">{d.partNumber ?? d.file ?? '—'}</td>
                     <td className="px-4 py-3 text-right">
                       {d.file ? (
                         <a

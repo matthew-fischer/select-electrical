@@ -36,7 +36,7 @@ import SineFilters from './pages/SineFilters'
 import DvdtFilters from './pages/DvdtFilters'
 import CFW11Datasheets from './pages/CFW11Datasheets'
 import CFW100Datasheets from './pages/CFW100Datasheets'
-import CFW300Datasheets from './pages/CFW300Datasheets'
+import CFW320Datasheets from './pages/CFW320Datasheets'
 import CFW500Datasheets from './pages/CFW500Datasheets'
 import SoftStarterDatasheets from './pages/SoftStarterDatasheets'
 import ElectricalServices from './pages/ElectricalServices'
@@ -91,7 +91,7 @@ export default function App() {
             <Route path="/dvdt-filters" element={<DvdtFilters />} />
             <Route path="/cfw11-datasheets" element={<CFW11Datasheets />} />
             <Route path="/cfw100-datasheets" element={<CFW100Datasheets />} />
-            <Route path="/cfw300-datasheets" element={<CFW300Datasheets />} />
+            <Route path="/cfw320-datasheets" element={<CFW320Datasheets />} />
             <Route path="/cfw500-datasheets" element={<CFW500Datasheets />} />
             <Route path="/soft-starter-datasheets" element={<SoftStarterDatasheets />} />
             <Route path="/infrared-surveys" element={<InfraredSurveys />} />
