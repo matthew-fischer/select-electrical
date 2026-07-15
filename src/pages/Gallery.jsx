@@ -198,6 +198,7 @@ const categoryOrder = ['mcc', 'mcp', 'switchboard', 'transferswitch', 'packages'
 
 export default function Gallery() {
   const [selectedCategory, setSelectedCategory] = useState('all')
+  const [visibleCount, setVisibleCount] = useState(12)
 
   const galleryCategories = useMemo(() => {
     return ['all', ...categoryOrder.filter((category) => galleryItems.some((item) => item.category === category))]
@@ -205,11 +206,18 @@ export default function Gallery() {
 
   const visibleItems = useMemo(() => {
     if (selectedCategory === 'all') {
-      return galleryItems
+      return galleryItems.slice(0, visibleCount)
     }
 
     return galleryItems.filter((item) => item.category === selectedCategory)
-  }, [selectedCategory])
+  }, [selectedCategory, visibleCount])
+
+  const hasMoreAllItems = selectedCategory === 'all' && visibleCount < galleryItems.length
+
+  function handleCategoryChange(category) {
+    setSelectedCategory(category)
+    setVisibleCount(12)
+  }
 
   return (
     <>
@@ -250,7 +258,7 @@ export default function Gallery() {
                 <button
                   key={category}
                   type="button"
-                  onClick={() => setSelectedCategory(category)}
+                  onClick={() => handleCategoryChange(category)}
                   className={`inline-flex items-center gap-2 px-4 py-2 text-xs md:text-sm font-semibold uppercase tracking-[0.16em] transition-all duration-200 rounded-none ${
                     isActive
                       ? 'bg-gold text-dark hover:bg-gold-dark'
@@ -264,7 +272,7 @@ export default function Gallery() {
           </div>
 
           <div className="columns-1 md:columns-2 lg:columns-3 gap-4 md:gap-5 [column-fill:balance]">
-            {visibleItems.map((item) => (
+            {visibleItems.map((item, index) => (
               <article
                 key={item.src}
                 className="group relative mb-4 break-inside-avoid overflow-hidden bg-[#f1ece1] shadow-[0_18px_40px_rgba(0,0,0,0.14)]"
@@ -273,7 +281,9 @@ export default function Gallery() {
                   src={item.src}
                   alt={item.title}
                   className="h-auto w-full object-contain transition-transform duration-700 group-hover:scale-[1.01]"
-                  loading="lazy"
+                  loading={index < 4 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  fetchPriority={index < 4 ? 'high' : 'low'}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-[#b59b1f]/45 via-[#b59b1f]/20 to-transparent" />
@@ -285,6 +295,18 @@ export default function Gallery() {
               </article>
             ))}
           </div>
+
+          {hasMoreAllItems && (
+            <div className="mt-8 flex justify-center">
+              <button
+                type="button"
+                onClick={() => setVisibleCount((count) => Math.min(count + 12, galleryItems.length))}
+                className="inline-flex items-center gap-2 bg-dark text-white font-semibold px-6 py-3 hover:bg-dark-700 transition-colors"
+              >
+                Load more photos
+              </button>
+            </div>
+          )}
         </div>
       </section>
 
