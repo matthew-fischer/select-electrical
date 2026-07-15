@@ -7,6 +7,7 @@ import Company from './pages/Company'
 import Contact from './pages/Contact'
 import Blogs from './pages/Blogs'
 import BlogPost from './pages/BlogPost'
+import Gallery from './pages/Gallery'
 import PowerFactorCorrection from './pages/PowerFactorCorrection'
 import SE1000MCC from './pages/SE1000MCC'
 import SE3000Switchboards from './pages/SE3000Switchboards'
@@ -59,6 +60,8 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/company" element={<Company />} />
             <Route path="/electrical-services" element={<ElectricalServices />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/gallary" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blogs />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
