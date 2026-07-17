@@ -100,6 +100,18 @@ const galleryItems = [
     category: 'transferswitch',
   },
   {
+    src: '/images/gallery/transferswitch/ts3.png',
+    title: 'Transfer Switch',
+    description: 'Third transfer switch image from the transfer switch folder.',
+    category: 'transferswitch',
+  },
+  {
+    src: '/images/gallery/transferswitch/ts4.png',
+    title: 'Transfer Switch',
+    description: 'Fourth transfer switch image from the transfer switch folder.',
+    category: 'transferswitch',
+  },
+  {
     src: '/images/gallery/se200/mstr.jpg',
     title: 'Packages',
     description: 'Motor starter package photo from the Packages folder.',
