@@ -115,7 +115,7 @@ export default function Home() {
           </div>
 
           <div className="mt-10 text-center flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/services" className="btn-outline-dark inline-flex">
+            <Link to="/electrical-services" className="btn-outline-dark inline-flex">
               View All Services <ArrowRight size={16} />
             </Link>
             <Link to="/package-solutions" className="btn-outline-dark inline-flex">

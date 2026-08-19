@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { Phone, Mail, MapPin, Linkedin, ArrowRight } from 'lucide-react'
 
 const serviceLinks = [
-  { label: 'VFD Packages', to: '/vfd-packages' },
+  { label: 'VFD Packages', to: '/package-solutions' },
   { label: 'Motor Control Centers', to: '/se1000-pds-motor-control-center' },
   { label: 'Switchboards', to: '/se3000-switchboards' },
   { label: 'Electric Motors', to: '/motor-datasheets' },
@@ -61,7 +61,7 @@ export default function Footer() {
               {[
                 { label: 'Home', to: '/' },
                 { label: 'Company', to: '/company' },
-                { label: 'Services', to: '/services' },
+                { label: 'Services', to: '/electrical-services' },
                 { label: 'Blog', to: '/blog' },
                 { label: 'Contact Us', to: '/contact' },
               ].map((link) => (

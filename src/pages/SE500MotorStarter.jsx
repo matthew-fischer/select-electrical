@@ -66,7 +66,7 @@ export default function SE500MotorStarter() {
               <div className="flex items-center gap-2 text-gray-500 text-sm mb-6 flex-wrap">
                 <Link to="/" className="hover:text-gold transition-colors">Home</Link>
                 <span>/</span>
-                <Link to="/vfd-packages" className="hover:text-gold transition-colors">VFD Packages</Link>
+                <Link to="/package-solutions" className="hover:text-gold transition-colors">VFD Packages</Link>
                 <span>/</span>
                 <span className="text-gray-300">SE500 Motor Starter</span>
               </div>

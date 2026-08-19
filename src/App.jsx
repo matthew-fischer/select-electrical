@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -104,6 +104,7 @@ export default function App() {
             <Route path="/energy-saving-audits" element={<EnergySavingAudits />} />
             <Route path="/se500-motor-starter" element={<SE500MotorStarter />} />
             <Route path="/support" element={<Support />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
         <Footer />

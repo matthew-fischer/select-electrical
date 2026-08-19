@@ -63,7 +63,7 @@ export default function SE3000Switchboards() {
               <div className="flex items-center gap-2 text-gray-500 text-sm mb-6 flex-wrap">
                 <Link to="/" className="hover:text-gold transition-colors">Home</Link>
                 <span>/</span>
-                <Link to="/services" className="hover:text-gold transition-colors">Services</Link>
+                <Link to="/electrical-services" className="hover:text-gold transition-colors">Services</Link>
                 <span>/</span>
                 <span className="text-gray-300">SE3000 Switchboards</span>
               </div>

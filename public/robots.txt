@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://selectelectricalent.com/sitemap.xml

@@ -62,7 +62,7 @@ export default function PowerFactorCorrection() {
               <div className="flex items-center gap-2 text-gray-500 text-sm mb-6 flex-wrap">
                 <Link to="/" className="hover:text-gold transition-colors">Home</Link>
                 <span>/</span>
-                <Link to="/services" className="hover:text-gold transition-colors">Services</Link>
+                <Link to="/electrical-services" className="hover:text-gold transition-colors">Services</Link>
                 <span>/</span>
                 <span className="text-gray-300">Power Factor Correction</span>
               </div>
@@ -193,22 +193,22 @@ export default function PowerFactorCorrection() {
                 <h3 className="font-bold text-dark text-base mb-3">Related Services</h3>
                 <ul className="space-y-2 text-sm text-gray-500">
                   <li>
-                    <Link to="/services" className="hover:text-gold transition-colors flex items-center gap-2">
+                    <Link to="/electrical-services" className="hover:text-gold transition-colors flex items-center gap-2">
                       <ArrowRight size={13} /> Energy Audits
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services" className="hover:text-gold transition-colors flex items-center gap-2">
+                    <Link to="/electrical-services" className="hover:text-gold transition-colors flex items-center gap-2">
                       <ArrowRight size={13} /> Harmonic Filters
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services" className="hover:text-gold transition-colors flex items-center gap-2">
+                    <Link to="/electrical-services" className="hover:text-gold transition-colors flex items-center gap-2">
                       <ArrowRight size={13} /> Variable Frequency Drives
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services" className="hover:text-gold transition-colors flex items-center gap-2">
+                    <Link to="/electrical-services" className="hover:text-gold transition-colors flex items-center gap-2">
                       <ArrowRight size={13} /> Infrared Surveys
                     </Link>
                   </li>

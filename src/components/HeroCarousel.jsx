@@ -9,7 +9,7 @@ const productSlides = [
     title: 'VFD Packages',
     subtitle: 'Custom-engineered VFD packages for oil & gas and industrial applications',
     image: '/images/hero/SEEL_Packages.jpg',
-    to: '/vfd-packages',
+    to: '/package-solutions',
     cta: 'View VFD Packages',
     tag: 'VFD Packages',
   },
@@ -108,9 +108,9 @@ export default function HeroCarousel() {
               professional, personal, precise, and reliable services.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/services" className="btn-primary text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4">
+              <Link to="/electrical-services" className="btn-primary text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4">
                 Our Services <ArrowRight size={18} />
-              </Link>
+              </Link>``
               <Link to="/contact" className="btn-outline text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4">
                 Get a Quote
               </Link>
