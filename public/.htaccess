@@ -2,6 +2,11 @@
   RewriteEngine On
   RewriteBase /
 
+  # Old WordPress/WooCommerce/legacy-CMS URLs (site was previously on WP) — signal
+  # Gone (410) instead of soft-404ing to the homepage, so these get dropped from
+  # Google/Bing's index instead of lingering forever.
+  RewriteRule ^(wp-content|wp-includes|wp-admin|wp-json|wp-login\.php|xmlrpc\.php|product|product-category|product-tag|amps|horsepower|voltage|coil-voltage|input-voltage|input-phase|input-frequency|poles|frame|enclosure|rpm|kvar|phase|length|number-of-step|uploads|adminccc|variable-frequency-drives|electric-motor-vfd-sales)(/|$) - [G,L]
+
   # Serve existing files and directories directly (assets, datasheets, etc.)
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
